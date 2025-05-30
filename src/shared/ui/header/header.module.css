@@ -1,0 +1,35 @@
+.wrapper {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  background-color: var(--dark-5);
+}
+.header {
+  width: 100%;
+  max-width: 1640px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+}
+.title {
+  font-size: 28px;
+  font-family: var(--ff-Unbounded);
+}
+.title span {
+  font-family: var(--ff-Unbounded);
+  color: var(--accent);
+}
+
+.flex {
+  display: flex;
+  align-items: center;
+  gap: 58px;
+}
+.link {
+  font-weight: 700;
+}
+.link.disable {
+  pointer-events: none;
+  color: var(--text-6);
+}

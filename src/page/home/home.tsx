@@ -1,3 +1,5 @@
+import css from './home.module.css'
+
 export const Home = () => {
-  return <div>Главная</div>
+  return <div className={css.wrapper}>Привет</div>
 }

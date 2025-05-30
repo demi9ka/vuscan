@@ -1,0 +1,7 @@
+.wrapper {
+  width: 100vw;
+  height: 100svh;
+  display: flex;
+  flex-direction: column;
+  background-image: url('/background-image.png');
+}

@@ -1,5 +1,4 @@
 import type { ReactNode } from 'react'
-import { MantineProvider } from '@mantine/core'
 import { BrowserRouter } from 'react-router-dom'
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query'
 
@@ -19,9 +18,7 @@ export const queryClient = new QueryClient({
 export const Provider = ({ children }: Props) => {
   return (
     <BrowserRouter>
-      <MantineProvider defaultColorScheme='dark'>
-        <QueryClientProvider client={queryClient}>{children}</QueryClientProvider>
-      </MantineProvider>
+      <QueryClientProvider client={queryClient}>{children}</QueryClientProvider>
     </BrowserRouter>
   )
 }

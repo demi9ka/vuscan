@@ -1,16 +1,35 @@
-import { observer } from 'mobx-react-lite'
-import { Flex, Text } from '@mantine/core'
+import css from './header.module.css'
+import { LanguageSelect } from './ui/language-select'
+import { compareCss } from '@/helpers'
+import { Button } from '../button'
+import { Link } from 'react-router-dom'
 
-export const Header = observer(() => {
+export const Header = () => {
+  const goToContact = () => {
+    console.log('go to contact')
+  }
+
   return (
-    <Flex style={{ borderRadius: 4 }} m={6} py={6} px={8} bg={'dark.6'} justify={'center'}>
-      <Flex justify={'space-between'} w={1920}>
-        <Flex align={'center'}>
-          <Text fw={600} size={'22px'}>
-            Get&Fix
-          </Text>
-        </Flex>
-      </Flex>
-    </Flex>
+    <div className={css.wrapper}>
+      <div className={css.header}>
+        <h1 className={css.title}>
+          <span>VU</span>
+          SCAN
+        </h1>
+        <div className={css.flex}>
+          <Link to={'/modal=about-scanner'} className={css.link}>
+            О СКАННЕРЕ
+          </Link>
+          <Link to={'/modal=faq'} className={css.link}>
+            FAQ
+          </Link>
+          <Link to={'/'} className={compareCss(css.link, css.disable)}>
+            СКОРО
+          </Link>
+          <LanguageSelect />
+          <Button onClick={goToContact}>Связаться с нами</Button>
+        </div>
+      </div>
+    </div>
   )
-})
+}
