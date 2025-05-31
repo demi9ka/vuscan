@@ -3,11 +3,10 @@ import { LanguageSelect } from './ui/language-select'
 import { combaneCSS } from '@/helpers'
 import { Button } from '../button'
 import { Link } from 'react-router-dom'
+import { AboutScannerModal } from './ui/about-scanner-modal'
 
 export const Header = () => {
-  const goToContact = () => {
-    console.log('go to contact')
-  }
+  const goToContact = () => {}
 
   return (
     <div className={css.wrapper}>
@@ -30,6 +29,7 @@ export const Header = () => {
           <Button onClick={goToContact}>Связаться с нами</Button>
         </div>
       </div>
+      <AboutScannerModal />
     </div>
   )
 }

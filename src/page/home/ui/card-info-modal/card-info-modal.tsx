@@ -39,8 +39,10 @@ export const CardInfoModal = ({ id }: Props) => {
         </div>
       </div>
       <h1 className={css.title}>{title}</h1>
-      {info.split('\n\n').map(paragraph => (
-        <p className={css.info}>{paragraph}</p>
+      {info.split('\n\n').map((el, i) => (
+        <p key={i} className={css.info}>
+          {el}
+        </p>
       ))}
       <div style={{ marginTop: 40 }} className={css.center}>
         <Button variant='secondary' className={css.button} onClick={onClose}>
