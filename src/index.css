@@ -66,3 +66,12 @@
   --ff-Manrope: 'Manrope';
   --ff-Eesti: 'Eesti';
 }
+
+.Toastify__toast-icon svg {
+  width: 40px !important; /* нужная ширина */
+  height: 40px !important; /* нужная высота */
+}
+.Toastify__toast-container {
+  --toastify-toast-width: 400px;
+  --toastify-toast-padding: 15px 30px;
+}

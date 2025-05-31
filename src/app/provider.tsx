@@ -1,6 +1,8 @@
-import type { ReactNode } from 'react'
+import { ReactNode } from 'react'
 import { BrowserRouter } from 'react-router-dom'
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query'
+import { ToastContainer } from 'react-toastify'
+import { toastContainerProps } from '@/feature/toast'
 
 type Props = {
   children: ReactNode
@@ -18,7 +20,10 @@ export const queryClient = new QueryClient({
 export const Provider = ({ children }: Props) => {
   return (
     <BrowserRouter>
-      <QueryClientProvider client={queryClient}>{children}</QueryClientProvider>
+      <QueryClientProvider client={queryClient}>
+        <ToastContainer {...toastContainerProps} />
+        {children}
+      </QueryClientProvider>
     </BrowserRouter>
   )
 }

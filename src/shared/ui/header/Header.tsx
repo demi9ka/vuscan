@@ -6,6 +6,7 @@ import { Link } from 'react-router-dom'
 import { AboutScannerModal } from './ui/about-scanner-modal'
 import { FaqModal } from './ui/faq-modal'
 import { SoonModal } from './ui/soon-modal'
+import { ContactModal } from './ui/contact-modal'
 
 export const Header = () => {
   return (
@@ -34,6 +35,7 @@ export const Header = () => {
       <AboutScannerModal />
       <FaqModal />
       <SoonModal />
+      <ContactModal />
     </div>
   )
 }

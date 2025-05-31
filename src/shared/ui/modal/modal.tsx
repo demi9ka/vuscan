@@ -6,9 +6,10 @@ import { CrossIcon } from '../svg'
 type Props = {
   opened: boolean
   onClose: VoidFunction
+  title?: string
 } & React.DetailedHTMLProps<React.HTMLAttributes<HTMLDivElement>, HTMLDivElement>
 
-export const Modal = ({ onClose, opened, children, ...props }: Props) => {
+export const Modal = ({ onClose, opened, children, title, ...props }: Props) => {
   useEffect(() => {
     const handleEsc = (event: KeyboardEvent) => event.key === 'Escape' && onClose()
     window.addEventListener('keydown', handleEsc)
@@ -21,6 +22,7 @@ export const Modal = ({ onClose, opened, children, ...props }: Props) => {
     <div className={combaneCSS(css.wrapper, opened ? css.opened : '')}>
       <div {...props} className={css.modal}>
         <div className={css.header}>
+          <h1 className={css.title}>{title}</h1>
           <CrossIcon style={{ width: 20, cursor: 'pointer' }} onClick={onClose} />
         </div>
         <div className={css.content}>{children}</div>

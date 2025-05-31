@@ -2,6 +2,7 @@ import { Provider } from '.'
 import { AppRouting } from './app-routing'
 import { Header } from '@/shared/ui'
 import css from './app.module.css'
+import 'react-toastify/dist/ReactToastify.css'
 
 export const App = () => {
   return (

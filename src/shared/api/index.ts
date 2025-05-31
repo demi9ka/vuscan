@@ -1,20 +1,11 @@
 import axios from 'axios'
-import { showNotification } from '@/feature/notification'
-import auth from './auth'
-import statistics from './statistics'
-import top from './top'
-import users from './users'
-import profile from './profile'
-import payments from './payments'
-import prices from './prices'
-
-const jwt = localStorage.getItem('access_token')
+import { toast } from '@/feature/toast'
+import contact from './contact'
 
 export const api = axios.create({
-  baseURL: 'http://81.94.150.108:5004',
+  baseURL: 'http://localhost:3333',
   headers: {
-    'Content-Type': 'application/json',
-    Authorization: jwt ? 'Bearer ' + jwt : undefined
+    'Content-Type': 'application/json'
   }
 })
 
@@ -23,19 +14,11 @@ api.interceptors.response.use(
     return response
   },
   error => {
-    showNotification({
-      message: error.message
-    })
+    toast(error.message, 'error')
     return Promise.reject(error)
   }
 )
 
 export default {
-  auth,
-  statistics,
-  top,
-  users,
-  profile,
-  payments,
-  prices
+  contact
 }
