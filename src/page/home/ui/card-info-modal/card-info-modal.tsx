@@ -24,6 +24,7 @@ export const CardInfoModal = ({ id }: Props) => {
 
   const opened = id == Number(urlId) && urlModal == 'card-info'
   const { color, title, info, level } = cardData
+
   return (
     <Modal
       opened={opened}

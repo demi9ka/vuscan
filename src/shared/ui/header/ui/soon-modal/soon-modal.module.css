@@ -1,0 +1,27 @@
+.center {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+.scrollArea {
+  margin-top: 20px;
+  border-radius: 12px;
+  height: 527px;
+  background-color: var(--dark-3);
+  padding: 16px;
+  overflow-y: auto;
+}
+.title {
+  font-family: var(--ff-Eesti);
+  font-size: 32px;
+  font-weight: 400;
+  text-align: center;
+}
+.info {
+  margin-top: 10px;
+  font-size: 16px;
+  line-height: 155%;
+}
+.button {
+  padding: 11px 55px;
+}

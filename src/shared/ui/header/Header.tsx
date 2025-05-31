@@ -5,10 +5,9 @@ import { Button } from '../button'
 import { Link } from 'react-router-dom'
 import { AboutScannerModal } from './ui/about-scanner-modal'
 import { FaqModal } from './ui/faq-modal'
+import { SoonModal } from './ui/soon-modal'
 
 export const Header = () => {
-  const goToContact = () => {}
-
   return (
     <div className={css.wrapper}>
       <div className={css.header}>
@@ -23,15 +22,18 @@ export const Header = () => {
           <Link to={'/?modal=faq'} className={css.link}>
             FAQ
           </Link>
-          <Link to={'/'} className={combaneCSS(css.link, css.disable)}>
+          <Link to={'/?modal=soon'} className={combaneCSS(css.link, css.disable)}>
             СКОРО
           </Link>
           <LanguageSelect />
-          <Button onClick={goToContact}>Связаться с нами</Button>
+          <Link to={'/?modal=contact'} className={css.link}>
+            <Button>Связаться с нами</Button>
+          </Link>
         </div>
       </div>
       <AboutScannerModal />
       <FaqModal />
+      <SoonModal />
     </div>
   )
 }

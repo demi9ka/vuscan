@@ -30,6 +30,5 @@
   font-weight: 700;
 }
 .link.disable {
-  pointer-events: none;
   color: var(--text-6);
 }
