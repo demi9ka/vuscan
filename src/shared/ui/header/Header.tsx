@@ -4,6 +4,7 @@ import { combaneCSS } from '@/helpers'
 import { Button } from '../button'
 import { Link } from 'react-router-dom'
 import { AboutScannerModal } from './ui/about-scanner-modal'
+import { FaqModal } from './ui/faq-modal'
 
 export const Header = () => {
   const goToContact = () => {}
@@ -30,6 +31,7 @@ export const Header = () => {
         </div>
       </div>
       <AboutScannerModal />
+      <FaqModal />
     </div>
   )
 }
