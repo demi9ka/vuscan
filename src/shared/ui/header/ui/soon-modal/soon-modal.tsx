@@ -1,9 +1,10 @@
 import { useLocation, useNavigate } from 'react-router-dom'
 import css from './soon-modal.module.css'
 import { Button, Modal } from '@/shared/ui'
-import { modalText } from './constants'
+import { useTranslation } from 'react-i18next'
 
 export const SoonModal = () => {
+  const { t } = useTranslation()
   const navigate = useNavigate()
   const location = useLocation()
 
@@ -25,17 +26,19 @@ export const SoonModal = () => {
       }}
       onClose={onClose}
     >
-      <h1 className={css.title}>Скоро...</h1>
+      <h1 className={css.title}>{t('header.soon-modal.title')}</h1>
       <div className={css.scrollArea}>
-        {modalText.split('\n\n').map((el, i) => (
-          <p key={i} className={css.info}>
-            {el}
-          </p>
-        ))}
+        {t('header.soon-modal.content')
+          .split('\n\n')
+          .map((el, i) => (
+            <p key={i} className={css.info}>
+              {el}
+            </p>
+          ))}
       </div>
       <div style={{ marginTop: 40 }} className={css.center}>
         <Button variant='secondary' className={css.button} onClick={onClose}>
-          ЗАКРЫТЬ
+          {t('global.close')}
         </Button>
       </div>
     </Modal>

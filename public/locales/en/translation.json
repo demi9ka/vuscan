@@ -1,0 +1,75 @@
+{
+  "global": {
+    "close": "CLOSE",
+    "more": "MORE DETAILS",
+    "confirm": "Confirm"
+  },
+  "header": {
+    "about": "ABOUT SCANNER",
+    "soon": "SOON",
+    "contact": "Contact us",
+    "about-scanner-content": "Vulnerability scanner based on external analysis, Our tool performs intelligent site scanning, identifying risks that become visible not only to intruders, but also to search engines. This allows you to detect vulnerabilities even before they are exploited.Scanner analyzes publicly available data about your resource, such as is accessible from the outside without authorization. This includes:\n\nHidden administrative panels\n\nIndexed directories and hidden files\n\nInvulnerable entry points (XSS, SQL injection)\n\n Confidential data is freely available\n\n✅ What makes our approach better than traditional scanners\n\n Unlike classic scanners that work only from inside the system or require access to a server, our tool:\n\n does not require installation on the client side\n\nPanalizes the site like this, how an external user or bot sees it\n\nThe risks of information leakage and incorrect access settings\n\n Helps protect against unauthorized indexing and digital intelligence\n\n💡🔎Why it is needed\n\n Our approach helps companies find risks in time that may be visible to intruders from the outside. This is important to protect your business, reputation, and customers. Such an audit allows you to:\n\n Understand what is visible about the company on the Internet — what data, panels and vulnerabilities are available without logging in\n\n Close weaknesses before someone finds them - protect yourself before indexing by search engines or malicious actions\n\n Strengthen cybersecurity — reduce the risk of leaks and external interference\n\n To meet the requirements of regulators — to help with the passage of audits and compliance with safety standards",
+    "questions": [
+      {
+        "question": "Question1",
+        "answer": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris condimentum tincidunt lacus sed ullamcorper. Nunc et faucibus metus. Ut justo nibh, laoreet non sapien in, commodo bibendum libero."
+      },
+      {
+        "question": "Question1",
+        "answer": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris condimentum tincidunt lacus sed ullamcorper. Nunc et faucibus metus. Ut justo nibh, laoreet non sapien in, commodo bibendum libero."
+      },
+      {
+        "question": "Question1",
+        "answer": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris condimentum tincidunt lacus sed ullamcorper. Nunc et faucibus metus. Ut justo nibh, laoreet non sapien in, commodo bibendum libero."
+      },
+      {
+        "question": "Question1",
+        "answer": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris condimentum tincidunt lacus sed ullamcorper. Nunc et faucibus metus. Ut justo nibh, laoreet non sapien in, commodo bibendum libero."
+      },
+      {
+        "question": "Question1",
+        "answer": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris condimentum tincidunt lacus sed ullamcorper. Nunc et faucibus metus. Ut justo nibh, laoreet non sapien in, commodo bibendum libero."
+      }
+    ],
+    "contact-modal": {
+      "content": "You can leave your email and we will get back to you shortly."
+    },
+    "soon-modal": {
+      "title": "Soon...",
+      "content": "🔐 New Feature: Automated Security Monitoring\n\nComing soon to our system — a dashboard for automated web resource monitoring.\n\nBased on numerous client requests, we are introducing a tool that will allow you to:\n\n📡 Launch 24/7 website monitoring\n\n🔍 Automatically scan resources for vulnerabilities\n\n📬 Receive real-time notifications and reports\n\n🛡 Enhance security levels and reduce attack risks\n\nThe dashboard will be accessible through your personal account and fully integrated with the current system.\n\n🕒 This feature is in development and will be available in upcoming updates."
+    }
+  },
+  "home": {
+    "title": "Online Vulnerability Scanner",
+    "description": "External website security analysis to detect vulnerabilities",
+    "search-placeholder": "Enter URL here",
+    "scan-btn": "Scan",
+
+    "levels": [
+      {
+        "level": "LOW",
+        "title": "Open Directories",
+        "description": "Unrestricted access to website content can expose internal files and structure.",
+        "info": "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. \n\n Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. \n\nUt enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?"
+      },
+      {
+        "level": "MEDIUM",
+        "title": "Admin Panels and CMS",
+        "description": "Unprotected site control panels pose a risk of unauthorized access.",
+        "info": "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. \n\n Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. \n\nUt enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?"
+      },
+      {
+        "level": "HIGH",
+        "title": "XSS / SQL Vulnerabilities",
+        "description": "Input form errors allow injecting malicious code or accessing data.",
+        "info": "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. \n\n Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. \n\nUt enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?"
+      },
+      {
+        "level": "CRITICAL",
+        "title": "Confidential Files",
+        "description": "Open configurations and backups may contain logins, passwords, and keys.",
+        "info": "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. \n\n Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. \n\nUt enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?"
+      }
+    ]
+  }
+}

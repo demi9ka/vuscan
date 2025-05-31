@@ -10,5 +10,6 @@
   border-radius: 12px;
   background-color: var(--dark);
   border: 1px solid var(--border);
-  padding: 11px 24px;
+  padding: 13px 24px;
+  font-weight: 400;
 }

@@ -2,17 +2,16 @@ import { Button } from '@/shared/ui'
 import css from './card.module.css'
 import { useNavigate } from 'react-router-dom'
 import { useState } from 'react'
+import { useTranslation } from 'react-i18next'
 
 export type Props = {
   color: string
-  level: string
   logo: string
-  title: string
-  description: string
   id: number
 }
 
-export const Card = ({ description, level, logo, color, title, id }: Props) => {
+export const Card = ({ logo, color, id }: Props) => {
+  const { t } = useTranslation()
   const navigate = useNavigate()
 
   const [state, setState] = useState(0)
@@ -29,13 +28,13 @@ export const Card = ({ description, level, logo, color, title, id }: Props) => {
       }}
     >
       <div className={css.level} style={{ color, boxShadow: ` inset 0px 0px 12px ${color}` }}>
-        {level}
+        {t(`home.levels.${id}.level`)}
       </div>
       <div className={css.logoWrapper}>
         <img src={logo} />
       </div>
-      <h3 className={css.title}>{title}</h3>
-      <p className={css.description}>{description}</p>
+      <h3 className={css.title}>{t(`home.levels.${id}.title`)}</h3>
+      <p className={css.description}>{t(`home.levels.${id}.description`)}</p>
       {state == 0 ? (
         <Button
           variant='secondary'
@@ -46,7 +45,7 @@ export const Card = ({ description, level, logo, color, title, id }: Props) => {
           }}
           onClick={handleOpenDescriptionModal}
         >
-          ПОДРОБНЕЕ
+          {t(`global.more`)}
         </Button>
       ) : (
         ''

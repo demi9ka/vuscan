@@ -8,7 +8,7 @@ type Props = { variant?: 'primary' | 'secondary' } & React.DetailedHTMLProps<
 
 export const Button = ({ children, variant, className, ...props }: Props) => {
   return (
-    <button className={combaneCSS(css[variant || 'primary'], className || '')} {...props}>
+    <button className={combaneCSS(css[variant || 'primary'], className || '', css.button)} {...props}>
       {children}
     </button>
   )

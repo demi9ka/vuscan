@@ -12,10 +12,10 @@ export const Home = () => {
         <Search />
         <Cards />
       </div>
+      <CardInfoModal id={0} />
       <CardInfoModal id={1} />
       <CardInfoModal id={2} />
       <CardInfoModal id={3} />
-      <CardInfoModal id={4} />
     </div>
   )
 }

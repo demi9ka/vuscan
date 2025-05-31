@@ -1,8 +1,10 @@
 import { useState } from 'react'
 import css from './search.module.css'
 import { Button } from '@/shared/ui'
+import { useTranslation } from 'react-i18next'
 
 export const Search = () => {
+  const { t } = useTranslation()
   const [searchValue, setSearchValue] = useState('')
 
   const handleScan = () => {}
@@ -11,7 +13,7 @@ export const Search = () => {
     <div className={css.wrapper}>
       <input
         type='text'
-        placeholder='Введите URL сюда'
+        placeholder={t('home.search-placeholder')}
         value={searchValue}
         onChange={e => setSearchValue(e.target.value)}
         className={css.searchInput}
@@ -26,7 +28,7 @@ export const Search = () => {
           padding: '11px 80px'
         }}
       >
-        Сканировать
+        {t('home.scan-btn')}
       </Button>
     </div>
   )

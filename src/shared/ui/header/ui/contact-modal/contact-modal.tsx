@@ -8,11 +8,13 @@ import { zodResolver } from '@hookform/resolvers/zod'
 import { schema } from './schema'
 import z from 'zod'
 import { toast } from '@/feature/toast'
+import { useTranslation } from 'react-i18next'
 
 type FormDataType = z.infer<typeof schema>
 
 export const ContactModal = () => {
-  const { mutateAsync } = useContact()
+  const { t } = useTranslation()
+  const { mutateAsync, isPending } = useContact()
   const navigate = useNavigate()
   const location = useLocation()
 
@@ -36,10 +38,10 @@ export const ContactModal = () => {
   const onSubmit = async (formData: FormDataType) => {
     const { result } = await mutateAsync(formData)
     if (result) {
-      toast('Успешно!', 'success')
+      toast('Success!', 'success')
       onClose()
     } else {
-      toast('Не удалось обработать запрос')
+      toast("Couldn't process the request")
     }
   }
 
@@ -47,20 +49,20 @@ export const ContactModal = () => {
 
   return (
     <Modal
-      title='Связаться с нами'
+      title={t('header.contact')}
       opened={opened}
       style={{
         width: 700
       }}
       onClose={onClose}
     >
-      <p className={css.text}>Вы можете оставить свой Email и мы свяжемся с вами в ближайшее время</p>
+      <p className={css.text}>{t('header.contact-modal.content')}</p>
       <form onSubmit={handleSubmit(onSubmit)}>
         <input placeholder='example@gmail.com' className={css.emailInput} {...register('email')} />
         {errors.email && <p style={{ color: 'red' }}>{errors.email.message}</p>}
 
-        <Button type='submit' className={css.button}>
-          Подтвердить
+        <Button type='submit' disabled={isPending} className={css.button}>
+          {t('global.confirm')}
         </Button>
       </form>
     </Modal>
