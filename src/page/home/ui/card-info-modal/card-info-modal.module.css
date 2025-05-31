@@ -1,0 +1,31 @@
+.center {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+.level {
+  position: absolute;
+  top: 5px;
+  background-color: var(--dark);
+  transform: translateY(-20px);
+  font-family: var(--ff-Unbounded);
+  font-size: 18px;
+  font-weight: 600;
+  padding: 10px 50px;
+  border-radius: 12px;
+}
+
+.title {
+  font-family: var(--ff-Eesti);
+  font-size: 32px;
+  font-weight: 400;
+  text-align: center;
+}
+.info {
+  margin-top: 10px;
+  font-size: 16px;
+  line-height: 155%;
+}
+.button {
+  padding: 11px 55px;
+}

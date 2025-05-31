@@ -1,3 +1,3 @@
-export const compareCss = (...res: string[]) => {
+export const combaneCSS = (...res: string[]) => {
   return res.join(' ')
 }

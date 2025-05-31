@@ -1,0 +1,17 @@
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.title {
+  font-family: var(--ff-Eesti);
+  font-size: 52px;
+  font-weight: 400;
+}
+.subTitle {
+  font-family: var(--ff-Eesti);
+  font-weight: 400;
+  font-size: 20px;
+  color: var(--text-5);
+  margin-top: 27px;
+}

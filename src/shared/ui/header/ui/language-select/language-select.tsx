@@ -1,18 +1,18 @@
 import { languageStore } from '@/store'
 import { observer } from 'mobx-react-lite'
 import css from './language-select.module.css'
-import { compareCss } from '@/helpers'
+import { combaneCSS } from '@/helpers'
 
 export const LanguageSelect = observer(() => {
   const { language, setLanguage } = languageStore
 
   return (
     <div className={css.wrapper}>
-      <p onClick={() => setLanguage('ru')} className={compareCss(css.variant, language != 'ru' ? css.disable : '')}>
+      <p onClick={() => setLanguage('ru')} className={combaneCSS(css.variant, language != 'ru' ? css.disable : '')}>
         RU
       </p>
       <div className={css.separator} />
-      <p onClick={() => setLanguage('en')} className={compareCss(css.variant, language != 'en' ? css.disable : '')}>
+      <p onClick={() => setLanguage('en')} className={combaneCSS(css.variant, language != 'en' ? css.disable : '')}>
         EN
       </p>
     </div>

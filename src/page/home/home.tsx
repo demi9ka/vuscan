@@ -1,5 +1,21 @@
 import css from './home.module.css'
+import { Cards } from './ui/cards'
+import { Search } from './ui/search'
+import { Title } from './ui/title'
+import { CardInfoModal } from './ui/card-info-modal'
 
 export const Home = () => {
-  return <div className={css.wrapper}>Привет</div>
+  return (
+    <div className={css.wrapper}>
+      <div className={css.content}>
+        <Title />
+        <Search />
+        <Cards />
+      </div>
+      <CardInfoModal id={1} />
+      <CardInfoModal id={2} />
+      <CardInfoModal id={3} />
+      <CardInfoModal id={4} />
+    </div>
+  )
 }

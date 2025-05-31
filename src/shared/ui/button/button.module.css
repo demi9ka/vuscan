@@ -1,6 +1,18 @@
-.button {
-  padding: 7px 22px;
+.primary {
+  padding: 9px 22px;
   background: linear-gradient(180deg, #ff8800 0%, #ff6a00 100%);
+  border-radius: 12px;
+  text-align: center;
+  transition: 0.1s;
+  cursor: pointer;
+}
+.secondary {
+  padding: 9px 22px;
+  border: 2px solid var(--border);
+  font-family: var(--ff-Eesti);
+  font-weight: 500;
+  font-size: 20px;
+  background-color: var(--dark-3);
   border-radius: 12px;
   text-align: center;
   transition: 0.1s;

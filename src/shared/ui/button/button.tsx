@@ -1,10 +1,14 @@
+import { combaneCSS } from '@/helpers'
 import css from './button.module.css'
 
-type Props = React.DetailedHTMLProps<React.ButtonHTMLAttributes<HTMLButtonElement>, HTMLButtonElement>
+type Props = { variant?: 'primary' | 'secondary' } & React.DetailedHTMLProps<
+  React.ButtonHTMLAttributes<HTMLButtonElement>,
+  HTMLButtonElement
+>
 
-export const Button = ({ children, ...props }: Props) => {
+export const Button = ({ children, variant, className, ...props }: Props) => {
   return (
-    <button {...props} className={css.button}>
+    <button className={combaneCSS(css[variant || 'primary'], className || '')} {...props}>
       {children}
     </button>
   )
