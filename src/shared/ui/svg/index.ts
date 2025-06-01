@@ -1,1 +1,1 @@
-export { CrossIcon, ArrowDownIcon } from './svg'
+export * from './svg'

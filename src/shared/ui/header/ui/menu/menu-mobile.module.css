@@ -1,0 +1,39 @@
+.wrapper {
+  position: relative;
+}
+.menu {
+  position: absolute;
+  visibility: hidden;
+  opacity: 0;
+  top: 50px;
+
+  right: -17px;
+  border: 1px solid var(--border);
+  width: 240px;
+  display: flex;
+  flex-direction: column;
+  transition: 0.1s;
+  padding: 12px;
+  border-radius: 12px;
+  background-color: var(--dark-5);
+}
+.menu.opened {
+  visibility: visible;
+  top: 60px;
+  opacity: 1;
+}
+
+.link {
+  padding: 12px 0;
+  font-weight: 700;
+}
+.link.disable {
+  color: var(--text-6);
+}
+.button {
+  width: 100%;
+  font-weight: 700;
+  font-size: 14px;
+  padding: 12px 0;
+  border-radius: 8px;
+}

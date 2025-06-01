@@ -20,15 +20,3 @@
   font-family: var(--ff-Unbounded);
   color: var(--accent);
 }
-
-.flex {
-  display: flex;
-  align-items: center;
-  gap: 58px;
-}
-.link {
-  font-weight: 700;
-}
-.link.disable {
-  color: var(--text-6);
-}
