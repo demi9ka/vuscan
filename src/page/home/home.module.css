@@ -1,9 +1,9 @@
 .wrapper {
   width: 100%;
   max-width: 1640px;
+  padding: 16px;
 }
 .content {
-  margin-top: 200px;
   display: flex;
   flex-direction: column;
 }

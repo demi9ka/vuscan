@@ -42,7 +42,7 @@
   "home": {
     "title": "Сканер уязвимостей онлайн",
     "description": "Внешний анализ безопасности сайта для обнаружения уязвимостей",
-    "search-placeholder": "Введите URl сюда",
+    "search-placeholder": "Введите URL сюда",
     "scan-btn": "Сканировать",
 
     "levels": [

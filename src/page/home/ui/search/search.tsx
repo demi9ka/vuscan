@@ -18,16 +18,7 @@ export const Search = () => {
         onChange={e => setSearchValue(e.target.value)}
         className={css.searchInput}
       />
-      <Button
-        onClick={handleScan}
-        style={{
-          fontFamily: 'var(--ff-Eesti)',
-          fontSize: 20,
-          fontWeight: 500,
-          borderRadius: 12,
-          padding: '11px 80px'
-        }}
-      >
+      <Button onClick={handleScan} className={css.button}>
         {t('home.scan-btn')}
       </Button>
     </div>
