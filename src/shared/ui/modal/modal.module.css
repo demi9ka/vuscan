@@ -52,7 +52,10 @@
   flex-grow: 2;
   overflow-y: auto;
 }
-
+.close {
+  width: 20px;
+  cursor: pointer;
+}
 @keyframes modal-anim {
   from {
     opacity: 0;
@@ -61,5 +64,13 @@
   to {
     opacity: 1;
     transform: scale(1);
+  }
+}
+@media screen and (max-width: 1440px) {
+  .modal {
+    border-radius: 20px;
+  }
+  .close {
+    width: 16px;
   }
 }

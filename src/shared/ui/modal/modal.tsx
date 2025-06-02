@@ -9,7 +9,7 @@ type Props = {
   title?: string
 } & React.DetailedHTMLProps<React.HTMLAttributes<HTMLDivElement>, HTMLDivElement>
 
-export const Modal = ({ onClose, opened, children, title, ...props }: Props) => {
+export const Modal = ({ onClose, opened, children, title, className, ...props }: Props) => {
   useEffect(() => {
     const handleEsc = (event: KeyboardEvent) => event.key === 'Escape' && onClose()
     window.addEventListener('keydown', handleEsc)
@@ -20,10 +20,10 @@ export const Modal = ({ onClose, opened, children, title, ...props }: Props) => 
 
   return (
     <div className={combaneCSS(css.wrapper, opened ? css.opened : '')}>
-      <div {...props} className={css.modal}>
+      <div {...props} className={combaneCSS(css.modal, className || '')}>
         <div className={css.header}>
           <h1 className={css.title}>{title}</h1>
-          <CrossIcon style={{ width: 20, cursor: 'pointer' }} onClick={onClose} />
+          <CrossIcon className={css.close} onClick={onClose} />
         </div>
         <div className={css.content}>{children}</div>
       </div>

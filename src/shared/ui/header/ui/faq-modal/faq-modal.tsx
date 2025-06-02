@@ -25,13 +25,7 @@ export const FaqModal = () => {
   const opened = urlModal == 'faq'
 
   return (
-    <Modal
-      opened={opened}
-      style={{
-        width: 700
-      }}
-      onClose={onClose}
-    >
+    <Modal opened={opened} className={css.modal} onClose={onClose}>
       <h1 className={css.title}>FAQ</h1>
       <div className={css.scrollArea}>
         {[0, 1, 2, 3].map(i => (
@@ -39,9 +33,9 @@ export const FaqModal = () => {
             <div className={css.questionHeader}>
               <h2 className={css.questionTitle}>{t(`header.questions.${i}.question`)}</h2>
               <ArrowDownIcon
+                className={css.arrow}
                 style={{
-                  transform: `rotate(${openedQuestion == i ? 180 : 0}deg)`,
-                  width: 24
+                  transform: `rotate(${openedQuestion == i ? 180 : 0}deg)`
                 }}
               />
             </div>

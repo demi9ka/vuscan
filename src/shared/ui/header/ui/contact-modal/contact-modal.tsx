@@ -48,14 +48,7 @@ export const ContactModal = () => {
   const opened = urlModal == 'contact'
 
   return (
-    <Modal
-      title={t('header.contact')}
-      opened={opened}
-      style={{
-        width: 700
-      }}
-      onClose={onClose}
-    >
+    <Modal title={t('header.contact')} opened={opened} className={css.modal} onClose={onClose}>
       <p className={css.text}>{t('header.contact-modal.content')}</p>
       <form onSubmit={handleSubmit(onSubmit)}>
         <input placeholder='example@gmail.com' className={css.emailInput} {...register('email')} />

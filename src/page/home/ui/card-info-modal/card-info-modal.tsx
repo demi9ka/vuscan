@@ -29,11 +29,11 @@ export const CardInfoModal = ({ id }: Props) => {
 
   return (
     <Modal
-      opened={opened}
       style={{
-        width: 700,
         boxShadow: `0px 0px 12px ${color}`
       }}
+      opened={opened}
+      className={css.modal}
       onClose={onClose}
     >
       <div className={css.center}>

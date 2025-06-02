@@ -1,3 +1,6 @@
+.modal {
+  width: 700px;
+}
 .center {
   width: 100%;
   display: flex;
@@ -28,4 +31,23 @@
 }
 .button {
   padding: 11px 55px;
+}
+@media screen and (max-width: 1440px) {
+  .level {
+    font-size: 14px;
+    padding: 8px 38px;
+  }
+  .title {
+    font-size: 26px;
+  }
+  .info {
+    margin-top: 7px;
+    font-size: 12px;
+  }
+  .button {
+    padding: 8px 38px;
+  }
+  .modal {
+    width: 528px;
+  }
 }

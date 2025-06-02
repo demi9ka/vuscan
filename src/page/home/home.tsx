@@ -3,6 +3,7 @@ import { Cards } from './ui/cards'
 import { Search } from './ui/search'
 import { Title } from './ui/title'
 import { CardInfoModal } from './ui/card-info-modal'
+import { WarningModal } from './ui/warning-modal'
 
 export const Home = () => {
   return (
@@ -16,6 +17,7 @@ export const Home = () => {
       <CardInfoModal id={1} />
       <CardInfoModal id={2} />
       <CardInfoModal id={3} />
+      <WarningModal />
     </div>
   )
 }

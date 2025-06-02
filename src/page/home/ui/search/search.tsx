@@ -2,12 +2,16 @@ import { useState } from 'react'
 import css from './search.module.css'
 import { Button } from '@/shared/ui'
 import { useTranslation } from 'react-i18next'
+import { useNavigate } from 'react-router-dom'
 
 export const Search = () => {
   const { t } = useTranslation()
+  const navigate = useNavigate()
   const [searchValue, setSearchValue] = useState('')
 
-  const handleScan = () => {}
+  const handleScan = () => {
+    navigate('/?modal=warning')
+  }
 
   return (
     <div className={css.wrapper}>

@@ -1,14 +1,8 @@
 .wrapper {
+  margin-bottom: 20px;
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 100vw;
-  scrollbar-width: none;
-  -ms-overflow-style: none;
-}
-
-.wrapper::-webkit-scrollbar {
-  display: none;
 }
 
 @media screen and (max-width: 1280px) {
@@ -16,5 +10,24 @@
     justify-content: start;
     overflow-x: auto;
     height: 400px;
+  }
+}
+
+@media (hover: hover) and (pointer: fine) and (max-width: 1280px) {
+  /* Стили для ПК */
+  .wrapper {
+    width: calc(100vw - 32px);
+  }
+}
+
+/* Устройства с грубым указателем (палец) — обычно смартфоны и планшеты */
+@media (hover: none) and (pointer: coarse) and (max-width: 1280px) {
+  .wrapper {
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+    width: 100vw;
+  }
+  .wrapper::-webkit-scrollbar {
+    display: none;
   }
 }

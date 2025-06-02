@@ -1,6 +1,7 @@
 import axios from 'axios'
 import { toast } from '@/feature/toast'
 import contact from './contact'
+import scanner from './scanner'
 
 export const api = axios.create({
   baseURL: 'http://localhost:3333',
@@ -20,5 +21,6 @@ api.interceptors.response.use(
 )
 
 export default {
-  contact
+  contact,
+  scanner
 }

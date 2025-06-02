@@ -19,13 +19,7 @@ export const AboutScannerModal = () => {
   const opened = urlModal == 'about-scanner'
 
   return (
-    <Modal
-      opened={opened}
-      style={{
-        width: 700
-      }}
-      onClose={onClose}
-    >
+    <Modal opened={opened} className={css.modal} onClose={onClose}>
       <h1 className={css.title}>{t('header.about')}</h1>
       <div className={css.scrollArea}>
         {t('header.about-scanner-content')

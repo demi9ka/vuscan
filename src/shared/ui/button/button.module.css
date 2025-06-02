@@ -22,3 +22,9 @@
   opacity: 0.8;
   pointer-events: none;
 }
+
+@media screen and (max-width: 1440px) {
+  .secondary {
+    font-size: 14px;
+  }
+}
