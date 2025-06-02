@@ -2,6 +2,19 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 24px;
-  margin-bottom: 64px;
+  width: 100vw;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.wrapper::-webkit-scrollbar {
+  display: none;
+}
+
+@media screen and (max-width: 1280px) {
+  .wrapper {
+    justify-content: start;
+    overflow-x: auto;
+    height: 400px;
+  }
 }

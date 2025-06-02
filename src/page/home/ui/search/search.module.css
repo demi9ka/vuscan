@@ -1,6 +1,7 @@
 .wrapper {
   margin: 38px auto 109px auto;
   width: 950px;
+  padding: 0 16px;
   display: flex;
   align-items: center;
   gap: 16px;
