@@ -1,1 +1,1 @@
-export { WarningModal } from './warning'
+export { WarningModal } from './warning-modal'

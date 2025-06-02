@@ -4,12 +4,17 @@ import { Button } from '@/shared/ui'
 import { useTranslation } from 'react-i18next'
 import { useNavigate } from 'react-router-dom'
 
-export const Search = () => {
+type Props = {
+  onChangeValue: (value: string) => void
+}
+
+export const Search = ({ onChangeValue }: Props) => {
   const { t } = useTranslation()
   const navigate = useNavigate()
   const [searchValue, setSearchValue] = useState('')
 
   const handleScan = () => {
+    onChangeValue(searchValue)
     navigate('/?modal=warning')
   }
 
@@ -22,7 +27,7 @@ export const Search = () => {
         onChange={e => setSearchValue(e.target.value)}
         className={css.searchInput}
       />
-      <Button onClick={handleScan} className={css.button}>
+      <Button disabled={!searchValue.length} onClick={handleScan} className={css.button}>
         {t('home.scan-btn')}
       </Button>
     </div>

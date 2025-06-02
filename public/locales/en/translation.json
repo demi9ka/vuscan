@@ -76,6 +76,10 @@
       "text": "Scan results are available only after payment.\n\nIf vulnerabilities are found during the process, access to the detailed report will be granted only after payment confirmation.",
       "approval": "By clicking 'Start Scan', you agree to these terms.",
       "start-btn": "Start Scan"
+    },
+    "wrong-url-modal": {
+      "title": "The specified site was not found!",
+      "text": "Please check if you have entered the website URL correctly"
     }
   }
 }
