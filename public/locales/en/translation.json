@@ -2,7 +2,8 @@
   "global": {
     "close": "CLOSE",
     "more": "MORE DETAILS",
-    "confirm": "Confirm"
+    "confirm": "Confirm",
+    "or": "or"
   },
   "header": {
     "about": "ABOUT SCANNER",
@@ -80,6 +81,12 @@
     "wrong-url-modal": {
       "title": "The specified site was not found!",
       "text": "Please check if you have entered the website URL correctly"
+    },
+    "queue-modal": {
+      "title": "High Queue Volume",
+      "content": "⚠️ The service is temporarily overloaded\n\nScanning is performed in order. You can:\n\n🔄 Add your site to the queue — the report will be sent to your email after completion\n\n⚡️ Skip the queue — get instant scanning by purchasing priority access",
+      "buy-btn": "Buy priority for {{price}} $",
+      "send-email": "Send Email"
     }
   }
 }
