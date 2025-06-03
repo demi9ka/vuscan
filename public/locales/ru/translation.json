@@ -45,6 +45,11 @@
     "description": "Внешний анализ безопасности сайта для обнаружения уязвимостей",
     "search-placeholder": "Введите URL сюда",
     "scan-btn": "Сканировать",
+    "link-btn_one": "{{count}} ССЫЛКА",
+    "link-btn_few": "{{count}} ССЫЛКИ",
+    "link-btn_many": "{{count}} ССЫЛОК",
+    "open-package": "ОТКРЫТЬ ПАКЕТ",
+    "no-thread": "УГРОЗ НЕТ",
     "levels": [
       {
         "level": "НИЗКАЯ",

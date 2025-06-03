@@ -8,6 +8,8 @@ import { useState } from 'react'
 import { useScanner } from '@/entities/scanner/use-scanner'
 import { useNavigate } from 'react-router-dom'
 import { WrongUrlModal } from './ui/wrong-url-modal'
+import { QueueModal } from './ui/queue-modal'
+import { scannerStore } from '@/store'
 
 export const Home = () => {
   const { mutateAsync, isPending } = useScanner()
@@ -17,13 +19,15 @@ export const Home = () => {
   const onStartScan = async () => {
     const res = await mutateAsync({ url })
     if (res.status === 1) navigate('/?modal=wrong-url')
+    if (res.status === 2) navigate('/?modal=queue')
+    if (res.status == 0) scannerStore.start(res.id)
   }
 
   return (
     <div className={css.wrapper}>
       <div className={css.content}>
         <Title />
-        <Search onChangeValue={setUrl} />
+        <Search onChangeValue={setUrl} isPending={isPending} />
         <Cards />
       </div>
       <CardInfoModal id={0} />
@@ -32,6 +36,7 @@ export const Home = () => {
       <CardInfoModal id={3} />
       <WarningModal onStartScan={onStartScan} />
       <WrongUrlModal />
+      <QueueModal />
     </div>
   )
 }

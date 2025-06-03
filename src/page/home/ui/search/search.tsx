@@ -6,9 +6,10 @@ import { useNavigate } from 'react-router-dom'
 
 type Props = {
   onChangeValue: (value: string) => void
+  isPending: boolean
 }
 
-export const Search = ({ onChangeValue }: Props) => {
+export const Search = ({ onChangeValue, isPending }: Props) => {
   const { t } = useTranslation()
   const navigate = useNavigate()
   const [searchValue, setSearchValue] = useState('')
@@ -27,7 +28,7 @@ export const Search = ({ onChangeValue }: Props) => {
         onChange={e => setSearchValue(e.target.value)}
         className={css.searchInput}
       />
-      <Button disabled={!searchValue.length} onClick={handleScan} className={css.button}>
+      <Button disabled={!searchValue.length || isPending} onClick={handleScan} className={css.button}>
         {t('home.scan-btn')}
       </Button>
     </div>

@@ -1,8 +1,12 @@
-import { Button } from '@/shared/ui'
 import css from './card.module.css'
-import { useNavigate } from 'react-router-dom'
-import { useState } from 'react'
 import { useTranslation } from 'react-i18next'
+import { scannerStore } from '@/store'
+import { ProgressBar } from './ui/progress-bar'
+import { LinkFounded } from './ui/link-founded'
+import { InfoButton } from './ui/info-button'
+import { OpenPackage } from './ui/open-result'
+import { NoThread } from './ui/no-thread'
+import { observer } from 'mobx-react-lite'
 
 export type Props = {
   color: string
@@ -10,15 +14,17 @@ export type Props = {
   id: number
 }
 
-export const Card = ({ logo, color, id }: Props) => {
+export const Card = observer(({ logo, color, id }: Props) => {
   const { t } = useTranslation()
-  const navigate = useNavigate()
+  const { packages } = scannerStore
 
-  const [state, setState] = useState(0)
+  const cardPackage = packages ? packages.find(el => el.id == id)! : null
 
-  const handleOpenDescriptionModal = () => {
-    navigate(`/?modal=card-info&id=${id}`)
-  }
+  const isRenderProgressBar = cardPackage && cardPackage.progress !== 100
+  const isRenderScanningResult = cardPackage && cardPackage.progress == 100 && cardPackage.linkFounded! > 0
+  const isRenderInfoButton = !Boolean(cardPackage)
+  const isRenderNoThreats = cardPackage && cardPackage.linkFounded == 0
+  const isRenderErrorBoxShadow = cardPackage && cardPackage.linkFounded && cardPackage.linkFounded > 0
 
   return (
     <div
@@ -30,26 +36,25 @@ export const Card = ({ logo, color, id }: Props) => {
       <div className={css.level} style={{ color, boxShadow: ` inset 0px 0px 12px ${color}` }}>
         {t(`home.levels.${id}.level`)}
       </div>
-      <div className={css.logoWrapper}>
-        <img src={logo} />
+      <div className={css.avatarWrapper}>
+        <div className={css.logoWrapper}>
+          <img src={logo} />
+        </div>
+        {isRenderErrorBoxShadow ? <div className={css.errorBoxShadow} /> : <></>}
       </div>
       <h3 className={css.title}>{t(`home.levels.${id}.title`)}</h3>
       <p className={css.description}>{t(`home.levels.${id}.description`)}</p>
-      {state == 0 ? (
-        <Button
-          variant='secondary'
-          style={{
-            marginTop: 20,
-            fontWeight: 400,
-            padding: '11px 41px'
-          }}
-          onClick={handleOpenDescriptionModal}
-        >
-          {t(`global.more`)}
-        </Button>
-      ) : (
-        ''
-      )}
+      <div className={css.buttonWrapper}>
+        {isRenderProgressBar && <ProgressBar progress={cardPackage.progress} />}
+        {isRenderScanningResult && (
+          <>
+            <LinkFounded linkFounded={cardPackage.linkFounded!} />
+            <OpenPackage id={id} />
+          </>
+        )}
+      </div>
+      {isRenderInfoButton && <InfoButton id={id} />}
+      {isRenderNoThreats && <NoThread />}
     </div>
   )
-}
+})

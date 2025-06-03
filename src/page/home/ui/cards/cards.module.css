@@ -9,14 +9,14 @@
   .wrapper {
     justify-content: start;
     overflow-x: auto;
-    height: 400px;
+    height: 440px;
   }
 }
 
 @media (hover: hover) and (pointer: fine) and (max-width: 1280px) {
   /* Стили для ПК */
   .wrapper {
-    width: calc(100vw - 32px);
+    width: 100vw;
   }
 }
 

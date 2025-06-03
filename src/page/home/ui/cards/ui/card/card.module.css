@@ -1,12 +1,12 @@
 .wrapper {
   position: relative;
   min-width: 270px;
-  flex: 0 0 270px;
   max-width: 270px;
-  max-height: 320px;
+  min-height: 382px;
+  max-height: 382px;
+  flex: 0 0 270px;
   display: flex;
   flex-direction: column;
-
   align-items: center;
   padding: 45px 18px 18px 18px;
   margin: 0 12px;
@@ -25,11 +25,29 @@
   padding: 10px 50px;
   border-radius: 12px;
 }
-.logoWrapper {
+.avatarWrapper {
   width: 80px;
   height: 80px;
+  position: relative;
+}
+.logoWrapper {
+  position: relative;
+  z-index: 3;
+}
+.errorBoxShadow {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 80px;
+  z-index: 1;
+  height: 80px;
+  border-radius: 50%;
+  filter: blur(30px);
+  background-color: var(--error);
 }
 .logo img {
+  position: relative;
+  z-index: 3;
   width: 100%;
   height: 100%;
 }
@@ -47,8 +65,18 @@
   text-align: center;
   line-height: 150%;
 }
+.buttonWrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-top: 20px;
+}
 @media screen and (max-width: 1280px) {
   .wrapper {
     padding: 45px 8px 18px 8px;
+  }
+  .buttonWrapper {
+    gap: 8px;
+    margin-top: 12px;
   }
 }

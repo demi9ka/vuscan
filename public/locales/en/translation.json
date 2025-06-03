@@ -45,7 +45,10 @@
     "description": "External website security analysis to detect vulnerabilities",
     "search-placeholder": "Enter URL here",
     "scan-btn": "Scan",
-
+    "link-btn_one": "{{count}} LINK",
+    "link-btn_other": "{{count}} LINKS",
+    "open-package": "OPEN PACKAGE",
+    "no-thread": "NO THREATS",
     "levels": [
       {
         "level": "LOW",
