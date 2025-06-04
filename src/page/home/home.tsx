@@ -11,6 +11,7 @@ import { WrongUrlModal } from './ui/wrong-url-modal'
 import { QueueModal } from './ui/queue-modal'
 import { scannerStore } from '@/store'
 import { BuyAllButton } from './ui/buy-all-button'
+import { BuyAllModal } from './ui/buy-all-modal'
 
 export const Home = () => {
   const { mutateAsync, isPending } = useScanner()
@@ -39,6 +40,7 @@ export const Home = () => {
       <WarningModal onStartScan={onStartScan} />
       <WrongUrlModal />
       <QueueModal />
+      <BuyAllModal />
     </div>
   )
 }

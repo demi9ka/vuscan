@@ -18,3 +18,9 @@ export type QueueParams = {
 export type QueueResponse = {
   result: boolean
 }
+export type BuyAllParams = {
+  scannerId: string
+}
+export type BuyAllResponse = {
+  paymentLink: string
+}

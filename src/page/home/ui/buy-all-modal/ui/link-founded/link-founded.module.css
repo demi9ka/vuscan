@@ -1,0 +1,6 @@
+.button {
+  width: 140px;
+  background: var(--error);
+  font-size: 16px;
+  padding: 5px;
+}
