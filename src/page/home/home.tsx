@@ -10,6 +10,7 @@ import { useNavigate } from 'react-router-dom'
 import { WrongUrlModal } from './ui/wrong-url-modal'
 import { QueueModal } from './ui/queue-modal'
 import { scannerStore } from '@/store'
+import { BuyAllButton } from './ui/buy-all-button'
 
 export const Home = () => {
   const { mutateAsync, isPending } = useScanner()
@@ -29,6 +30,7 @@ export const Home = () => {
         <Title />
         <Search onChangeValue={setUrl} isPending={isPending} />
         <Cards />
+        <BuyAllButton />
       </div>
       <CardInfoModal id={0} />
       <CardInfoModal id={1} />

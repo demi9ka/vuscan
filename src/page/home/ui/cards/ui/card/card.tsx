@@ -21,19 +21,25 @@ export const Card = observer(({ logo, color, id }: Props) => {
   const cardPackage = packages ? packages.find(el => el.id == id)! : null
 
   const isRenderProgressBar = cardPackage && cardPackage.progress !== 100
-  const isRenderScanningResult = cardPackage && cardPackage.progress == 100 && cardPackage.linkFounded! > 0
+  const isRenderScanningResult = cardPackage && cardPackage.progress == 100 && cardPackage.linkFounded > 0
   const isRenderInfoButton = !Boolean(cardPackage)
-  const isRenderNoThreats = cardPackage && cardPackage.linkFounded == 0
-  const isRenderErrorBoxShadow = cardPackage && cardPackage.linkFounded && cardPackage.linkFounded > 0
+  const isRenderNoThreats = cardPackage && cardPackage.linkFounded == 0 && cardPackage.progress == 100
+  const isRenderErrorBoxShadow = cardPackage && cardPackage.linkFounded > 0
 
   return (
     <div
       className={css.wrapper}
       style={{
-        boxShadow: `0px 0px 22px ${color}`
+        boxShadow: `0px 0px 22px ${isRenderErrorBoxShadow ? 'var(--error)' : color}`
       }}
     >
-      <div className={css.level} style={{ color, boxShadow: ` inset 0px 0px 12px ${color}` }}>
+      <div
+        className={css.level}
+        style={{
+          color: isRenderErrorBoxShadow ? 'var(--error)' : color,
+          boxShadow: ` inset 0px 0px 12px ${isRenderErrorBoxShadow ? 'var(--error)' : color}`
+        }}
+      >
         {t(`home.levels.${id}.level`)}
       </div>
       <div className={css.avatarWrapper}>
@@ -52,9 +58,9 @@ export const Card = observer(({ logo, color, id }: Props) => {
             <OpenPackage id={id} />
           </>
         )}
+        {isRenderInfoButton && <InfoButton id={id} />}
+        {isRenderNoThreats && <NoThread />}
       </div>
-      {isRenderInfoButton && <InfoButton id={id} />}
-      {isRenderNoThreats && <NoThread />}
     </div>
   )
 })

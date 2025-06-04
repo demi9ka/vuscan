@@ -9,7 +9,7 @@
 
 .text {
   font-family: var(--ff-Eesti);
-  font-size: 16px;
+  font-size: 20px;
   font-weight: 500;
   text-align: center;
   position: relative;
@@ -17,7 +17,7 @@
 }
 .progressBar {
   border-radius: 12px;
-  transition: 0.2s ease-in-out;
+  transition: 0.3s ease-in-out;
   position: absolute;
   top: 0;
   width: 0;

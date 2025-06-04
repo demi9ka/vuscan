@@ -50,6 +50,7 @@
     "link-btn_many": "{{count}} ССЫЛОК",
     "open-package": "ОТКРЫТЬ ПАКЕТ",
     "no-thread": "УГРОЗ НЕТ",
+    "buy-all-btn": "ОТКРЫТЬ ВСЕ ПАКЕТЫ",
     "levels": [
       {
         "level": "НИЗКАЯ",

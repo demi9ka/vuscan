@@ -1,4 +1,4 @@
-import { PackageType } from '@/store/scanner-store'
+import { PackageType, scannerStore } from '@/store/scanner-store'
 import { io, Socket } from 'socket.io-client'
 import { toast } from '@/feature/toast'
 
@@ -7,14 +7,13 @@ type ServerEventsType = {
   finishScan: VoidFunction
 }
 type SocketClientConstructorType = {
-  updatePackages: (data: PackageType) => void
   scannerId: string
 }
 
 export class SocketClient {
   readonly socket: Socket<ServerEventsType>
 
-  constructor({ scannerId, updatePackages }: SocketClientConstructorType) {
+  constructor({ scannerId }: SocketClientConstructorType) {
     this.socket = io('http://localhost:3000', {
       auth: {
         scannerId
@@ -28,12 +27,9 @@ export class SocketClient {
     this.socket.on('connect', () => {
       toast('Запущен процесс сканирования', 'success')
     })
-    this.socket.on('disconnect', () => {})
-    this.socket.on('updatePackages', updatePackages)
-    this.socket.on('finishScan', () => {
-      toast('Сканирование завершено', 'success')
-      this.disconnect()
-    })
+    // this.socket.on('disconnect', () => {})
+    this.socket.on('updatePackages', scannerStore.updatePackages)
+    this.socket.on('finishScan', scannerStore.stop)
   }
 
   disconnect() {

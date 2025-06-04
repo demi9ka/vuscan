@@ -49,6 +49,7 @@
     "link-btn_other": "{{count}} LINKS",
     "open-package": "OPEN PACKAGE",
     "no-thread": "NO THREATS",
+    "buy-all-btn": "OPEN ALL PACKAGES",
     "levels": [
       {
         "level": "LOW",

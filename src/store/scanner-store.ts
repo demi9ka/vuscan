@@ -1,15 +1,16 @@
 import { SocketClient } from '@/entities/socket-client'
+import { toast } from '@/feature/toast'
 import { makeAutoObservable } from 'mobx'
 
 export type PackageType = {
   id: number
   progress: number
-  isStarted: boolean
-  linkFounded?: number
+  linkFounded: number
 }[]
 
 class ScannerStore {
   scannerId: string | null = null
+  isFinished: boolean = false
   packages: PackageType | null = null
   socket: SocketClient | null = null
 
@@ -18,8 +19,16 @@ class ScannerStore {
   }
 
   start = (scannerId: string) => {
-    this.socket = new SocketClient({ scannerId, updatePackages: this.updatePackages })
+    console.log(scannerId)
+    if (!scannerId) return
+    this.socket = new SocketClient({ scannerId })
     this.scannerId = scannerId
+  }
+
+  stop = () => {
+    toast('Сканирование завершено', 'success')
+    this.socket = null
+    this.isFinished = true
   }
   updatePackages = (packages: PackageType | null) => {
     this.packages = packages
