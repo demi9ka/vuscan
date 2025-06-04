@@ -33,6 +33,12 @@ class ScannerStore {
   updatePackages = (packages: PackageType | null) => {
     this.packages = packages
   }
+  newScan = () => {
+    this.isFinished = false
+    this.packages = null
+    this.scannerId = null
+    this.socket = null
+  }
 }
 
 export const scannerStore = new ScannerStore()
