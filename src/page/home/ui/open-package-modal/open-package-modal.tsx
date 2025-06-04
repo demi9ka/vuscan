@@ -7,6 +7,7 @@ import { useBuyPackage } from '@/entities/scanner'
 import { Button, LockIcon, Modal } from '@/shared/ui'
 import { LinkFounded } from './ui/link-founded'
 import { combaneCSS, generateRandomLinks } from '@/helpers'
+import { useMemo } from 'react'
 
 type Props = {
   id: number
@@ -27,25 +28,22 @@ export const OpenPackageModal = observer(({ id }: Props) => {
     navigate('/')
   }
 
-  if (!packages) {
-    return <></>
-  }
-
-  const activePackage = packages.find(el => el.id == id)
+  const activePackage = (packages || []).find(el => el.id == id)
+  const fakeLinkList = useMemo(
+    () => generateRandomLinks(activePackage ? activePackage.linkFounded : 0),
+    [activePackage]
+  )
 
   const onBuyPackage = async () => {
     if (!scannerId) return
     const { paymentLink } = await mutateAsync({ id, scannerId })
     console.log(paymentLink)
   }
-  if (!activePackage || activePackage.linkFounded == 0) {
-    return <></>
-  }
 
   const isWasPaid = false
   const opened = id == Number(urlId) && urlModal == 'open-package'
 
-  const fakeLinks = generateRandomLinks(activePackage.linkFounded).map((link, i) => (
+  const fakeLinks = fakeLinkList.map((link, i) => (
     <div key={i} className={css.linkWrapper}>
       <p className={combaneCSS(css.link, !isWasPaid ? css.blur : '')}>{link}</p>
       <Button variant='secondary' className={css.linkButton}>
@@ -53,6 +51,9 @@ export const OpenPackageModal = observer(({ id }: Props) => {
       </Button>
     </div>
   ))
+  if (!activePackage || activePackage.linkFounded == 0) {
+    return <></>
+  }
 
   return (
     <Modal onClose={onClose} className={css.modal} opened={opened}>

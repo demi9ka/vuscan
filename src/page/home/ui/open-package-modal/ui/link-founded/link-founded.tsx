@@ -11,7 +11,7 @@ export const LinkFounded = ({ linkFounded }: Props) => {
 
   return (
     <Button className={css.button} variant='secondary'>
-      {t('home.open-package-modal.link-founded', { count: linkFounded })}{' '}
+      {t('home.open-package-modal.link-founded', { count: linkFounded })}
     </Button>
   )
 }

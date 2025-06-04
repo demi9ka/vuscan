@@ -101,7 +101,7 @@
       "description": "Access to the website content without restrictions may expose internal files and structure.",
       "content-description": "Vulnerabilities detected. Links with vulnerabilities are listed in the report. Please forward them to your developer for remediation.",
       "link-founded_one": "{{count}} LINK FOUND",
-      "link-btn_other": "{{count}} LINKS FOUND"
+      "link-founded_other": "{{count}} LINKS FOUND"
     }
   }
 }
