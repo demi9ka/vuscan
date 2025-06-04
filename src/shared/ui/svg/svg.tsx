@@ -28,3 +28,10 @@ export const MenuBurgerIcon = (props: WrapperProps) => {
     </SVGWrapper>
   )
 }
+export const LockIcon = (props: WrapperProps) => {
+  return (
+    <SVGWrapper {...props}>
+      <img style={svgStyle} src='/lock.svg' />
+    </SVGWrapper>
+  )
+}

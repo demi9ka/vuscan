@@ -24,3 +24,10 @@ export type BuyAllParams = {
 export type BuyAllResponse = {
   paymentLink: string
 }
+export type BuyPackageParams = {
+  id: number
+  scannerId: string
+}
+export type BuyPackageResponse = {
+  paymentLink: string
+}

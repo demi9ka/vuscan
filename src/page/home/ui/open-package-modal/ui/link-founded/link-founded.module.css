@@ -1,0 +1,4 @@
+.button {
+  margin: 16px 0 32px;
+  background-color: var(--error);
+}

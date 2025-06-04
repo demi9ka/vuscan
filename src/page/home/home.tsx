@@ -12,6 +12,7 @@ import { QueueModal } from './ui/queue-modal'
 import { scannerStore } from '@/store'
 import { BuyAllButton } from './ui/buy-all-button'
 import { BuyAllModal } from './ui/buy-all-modal'
+import { OpenPackageModal } from './ui/open-package-modal'
 
 export const Home = () => {
   const { mutateAsync, isPending } = useScanner()
@@ -20,9 +21,9 @@ export const Home = () => {
 
   const onStartScan = async () => {
     const res = await mutateAsync({ url })
+    if (res.status === 0) scannerStore.start(res.id)
     if (res.status === 1) navigate('/?modal=wrong-url')
     if (res.status === 2) navigate('/?modal=queue')
-    if (res.status == 0) scannerStore.start(res.id)
   }
 
   return (
@@ -41,6 +42,10 @@ export const Home = () => {
       <WrongUrlModal />
       <QueueModal />
       <BuyAllModal />
+      <OpenPackageModal id={0} />
+      <OpenPackageModal id={1} />
+      <OpenPackageModal id={2} />
+      <OpenPackageModal id={3} />
     </div>
   )
 }

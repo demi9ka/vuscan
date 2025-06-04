@@ -5,7 +5,7 @@ import { Button, Modal } from '@/shared/ui'
 import { observer } from 'mobx-react-lite'
 import { scannerStore } from '@/store'
 import { LinkFounded } from './ui/link-founded'
-import { useBuyAll } from '@/entities/scanner/use-buy-all'
+import { useBuyAll } from '@/entities/scanner'
 
 export const BuyAllModal = observer(() => {
   const { t } = useTranslation()
@@ -32,8 +32,8 @@ export const BuyAllModal = observer(() => {
   const opened = urlModal == 'buy-all'
   const oldPrice = activePackages.length * 12
 
-  const contentMapped = activePackages.map(el => (
-    <div className={css.packageInfo}>
+  const contentMapped = activePackages.map((el,i) => (
+    <div key={i} className={css.packageInfo}>
       <p className={css.packageTitle}>{t(`home.levels.${el.id}.title`)}</p>
       <LinkFounded linkFounded={el.linkFounded} />
     </div>

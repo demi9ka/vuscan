@@ -1,4 +1,13 @@
-import { BuyAllParams, BuyAllResponse, QueueParams, QueueResponse, ScannerParams, ScannerResponse } from './types'
+import {
+  BuyAllParams,
+  BuyAllResponse,
+  BuyPackageParams,
+  BuyPackageResponse,
+  QueueParams,
+  QueueResponse,
+  ScannerParams,
+  ScannerResponse
+} from './types'
 import { api } from '..'
 import { mockQueue, mockScanner0, mockScanner2, mockScanner1, mockBuyAll } from './mock'
 
@@ -16,9 +25,14 @@ const buyAll = async (data: BuyAllParams) => {
   return mockBuyAll
   return await api.post<BuyAllResponse>(PREFIX + '/buy-all', data)
 }
+const buyPackage = async (data: BuyPackageParams) => {
+  return mockBuyAll
+  return await api.post<BuyPackageResponse>(PREFIX + '/buy-package', data)
+}
 
 export default {
   scanner,
   queue,
-  buyAll
+  buyAll,
+  buyPackage
 }

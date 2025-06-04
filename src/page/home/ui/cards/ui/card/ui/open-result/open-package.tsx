@@ -6,6 +6,7 @@ import css from './open-result.module.css'
 type Props = {
   id: number
 }
+
 export const OpenPackage = ({ id }: Props) => {
   const navigate = useNavigate()
   const { t } = useTranslation()

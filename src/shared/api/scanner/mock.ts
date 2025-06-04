@@ -1,4 +1,4 @@
-import { BuyAllResponse, QueueResponse, ScannerResponse } from './types'
+import { BuyAllResponse, BuyPackageResponse, QueueResponse, ScannerResponse } from './types'
 
 export const mockScanner0: { data: ScannerResponse } = {
   data: {
@@ -24,6 +24,11 @@ export const mockQueue: { data: QueueResponse } = {
   }
 }
 export const mockBuyAll: { data: BuyAllResponse } = {
+  data: {
+    paymentLink: 'http://payment-link'
+  }
+}
+export const mockBuyPackage: { data: BuyPackageResponse } = {
   data: {
     paymentLink: 'http://payment-link'
   }

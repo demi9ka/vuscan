@@ -24,6 +24,10 @@ export const CardInfoModal = ({ id }: Props) => {
 
   const cardData = cardsData.find(el => el.id == id)!
 
+  if (!cardData) {
+    return <></>
+  }
+
   const opened = id == Number(urlId) && urlModal == 'card-info'
   const { color } = cardData
 

@@ -89,8 +89,19 @@
     "queue-modal": {
       "title": "High Queue Volume",
       "content": "⚠️ The service is temporarily overloaded\n\nScanning is performed in order. You can:\n\n🔄 Add your site to the queue — the report will be sent to your email after completion\n\n⚡️ Skip the queue — get instant scanning by purchasing priority access",
-      "buy-btn": "Buy priority for {{price}} $",
+      "buy-btn": "Buy priority for {{price}}$",
       "send-email": "Send Email"
+    },
+    "buy-all-modal": {
+      "title": "Buy All Packages",
+      "description": "Links with vulnerabilities are listed in the report. Please forward them to your developer for remediation.",
+      "content-title": "Vulnerabilities"
+    },
+    "open-package-modal": {
+      "description": "Access to the website content without restrictions may expose internal files and structure.",
+      "content-description": "Vulnerabilities detected. Links with vulnerabilities are listed in the report. Please forward them to your developer for remediation.",
+      "link-founded_one": "{{count}} LINK FOUND",
+      "link-btn_other": "{{count}} LINKS FOUND"
     }
   }
 }
