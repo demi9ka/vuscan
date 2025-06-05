@@ -9,7 +9,7 @@ import {
   ScannerResponse
 } from './types'
 import { api } from '..'
-import { mockQueue, mockScanner0, mockBuyAll, mockScanner1, mockScanner2 } from './mock'
+import { mockQueue, mockScanner0, mockBuyAll } from './mock'
 
 const PREFIX = '/scanner'
 
