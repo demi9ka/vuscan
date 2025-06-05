@@ -1,20 +1,24 @@
-.primary {
+.gradient {
   background: linear-gradient(180deg, #ff8800 0%, #ff6a00 100%);
 }
-.secondary {
-  border: 2px solid var(--border);
-  font-family: var(--ff-Eesti);
-  font-weight: 500;
-  font-size: 20px;
+.default {
   background-color: var(--dark-3);
 }
+.error {
+  background-color: var(--error);
+}
 .button {
-  padding: 11px 22px;
+  font-size: 20px;
+  border: 2px solid var(--border);
+  font-weight: 500;
+  font-family: var(--Eesti);
+  padding: 11px 20px;
   transition: 0.1s;
   border-radius: 12px;
   text-align: center;
   cursor: pointer;
 }
+
 .button:hover {
   opacity: 0.95;
 }
@@ -23,8 +27,20 @@
   pointer-events: none;
 }
 
-@media screen and (max-width: 1440px) {
-  .secondary {
-    font-size: 14px;
+@media screen and (max-width: 1680px) {
+  .button {
+    font-size: calc(100vw / 96);
+    padding: calc(100vw / 174) calc(100vw / 96);
+    border-radius: calc(100vw / 160);
+    border: 1px solid var(--border);
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .button {
+    font-size: 20px;
+    padding: 11px 20px;
+    border-radius: 12px;
+    border: 2px solid var(--border);
   }
 }

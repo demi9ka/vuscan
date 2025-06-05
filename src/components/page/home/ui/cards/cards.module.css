@@ -1,0 +1,20 @@
+.wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 440px;
+}
+
+@media screen and (max-width: 1680px) {
+  .wrapper {
+    height: calc(100vw / 5.3);
+  }
+}
+@media screen and (max-width: 768px) {
+  .wrapper {
+    justify-content: start;
+    overflow-x: auto;
+    overflow-y: visible;
+    height: 440px;
+  }
+}

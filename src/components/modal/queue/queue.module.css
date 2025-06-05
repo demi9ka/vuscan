@@ -1,0 +1,51 @@
+.modal {
+  width: 700px;
+}
+.text {
+  line-height: 155%;
+  margin-top: 16px;
+}
+.emailInput {
+  width: 100%;
+  margin: 36px 0 16px 0;
+  background-color: initial;
+  border-radius: 12px;
+  border: 1px solid var(--border);
+  padding: 11px 24px;
+  font-size: 18px;
+}
+.button {
+  padding: 11px 0;
+  width: 100%;
+  font-family: var(--ff-Eesti);
+  font-weight: 500;
+  font-size: 20px;
+}
+.variant {
+  text-align: center;
+  font-size: 18px;
+  margin: 20px 0;
+  color: var(--text-5);
+}
+@media screen and (max-width: 1680px) {
+  .text {
+    margin-top: 10px;
+  }
+  .emailInput {
+    margin: 20px 0 10px 0;
+    border-radius: 8px;
+    padding: 8px 20px;
+    font-size: 12px;
+  }
+  .button {
+    padding: 8px 0;
+    font-size: 16px;
+  }
+  .modal {
+    width: 528px;
+  }
+  .variant {
+    margin: 10px 0;
+    font-size: 16px;
+  }
+}

@@ -1,11 +1,13 @@
 import { SocketClient } from '@/entities/socket-client'
 import { toast } from '@/feature/toast'
 import { makeAutoObservable } from 'mobx'
+import { searchStore } from './search-store'
 
 export type PackageType = {
   id: number
   progress: number
   linkFounded: number
+  status: number
 }[]
 
 class ScannerStore {
@@ -19,7 +21,6 @@ class ScannerStore {
   }
 
   start = (scannerId: string) => {
-    console.log(scannerId)
     if (!scannerId) return
     this.socket = new SocketClient({ scannerId })
     this.scannerId = scannerId

@@ -20,3 +20,20 @@
   font-family: var(--ff-Unbounded);
   color: var(--accent);
 }
+
+@media screen and (max-width: 1680px) {
+  .header {
+    padding: calc(100vw / 96);
+  }
+  .title {
+    font-size: calc(100vw / 68);
+  }
+}
+@media screen and (max-width: 768px) {
+  .header {
+    padding: 20px;
+  }
+  .title {
+    font-size: 28px;
+  }
+}

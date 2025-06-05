@@ -1,4 +1,4 @@
-import { NotFound, Home } from '@/page'
+import { NotFound, Home } from '@/components/page'
 import { Routes, Route } from 'react-router-dom'
 
 export const AppRouting = () => {

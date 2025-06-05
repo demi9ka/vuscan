@@ -1,0 +1,51 @@
+.modal {
+  width: 700px;
+}
+.center {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+.scrollArea {
+  margin-top: 20px;
+  border-radius: 12px;
+  height: 527px;
+  background-color: var(--dark-3);
+  padding: 16px;
+  overflow-y: auto;
+}
+.title {
+  font-family: var(--ff-Eesti);
+  font-size: 32px;
+  font-weight: 400;
+  text-align: center;
+}
+.info {
+  margin-top: 10px;
+  font-size: 16px;
+  line-height: 155%;
+}
+.button {
+  padding: 11px 55px;
+}
+@media screen and (max-width: 1680px) {
+  .scrollArea {
+    margin-top: 16px;
+    height: 400px;
+    padding: 12px;
+    overflow-y: auto;
+  }
+  .title {
+    font-size: 20px;
+  }
+  .info {
+    margin-top: 7px;
+    font-size: 12px;
+  }
+  .button {
+    padding: 8px 48px;
+  }
+  .modal {
+    width: 528px;
+  }
+}

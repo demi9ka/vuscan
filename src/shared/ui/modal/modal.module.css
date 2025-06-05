@@ -19,7 +19,7 @@
 
 .modal {
   transition: 0.2s;
-  min-width: 240px;
+  width: 700px;
   background-color: var(--dark);
   display: flex;
   flex-direction: column;
@@ -27,6 +27,7 @@
   opacity: 0;
   transform: scale(0.98);
   border-radius: 44px;
+  border: 1px solid var(---border);
 }
 .wrapper.opened .modal {
   visibility: visible;
@@ -48,7 +49,6 @@
 .content {
   padding: 32px;
   padding-top: 0;
-
   flex-grow: 2;
   overflow-y: auto;
 }
@@ -66,15 +66,39 @@
     transform: scale(1);
   }
 }
-@media screen and (max-width: 1440px) {
+@media screen and (max-width: 1680px) {
   .modal {
-    border-radius: 20px;
+    border-radius: calc(100vw / 43);
+    width: calc(100vw / 2.74);
+  }
+  .header {
+    padding: calc(100vw / 96);
+  }
+  .title {
+    font-size: calc(100vw / 60);
+  }
+  .close {
+    width: calc(100vw / 96);
+  }
+  .content {
+    padding: calc(100vw / 60);
+  }
+}
+@media screen and (max-width: 768px) {
+  .modal {
+    border-radius: 16px;
+    width: 100%;
+  }
+  .header {
+    padding: 8px;
+  }
+  .title {
+    font-size: 16px;
   }
   .close {
     width: 16px;
   }
   .content {
-    padding: 24px;
-    padding-top: 0;
+    padding: 8px;
   }
 }

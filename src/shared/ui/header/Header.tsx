@@ -1,10 +1,7 @@
 import css from './header.module.css'
 import { useMediaQuery } from '@/helpers'
-import { AboutScannerModal } from './ui/about-scanner-modal'
-import { FaqModal } from './ui/faq-modal'
-import { SoonModal } from './ui/soon-modal'
-import { ContactModal } from './ui/contact-modal'
-import { MenuDesktop, MenuMobile } from './ui/menu'
+import { MenuMobile } from './ui/menu-mobile'
+import { MenuDesktop } from './ui/menu-desktop'
 
 export const Header = () => {
   const isMobile = useMediaQuery('(max-width: 768px)')
@@ -18,10 +15,6 @@ export const Header = () => {
         </h1>
         {isMobile ? <MenuMobile /> : <MenuDesktop />}
       </div>
-      <AboutScannerModal />
-      <FaqModal />
-      <SoonModal />
-      <ContactModal />
     </div>
   )
 }
