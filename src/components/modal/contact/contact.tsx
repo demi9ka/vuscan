@@ -49,7 +49,7 @@ export const Contact = () => {
 
   return (
     <Modal title={t('header.contact')} opened={opened} onClose={onClose}>
-      <p className={css.text}>{t('header.contact-modal.content')}</p>
+      <p className={css.text}>{t('modal.contact.content')}</p>
       <form onSubmit={handleSubmit(onSubmit)}>
         <input placeholder='example@gmail.com' className={css.emailInput} {...register('email')} />
         {errors.email && <p style={{ color: 'red' }}>{errors.email.message}</p>}

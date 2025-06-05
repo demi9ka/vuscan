@@ -14,7 +14,7 @@ import { mockQueue, mockScanner0, mockBuyAll, mockScanner1, mockScanner2 } from 
 const PREFIX = '/scanner'
 
 const scanner = async (data: ScannerParams) => {
-  return mockScanner2
+  return mockScanner0
   return await api.post<ScannerResponse>(PREFIX + '/scanner', data)
 }
 const queue = async (data: QueueParams) => {

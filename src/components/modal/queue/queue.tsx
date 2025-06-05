@@ -8,7 +8,7 @@ import { schema } from './schema'
 import z from 'zod'
 import { useTranslation } from 'react-i18next'
 import { useQueue } from '@/entities/scanner'
-// import { toast } from '@/feature/toast'
+import { toast } from '@/feature/toast'
 
 const price = 12
 
@@ -42,19 +42,18 @@ export const Queue = () => {
     console.log(2222)
     const { result } = await mutateAsync(formData)
     if (result) {
-      // toast('Вы успешно оставили заявку', 'success')
+      toast('Вы успешно оставили заявку', 'success')
       onClose()
+    } else {
+      toast("Couldn't process the request")
     }
-    //else {
-    //   toast("Couldn't process the request")
-    // }
   }
 
   const buyPriority = () => {}
 
   const opened = urlModal == 'queue'
 
-  const contentMapped = t('home.queue-modal.content')
+  const contentMapped = t('modal.queue.content')
     .split('\n\n')
     .map((el, i) => (
       <p key={i} className={css.text}>
@@ -63,18 +62,18 @@ export const Queue = () => {
     ))
 
   return (
-    <Modal title={t('home.queue-modal.title')} opened={opened} onClose={onClose}>
+    <Modal title={t('modal.queue.title')} opened={opened} onClose={onClose}>
       {contentMapped}
       <form onSubmit={handleSubmit(onSubmit)}>
         <input placeholder='example@gmail.com' className={css.emailInput} {...register('email')} />
         {errors.email && <p style={{ color: 'red' }}>{errors.email.message}</p>}
         <Button type='submit' disabled={isPending || !isValid} className={css.button} variant='gradient'>
-          {t('home.queue-modal.send-email')}
+          {t('modal.queue.send-email')}
         </Button>
       </form>
       <p className={css.variant}>{t('global.or')}</p>
       <Button onClick={buyPriority} className={css.button} variant='gradient'>
-        {t('home.queue-modal.buy-btn', { price })}
+        {t('modal.queue.buy-btn', { price })}
       </Button>
     </Modal>
   )

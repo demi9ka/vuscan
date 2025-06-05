@@ -61,13 +61,13 @@ export const OpenPackage = observer(({ id }: Props) => {
         <div className={css.level}>{t(`home.levels.${id}.level`)}</div>
       </div>
       <h1 className={css.title}>{t(`home.levels.${id}.title`)}</h1>
-      <p className={css.description}>{t('home.open-package-modal.description')}</p>
+      <p className={css.description}>{t('modal.open-package.description')}</p>
       <div className={css.center}>
         <Button className={css.linkFoundedButton} variant='error'>
-          {t('home.open-package-modal.link-founded', { count: activePackage.linkFounded })}
+          {t('modal.open-package.link-founded', { count: activePackage.linkFounded })}
         </Button>
       </div>
-      <p className={css.description}>{t('home.open-package-modal.content-description')}</p>
+      <p className={css.description}>{t('modal.open-package.content-description')}</p>
       <div className={css.scrollView}>{isWasPaid ? <></> : fakeLinks}</div>
       <div className={css.center}>
         <Button onClick={onBuyPackage} className={css.button} variant='gradient'>

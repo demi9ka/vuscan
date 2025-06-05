@@ -18,7 +18,7 @@ export const Soon = () => {
 
   const opened = urlModal == 'soon'
 
-  const contentMapped = t('header.soon-modal.content')
+  const contentMapped = t('modal.soon.content')
     .split('\n\n')
     .map((el, i) => (
       <p key={i} className={css.info}>
@@ -27,7 +27,7 @@ export const Soon = () => {
     ))
 
   return (
-    <Modal opened={opened} title={t('header.soon-modal.title')} onClose={onClose}>
+    <Modal opened={opened} title={t('modal.soon.title')} onClose={onClose}>
       <div className={css.scrollArea}>{contentMapped}</div>
       <div className={css.center}>
         <Button variant='default' className={css.button} onClick={onClose}>

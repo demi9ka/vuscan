@@ -21,7 +21,7 @@ export const AboutScanner = () => {
   return (
     <Modal title={t('header.about')} opened={opened} onClose={onClose}>
       <div className={css.scrollArea}>
-        {t('header.about-scanner-content')
+        {t('modal.about-scanner.content')
           .split('\n\n')
           .map((el, i) => (
             <p key={i} className={css.info}>

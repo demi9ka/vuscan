@@ -25,8 +25,8 @@ export const WrongUrl = () => {
           <img src='/level3.png' alt='' />
         </div>
       </div>
-      <h1 className={css.title}>{t(`home.wrong-url-modal.title`)}</h1>
-      <p className={css.text}>{t(`home.wrong-url-modal.text`)}</p>
+      <h1 className={css.title}>{t(`modal.wrong-url.title`)}</h1>
+      <p className={css.text}>{t(`modal.wrong-url.text`)}</p>
       <Button variant='gradient' className={css.button} onClick={onClose}>
         {t(`global.close`)}
       </Button>

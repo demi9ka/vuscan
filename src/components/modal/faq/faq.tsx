@@ -27,7 +27,7 @@ export const Faq = () => {
   const questionMapped = [0, 1, 2, 3].map(i => (
     <div onClick={() => handleToggleQuestion(i)} key={i} className={css.question}>
       <div className={css.questionHeader}>
-        <h2 className={css.questionTitle}>{t(`header.questions.${i}.question`)}</h2>
+        <h2 className={css.questionTitle}>{t(`modal.faq.questions.${i}.question`)}</h2>
         <ArrowDownIcon
           className={css.arrow}
           style={{
@@ -35,7 +35,7 @@ export const Faq = () => {
           }}
         />
       </div>
-      {openedQuestion == i ? <p className={css.answer}>{t(`header.questions.${i}.answer`)}</p> : <></>}
+      {openedQuestion == i ? <p className={css.answer}>{t(`modal.faq.questions.${i}.answer`)}</p> : <></>}
     </div>
   ))
 

@@ -39,7 +39,7 @@ export const Warning = observer(() => {
 
   const opened = urlModal == 'warning'
 
-  const textMapped = t(`home.warning.text`)
+  const textMapped = t(`modal.warning.text`)
     .split('\n\n')
     .map((el, i) => (
       <p key={i} className={css.text}>
@@ -54,13 +54,13 @@ export const Warning = observer(() => {
           <img src='/money.png' alt='' />
         </div>
       </div>
-      <h1 className={css.title}>{t(`home.warning.title`)}</h1>
+      <h1 className={css.title}>{t(`modal.warning.title`)}</h1>
       {textMapped}
       <p className={css.text} style={{ marginTop: '36px', marginBottom: '16px' }}>
-        {t(`home.warning.approval`)}
+        {t(`modal.warning.approval`)}
       </p>
       <Button variant='gradient' className={css.button} onClick={handleStartScan}>
-        {t(`home.warning.start-btn`)}
+        {t(`modal.warning.start-btn`)}
       </Button>
     </Modal>
   )

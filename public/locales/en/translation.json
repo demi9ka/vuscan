@@ -8,37 +8,7 @@
   "header": {
     "about": "ABOUT SCANNER",
     "soon": "SOON",
-    "contact": "Contact us",
-    "about-scanner-content": "Vulnerability scanner based on external analysis, Our tool performs intelligent site scanning, identifying risks that become visible not only to intruders, but also to search engines. This allows you to detect vulnerabilities even before they are exploited.Scanner analyzes publicly available data about your resource, such as is accessible from the outside without authorization. This includes:\n\nHidden administrative panels\n\nIndexed directories and hidden files\n\nInvulnerable entry points (XSS, SQL injection)\n\n Confidential data is freely available\n\n✅ What makes our approach better than traditional scanners\n\n Unlike classic scanners that work only from inside the system or require access to a server, our tool:\n\n does not require installation on the client side\n\nPanalizes the site like this, how an external user or bot sees it\n\nThe risks of information leakage and incorrect access settings\n\n Helps protect against unauthorized indexing and digital intelligence\n\n💡🔎Why it is needed\n\n Our approach helps companies find risks in time that may be visible to intruders from the outside. This is important to protect your business, reputation, and customers. Such an audit allows you to:\n\n Understand what is visible about the company on the Internet — what data, panels and vulnerabilities are available without logging in\n\n Close weaknesses before someone finds them - protect yourself before indexing by search engines or malicious actions\n\n Strengthen cybersecurity — reduce the risk of leaks and external interference\n\n To meet the requirements of regulators — to help with the passage of audits and compliance with safety standards",
-    "questions": [
-      {
-        "question": "Question1",
-        "answer": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris condimentum tincidunt lacus sed ullamcorper. Nunc et faucibus metus. Ut justo nibh, laoreet non sapien in, commodo bibendum libero."
-      },
-      {
-        "question": "Question1",
-        "answer": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris condimentum tincidunt lacus sed ullamcorper. Nunc et faucibus metus. Ut justo nibh, laoreet non sapien in, commodo bibendum libero."
-      },
-      {
-        "question": "Question1",
-        "answer": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris condimentum tincidunt lacus sed ullamcorper. Nunc et faucibus metus. Ut justo nibh, laoreet non sapien in, commodo bibendum libero."
-      },
-      {
-        "question": "Question1",
-        "answer": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris condimentum tincidunt lacus sed ullamcorper. Nunc et faucibus metus. Ut justo nibh, laoreet non sapien in, commodo bibendum libero."
-      },
-      {
-        "question": "Question1",
-        "answer": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris condimentum tincidunt lacus sed ullamcorper. Nunc et faucibus metus. Ut justo nibh, laoreet non sapien in, commodo bibendum libero."
-      }
-    ],
-    "contact-modal": {
-      "content": "You can leave your email and we will get back to you shortly."
-    },
-    "soon-modal": {
-      "title": "Soon...",
-      "content": "🔐 New Feature: Automated Security Monitoring\n\nComing soon to our system — a dashboard for automated web resource monitoring.\n\nBased on numerous client requests, we are introducing a tool that will allow you to:\n\n📡 Launch 24/7 website monitoring\n\n🔍 Automatically scan resources for vulnerabilities\n\n📬 Receive real-time notifications and reports\n\n🛡 Enhance security levels and reduce attack risks\n\nThe dashboard will be accessible through your personal account and fully integrated with the current system.\n\n🕒 This feature is in development and will be available in upcoming updates."
-    }
+    "contact": "Contact us"
   },
   "home": {
     "title": "Online Vulnerability Scanner",
@@ -49,6 +19,7 @@
     "scan-btn-finished": "New Scan",
     "link-btn_one": "{{count}} LINK",
     "link-btn_other": "{{count}} LINKS",
+
     "open-package": "OPEN PACKAGE",
     "no-thread": "NO THREATS",
     "buy-all-btn": "OPEN ALL PACKAGES",
@@ -56,54 +27,94 @@
       {
         "level": "LOW",
         "title": "Open Directories",
-        "description": "Unrestricted access to website content can expose internal files and structure.",
-        "info": "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. \n\n Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. \n\nUt enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?"
+        "description": "Unrestricted access to website content can expose internal files and structure."
       },
       {
         "level": "MEDIUM",
         "title": "Admin Panels and CMS",
-        "description": "Unprotected site control panels pose a risk of unauthorized access.",
-        "info": "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. \n\n Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. \n\nUt enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?"
+        "description": "Unprotected site management panels create a risk of unauthorized access."
       },
       {
         "level": "HIGH",
         "title": "XSS / SQL Vulnerabilities",
-        "description": "Input form errors allow injecting malicious code or accessing data.",
-        "info": "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. \n\n Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. \n\nUt enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?"
+        "description": "Input form errors allow malicious code injection or access to data."
       },
       {
         "level": "CRITICAL",
         "title": "Confidential Files",
-        "description": "Open configurations and backups may contain logins, passwords, and keys.",
-        "info": "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. \n\n Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. \n\nUt enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?"
+        "description": "Open configurations and backups may contain logins, passwords, and keys."
       }
-    ],
-    "warning": {
-      "title": "Important! All content is paid!",
-      "text": "Scan results are available only after payment.\n\nIf vulnerabilities are found during the process, access to the detailed report will be granted only after payment confirmation.",
-      "approval": "By clicking 'Start Scan', you agree to these terms.",
-      "start-btn": "Start Scan"
-    },
-    "wrong-url-modal": {
-      "title": "The specified site was not found!",
-      "text": "Please check if you have entered the website URL correctly"
-    },
-    "queue-modal": {
-      "title": "High Queue Volume",
-      "content": "⚠️ The service is temporarily overloaded\n\nScanning is performed in order. You can:\n\n🔄 Add your site to the queue — the report will be sent to your email after completion\n\n⚡️ Skip the queue — get instant scanning by purchasing priority access",
-      "buy-btn": "Buy priority for {{price}}$",
-      "send-email": "Send Email"
-    },
-    "buy-all-modal": {
-      "title": "Buy All Packages",
-      "description": "Links with vulnerabilities are listed in the report. Please forward them to your developer for remediation.",
-      "content-title": "Vulnerabilities"
-    },
-    "open-package-modal": {
-      "description": "Access to the website content without restrictions may expose internal files and structure.",
-      "content-description": "Vulnerabilities detected. Links with vulnerabilities are listed in the report. Please forward them to your developer for remediation.",
+    ]
+  },
+  "modal": {
+    "open-package": {
+      "description": "Unrestricted access to website content can expose internal files and structure.",
+      "content-description": "Vulnerabilities detected. Links with vulnerabilities are listed in the report. Pass them to your developer for fixing.",
       "link-founded_one": "{{count}} LINK FOUND",
       "link-founded_other": "{{count}} LINKS FOUND"
+    },
+    "buy-all": {
+      "title": "Buy all packages",
+      "description": "Links with vulnerabilities are listed in the report. Pass them to your developer for fixing.",
+      "content-title": "Vulnerabilities"
+    },
+    "queue": {
+      "title": "Large queue",
+      "content": "⚠️ The service is temporarily overloaded\n\nScanning is performed in a queue. You can:\n\n🔄 Put the site in the queue — the report will be sent to your email after completion\n\n⚡️ Skip the queue — instant scanning with priority access payment",
+      "buy-btn": "Buy priority for {{price}} $",
+      "send-email": "Leave Email"
+    },
+    "wrong-url": {
+      "title": "The specified site was not found!",
+      "text": "Check if you entered the website URL correctly"
+    },
+    "warning": {
+      "title": "Attention! All content is paid!",
+      "text": "Scan results are available only after payment.\n\nIf vulnerabilities are found during the process, access to the detailed report will open only after payment confirmation.",
+      "approval": "By clicking 'Start scan', you agree to these terms.",
+      "start-btn": "Start scan"
+    },
+    "soon": {
+      "title": "Soon...",
+      "content": "🔐 New Feature: Automated Security Monitoring\n\nComing soon to our system — a dashboard for automated web resource monitoring.\n\nBased on numerous client requests, we are introducing a tool that will allow you to:\n\n📡 Launch 24/7 website monitoring\n\n🔍 Automatically scan resources for vulnerabilities\n\n📬 Receive real-time notifications and reports\n\n🛡 Enhance security levels and reduce attack risks\n\nThe dashboard will be accessible through your personal account and fully integrated with the current system.\n\n🕒 This feature is in development and will be available in upcoming updates."
+    },
+    "contact": {
+      "content": "You can leave your email and we will get back to you shortly."
+    },
+    "faq": {
+      "questions": [
+        {
+          "question": "Question 1",
+          "answer": "This is a sample answer to the first question. Here you can provide a brief explanation or instruction."
+        },
+        {
+          "question": "Question 2",
+          "answer": "The second answer contains general information to help understand the essence of the question."
+        },
+        {
+          "question": "Question 3",
+          "answer": "Here is an example of a simple and clear answer for demonstration."
+        },
+        {
+          "question": "Question 4",
+          "answer": "This answer serves as a placeholder and can be replaced with more detailed text later."
+        },
+        {
+          "question": "Question 5",
+          "answer": "The final answer contains basic information sufficient for the current task."
+        }
+      ]
+    },
+    "about-scanner": {
+      "content": "🔒 Vulnerability scanner based on external analysis\n\nOur tool performs intelligent site scanning, identifying risks that become visible not only to intruders, but also to search engines. This allows you to detect vulnerabilities even before they are exploited.\n\nThe scanner analyzes publicly available data about your resource — such as is accessible from the outside without authorization. This includes:\n\nOpen administrative panels\n\nIndexed directories and hidden files\n\nVulnerable entry points (XSS, SQL injections)\n\nConfidential data freely available\n\n✅ What makes our approach better than traditional scanners\n\nUnlike classic scanners that work only from inside the system or require access to a server, our tool:\n\nDoes not require installation on the client side\n\nAnalyzes the site as it is seen by an external user or bot\n\nIdentifies risks of information leakage and incorrect access settings\n\nHelps protect against unauthorized indexing and digital intelligence\n\n💡🔎 Why this is needed\n\nOur approach helps companies find risks in time that may be visible to intruders from the outside. This is important to protect business, reputation, and customers. Such an audit allows you to:\n\nUnderstand what is visible about the company on the Internet — what data, panels, and vulnerabilities are available without logging in\n\nClose weaknesses before someone finds them — protect yourself before indexing by search engines or malicious actions\n\nStrengthen cybersecurity — reduce the risk of leaks and external interference\n\nComply with regulatory requirements — help with audits and security standards compliance"
+    },
+    "info": {
+      "levels": [
+        "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt.\n\nNeque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem.",
+        "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt.\n\nNeque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem.",
+        "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt.\n\nNeque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem.",
+        "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt.\n\nNeque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem."
+      ]
     }
   }
 }

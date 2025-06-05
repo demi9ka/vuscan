@@ -31,7 +31,7 @@ export const CardInfo = ({ id }: Props) => {
   const opened = id == Number(urlId) && urlModal == 'card-info'
   const { color } = cardData
 
-  const infoMapped = t(`home.levels.${id}.info`)
+  const infoMapped = t(`modal.info.levels.${id}`)
     .split('\n\n')
     .map((el, i) => (
       <p key={i} className={css.info}>
