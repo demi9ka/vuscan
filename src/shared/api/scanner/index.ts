@@ -9,12 +9,12 @@ import {
   ScannerResponse
 } from './types'
 import { api } from '..'
-import { mockQueue, mockScanner0, mockScanner2, mockScanner1, mockBuyAll } from './mock'
+import { mockQueue, mockScanner0, mockBuyAll, mockScanner1, mockScanner2 } from './mock'
 
 const PREFIX = '/scanner'
 
 const scanner = async (data: ScannerParams) => {
-  return mockScanner0
+  return mockScanner2
   return await api.post<ScannerResponse>(PREFIX + '/scanner', data)
 }
 const queue = async (data: QueueParams) => {

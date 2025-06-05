@@ -4,7 +4,7 @@ import { useTranslation } from 'react-i18next'
 import { useNavigate } from 'react-router-dom'
 import { observer } from 'mobx-react-lite'
 import { scannerStore } from '@/store'
-import { searchStore } from '@/store/search-store'
+import { searchStore } from '@/store'
 import { useScanner } from '@/entities/scanner'
 
 export const Search = observer(() => {

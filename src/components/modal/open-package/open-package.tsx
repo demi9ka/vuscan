@@ -5,7 +5,6 @@ import { useTranslation } from 'react-i18next'
 import { useLocation, useNavigate } from 'react-router-dom'
 import { useBuyPackage } from '@/entities/scanner'
 import { Button, LockIcon, Modal } from '@/shared/ui'
-import { LinkFounded } from './ui/link-founded'
 import { combaneCSS, generateRandomLinks } from '@/helpers'
 import { useMemo } from 'react'
 
@@ -37,10 +36,15 @@ export const OpenPackage = observer(({ id }: Props) => {
   const onBuyPackage = async () => {
     if (!scannerId) return
     const { paymentLink } = await mutateAsync({ id, scannerId })
+    paymentLink
   }
 
   const isWasPaid = false
   const opened = id == Number(urlId) && urlModal == 'open-package'
+
+  if (!activePackage || activePackage.linkFounded == 0) {
+    return <></>
+  }
 
   const fakeLinks = fakeLinkList.map((link, i) => (
     <div key={i} className={css.linkWrapper}>
@@ -50,9 +54,6 @@ export const OpenPackage = observer(({ id }: Props) => {
       </Button>
     </div>
   ))
-  if (!activePackage || activePackage.linkFounded == 0) {
-    return <></>
-  }
 
   return (
     <Modal onClose={onClose} className={css.modal} opened={opened}>
@@ -62,12 +63,14 @@ export const OpenPackage = observer(({ id }: Props) => {
       <h1 className={css.title}>{t(`home.levels.${id}.title`)}</h1>
       <p className={css.description}>{t('home.open-package-modal.description')}</p>
       <div className={css.center}>
-        <LinkFounded linkFounded={activePackage.linkFounded} />
+        <Button className={css.linkFoundedButton} variant='error'>
+          {t('home.open-package-modal.link-founded', { count: activePackage.linkFounded })}
+        </Button>
       </div>
       <p className={css.description}>{t('home.open-package-modal.content-description')}</p>
       <div className={css.scrollView}>{isWasPaid ? <></> : fakeLinks}</div>
       <div className={css.center}>
-        <Button onClick={onBuyPackage} className={css.button}>
+        <Button onClick={onBuyPackage} className={css.button} variant='gradient'>
           <p className={css.buttonText}>{t('home.open-package')}</p>
           <p className={css.price}>12$</p>
         </Button>

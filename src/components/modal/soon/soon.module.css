@@ -1,18 +1,15 @@
-.modal {
-  width: 700px;
-}
 .center {
   width: 100%;
   display: flex;
   justify-content: center;
 }
 .scrollArea {
-  margin-top: 20px;
   border-radius: 12px;
   height: 527px;
   background-color: var(--dark-3);
   padding: 16px;
   overflow-y: auto;
+  margin: 20px 0;
 }
 .title {
   font-family: var(--ff-Eesti);
@@ -22,30 +19,50 @@
 }
 .info {
   margin-top: 10px;
-  font-size: 16px;
+  font-size: 20px;
   line-height: 155%;
 }
 .button {
-  padding: 11px 55px;
+  width: 200px;
 }
 @media screen and (max-width: 1680px) {
   .scrollArea {
-    margin-top: 12px;
-    border-radius: 8px;
-    height: 400px;
-    padding: 12px;
+    border-radius: calc(100vw / 160); /* 12px */
+    height: calc(100vw / 3.643); /* 527px */
+    padding: calc(100vw / 120); /* 16px */
+    margin: calc(100vw / 96) 0; /* 20px 0 */
+  }
+
+  .title {
+    font-size: calc(100vw / 60); /* 32px */
+  }
+
+  .info {
+    margin-top: calc(100vw / 192); /* 10px */
+    font-size: calc(100vw / 96); /* 20px */
+  }
+
+  .button {
+    width: calc(100vw / 9.6); /* 200px */
+  }
+}
+@media screen and (max-width: 768px) {
+  .scrollArea {
+    border-radius: 12px;
+    height: 527px;
+
+    padding: 16px;
+
+    margin: 20px 0;
   }
   .title {
-    font-size: 28px;
+    font-size: 32px;
   }
   .info {
-    margin-top: 7px;
-    font-size: 12px;
+    margin-top: 10px;
+    font-size: 20px;
   }
   .button {
-    padding: 8px 48px;
-  }
-  .modal {
-    width: 528px;
+    width: 200px;
   }
 }

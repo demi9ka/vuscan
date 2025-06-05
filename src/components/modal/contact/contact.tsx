@@ -48,13 +48,13 @@ export const Contact = () => {
   const opened = urlModal == 'contact'
 
   return (
-    <Modal title={t('header.contact')} opened={opened} className={css.modal} onClose={onClose}>
+    <Modal title={t('header.contact')} opened={opened} onClose={onClose}>
       <p className={css.text}>{t('header.contact-modal.content')}</p>
       <form onSubmit={handleSubmit(onSubmit)}>
         <input placeholder='example@gmail.com' className={css.emailInput} {...register('email')} />
         {errors.email && <p style={{ color: 'red' }}>{errors.email.message}</p>}
 
-        <Button type='submit' disabled={isPending} className={css.button}>
+        <Button type='submit' disabled={isPending} className={css.button} variant='gradient'>
           {t('global.confirm')}
         </Button>
       </form>

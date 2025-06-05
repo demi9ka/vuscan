@@ -1,9 +1,7 @@
-.modal {
-  width: 700px;
-}
 .text {
   line-height: 155%;
   margin-top: 16px;
+  font-size: 20px;
 }
 .emailInput {
   width: 100%;
@@ -11,11 +9,10 @@
   background-color: initial;
   border-radius: 12px;
   border: 1px solid var(--border);
-  padding: 11px 24px;
-  font-size: 18px;
+  padding: 11px 20px;
+  font-size: 20px;
 }
 .button {
-  padding: 11px 0;
   width: 100%;
   font-family: var(--ff-Eesti);
   font-weight: 500;
@@ -29,23 +26,45 @@
 }
 @media screen and (max-width: 1680px) {
   .text {
-    margin-top: 10px;
+    margin-top: calc(100vw / 120); /* 16px */
+    font-size: calc(100vw / 96);
+  }
+
+  .emailInput {
+    margin: calc(100vw / 53.333) 0 calc(100vw / 120) 0; /* 36px 0 16px 0 */
+    border-radius: calc(100vw / 160); /* 12px */
+    padding: calc(100vw / 174.545) calc(100vw / 96); /* 11px 20px */
+    font-size: calc(100vw / 96); /* 20px */
+  }
+
+  .button {
+    width: 100%;
+    font-size: calc(100vw / 96); /* 20px */
+  }
+
+  .variant {
+    font-size: calc(100vw / 106.667); /* 18px */
+    margin: calc(100vw / 96) 0; /* 20px 0 */
+  }
+}
+@media screen and (max-width: 768px) {
+  .text {
+    margin-top: 16px;
+    font-size: 20px;
   }
   .emailInput {
-    margin: 20px 0 10px 0;
-    border-radius: 8px;
-    padding: 8px 20px;
-    font-size: 12px;
+    margin: 36px 0 16px 0;
+    border-radius: 12px;
+    padding: 11px 20px;
+    font-size: 20px;
   }
   .button {
-    padding: 8px 0;
-    font-size: 16px;
-  }
-  .modal {
-    width: 528px;
+    width: 100%;
+
+    font-size: 20px;
   }
   .variant {
-    margin: 10px 0;
-    font-size: 16px;
+    font-size: 18px;
+    margin: 20px 0;
   }
 }

@@ -1,6 +1,3 @@
-.modal {
-  width: 700px;
-}
 .center {
   width: 100%;
   display: flex;
@@ -14,19 +11,10 @@
   padding: 16px;
   overflow-y: auto;
 }
-.title {
-  font-family: var(--ff-Eesti);
-  font-size: 32px;
-  font-weight: 400;
-  text-align: center;
-}
-.info {
-  margin-top: 10px;
-  font-size: 16px;
-  line-height: 155%;
-}
+
 .button {
-  padding: 11px 55px;
+  margin-top: 20px;
+  width: 200px;
 }
 .question {
   border-bottom: 1px solid var(--border);
@@ -36,15 +24,16 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 28px 0;
+  padding: 28px 10px;
 }
 .questionTitle {
   font-weight: 400;
   font-family: var(--ff-Eesti);
-  font-size: 20px;
+  font-size: 24px;
 }
 .answer {
-  font-size: 16px;
+  padding: 0 10px;
+  font-size: 20px;
   margin-bottom: 12px;
 }
 .arrow {
@@ -53,38 +42,60 @@
 
 @media screen and (max-width: 1680px) {
   .scrollArea {
-    margin-top: 12px;
-    border-radius: 8px;
-    height: 400px;
-    padding: 12px;
+    margin-top: calc(100vw / 96); /* 20px */
+    border-radius: calc(100vw / 160); /* 12px */
+    height: calc(100vw / 3.643); /* 527px */
+    padding: calc(100vw / 120); /* 16px */
   }
-  .title {
-    font-size: 28px;
-  }
-  .info {
-    margin-top: 7px;
-    font-size: 12px;
-  }
+
   .button {
-    padding: 8px 48px;
+    margin-top: calc(100vw / 96); /* 20px */
+    width: calc(100vw / 9.6); /* 200px */
   }
+
   .questionHeader {
-    padding: 20px 0;
+    padding: calc(100vw / 68.571) calc(100vw / 192); /* 28px 10px */
+  }
+
+  .questionTitle {
+    font-size: calc(100vw / 80); /* 24px */
+  }
+
+  .answer {
+    padding: 0 calc(100vw / 192); /* 0 10px */
+    font-size: calc(100vw / 120); /* 16px */
+    margin-bottom: calc(100vw / 160); /* 12px */
+  }
+
+  .arrow {
+    width: calc(100vw / 80); /* 24px */
+  }
+}
+@media screen and (max-width: 768px) {
+  .scrollArea {
+    margin-top: 20px;
+    border-radius: 12px;
+    height: 527px;
+    padding: 16px;
+  }
+
+  .button {
+    margin-top: 20px;
+    width: 200px;
+  }
+
+  .questionHeader {
+    padding: 28px 10px;
   }
   .questionTitle {
-    font-weight: 400;
-
-    font-size: 16px;
+    font-size: 24px;
   }
   .answer {
-    font-size: 12px;
-    margin-bottom: 8px;
-  }
-
-  .modal {
-    width: 528px;
+    padding: 0 10px;
+    font-size: 16px;
+    margin-bottom: 12px;
   }
   .arrow {
-    width: 12px;
+    width: 24px;
   }
 }

@@ -1,7 +1,6 @@
 import { SocketClient } from '@/entities/socket-client'
 import { toast } from '@/feature/toast'
 import { makeAutoObservable } from 'mobx'
-import { searchStore } from './search-store'
 
 export type PackageType = {
   id: number
@@ -22,8 +21,38 @@ class ScannerStore {
 
   start = (scannerId: string) => {
     if (!scannerId) return
-    this.socket = new SocketClient({ scannerId })
+    // this.socket = new SocketClient({ scannerId })
     this.scannerId = scannerId
+
+    setTimeout(() => {
+      this.updatePackages([
+        {
+          id: 0,
+          progress: 100,
+          linkFounded: 44,
+          status: 2
+        },
+        {
+          id: 1,
+          progress: 100,
+          linkFounded: 0,
+          status: 3
+        },
+        {
+          id: 2,
+          progress: 100,
+          linkFounded: 2,
+          status: 2
+        },
+        {
+          id: 3,
+          progress: 100,
+          linkFounded: 0,
+          status: 3
+        }
+      ])
+    }, 1000)
+    this.stop()
   }
 
   stop = () => {

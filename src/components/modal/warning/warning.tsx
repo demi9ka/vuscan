@@ -3,7 +3,7 @@ import { useLocation, useNavigate } from 'react-router-dom'
 import css from './warning.module.css'
 import { useTranslation } from 'react-i18next'
 import { useScanner } from '@/entities/scanner'
-import { searchStore } from '@/store/search-store'
+import { searchStore } from '@/store'
 import { observer } from 'mobx-react-lite'
 import { scannerStore } from '@/store'
 
@@ -25,30 +25,37 @@ export const Warning = observer(() => {
 
   const handleStartScan = async () => {
     const res = await mutateAsync({ url: search })
-    if (res.status === 0) start(res.id)
-    if (res.status === 1) navigate('/?modal=wrong-url')
-    if (res.status === 2) navigate('/?modal=queue')
-    onClose()
+    if (res.status === 0) {
+      onClose()
+      start(res.id)
+    }
+    if (res.status === 1) {
+      navigate('/?modal=wrong-url')
+    }
+    if (res.status === 2) {
+      navigate('/?modal=queue')
+    }
   }
 
   const opened = urlModal == 'warning'
 
+  const textMapped = t(`home.warning.text`)
+    .split('\n\n')
+    .map((el, i) => (
+      <p key={i} className={css.text}>
+        {el}
+      </p>
+    ))
+
   return (
-    <Modal opened={opened} className={css.modal} onClose={onClose}>
+    <Modal opened={opened} onClose={onClose}>
       <div className={css.center}>
         <div className={css.imageWrapper}>
           <img src='/money.png' alt='' />
         </div>
       </div>
       <h1 className={css.title}>{t(`home.warning.title`)}</h1>
-      {t(`home.warning.text`)
-        .split('\n\n')
-        .map((el, i) => (
-          <p key={i} className={css.text}>
-            {el}
-          </p>
-        ))}
-
+      {textMapped}
       <p className={css.text} style={{ marginTop: '36px', marginBottom: '16px' }}>
         {t(`home.warning.approval`)}
       </p>

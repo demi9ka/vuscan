@@ -19,8 +19,7 @@ export const AboutScanner = () => {
   const opened = urlModal == 'about-scanner'
 
   return (
-    <Modal opened={opened} className={css.modal} onClose={onClose}>
-      <h1 className={css.title}>{t('header.about')}</h1>
+    <Modal title={t('header.about')} opened={opened} onClose={onClose}>
       <div className={css.scrollArea}>
         {t('header.about-scanner-content')
           .split('\n\n')
@@ -30,7 +29,7 @@ export const AboutScanner = () => {
             </p>
           ))}
       </div>
-      <div style={{ marginTop: 40 }} className={css.center}>
+      <div className={css.center}>
         <Button variant='default' className={css.button} onClick={onClose}>
           {t('global.close')}
         </Button>

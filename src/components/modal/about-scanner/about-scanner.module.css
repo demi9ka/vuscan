@@ -1,51 +1,51 @@
-.modal {
-  width: 700px;
-}
 .center {
   width: 100%;
   display: flex;
   justify-content: center;
 }
 .scrollArea {
-  margin-top: 20px;
+  margin-top: 16px;
   border-radius: 12px;
-  height: 527px;
+  height: 650px;
   background-color: var(--dark-3);
-  padding: 16px;
+  padding: 8px;
   overflow-y: auto;
 }
-.title {
-  font-family: var(--ff-Eesti);
-  font-size: 32px;
-  font-weight: 400;
-  text-align: center;
-}
 .info {
-  margin-top: 10px;
   font-size: 16px;
   line-height: 155%;
 }
 .button {
-  padding: 11px 55px;
+  margin-top: 20px;
+  width: 200px;
 }
 @media screen and (max-width: 1680px) {
   .scrollArea {
-    margin-top: 16px;
-    height: 400px;
-    padding: 12px;
-    overflow-y: auto;
-  }
-  .title {
-    font-size: 20px;
+    height: calc(100vw / 2.95);
+    margin-top: calc(100vw / 120);
+    border-radius: calc(100vw / 160);
+    padding: calc(100vw / 240);
   }
   .info {
-    margin-top: 7px;
-    font-size: 12px;
+    font-size: calc(100vw / 120);
   }
   .button {
-    padding: 8px 48px;
+    margin-top: calc(100vw / 96);
+    width: calc(100vw / 9.6);
   }
-  .modal {
-    width: 528px;
+}
+@media screen and (max-width: 768px) {
+  .scrollArea {
+    margin-top: 16px;
+    border-radius: 12px;
+    padding: 8px;
+    height: 650px;
+  }
+  .info {
+    font-size: 16px;
+  }
+  .button {
+    margin-top: 20px;
+    width: 200px;
   }
 }

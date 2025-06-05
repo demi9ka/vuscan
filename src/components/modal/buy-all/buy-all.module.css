@@ -1,45 +1,47 @@
 .description {
-  padding: 15px;
+  padding: 8px 16px;
   border-radius: 6px;
+  line-height: 155%;
+  margin-top: 16px;
   background-color: var(--dark-3);
   color: var(--text-5);
+  font-size: 16px;
 }
 .title {
-  margin: 10px 0;
-  font-size: 30px;
+  margin: 16px 0;
   font-family: var(--ff-Eesti);
   font-weight: 500;
-}
-.contentTitle {
-  margin: 10px 0;
-  font-family: var(--ff-Eesti);
-  font-weight: 500;
+  font-size: 24px;
 }
 .content {
   background-color: var(--dark-3);
-  padding: 8px 16px;
+  padding: 5px 10px;
+  min-height: 200px;
   border-radius: 6px;
 }
 .packageInfo {
   display: flex;
   align-items: center;
-  margin-top: 10px;
+  margin-top: 5px;
   justify-content: space-between;
 }
 .packageTitle {
-  font-size: 16px;
+  font-size: 18px;
   font-weight: 600;
 }
-
-.buttonWrapper {
-  margin-top: 36px;
+.packageButton {
+  width: 140px;
+  font-size: 16px;
+  padding: 5px;
 }
+
 .button {
   position: relative;
   width: 100%;
   display: flex;
   align-items: center;
   justify-content: space-between;
+  margin-top: 20px;
 }
 .buttonTitle {
   font-family: var(--ff-Eesti);
@@ -56,6 +58,7 @@
   font-size: 22px;
   font-weight: 700;
   text-decoration: line-through;
+  font-family: var(--ff-Eesti);
 }
 .newPrice {
   font-family: var(--ff-Eesti);
@@ -76,10 +79,116 @@
   border-radius: 100px;
   padding: 5px 18px;
 }
+
+@media screen and (max-width: 1680px) {
+  .description {
+    padding: calc(100vw / 240) calc(100vw / 120); /* 8px 16px */
+    border-radius: calc(100vw / 320);
+    margin-top: calc(100vw / 120); /* 16px */
+    font-size: calc(100vw / 120);
+  }
+
+  .title {
+    margin: calc(100vw / 120) calc(100vw / 240); /* 16px 0 */
+    font-size: calc(100vw / 80);
+  }
+
+  .content {
+    padding: calc(100vw / 384) calc(100vw / 192); /* 5px 10px */
+    min-height: calc(100vw / 9.6); /* 200px */
+    border-radius: calc(100vw / 320); /* 6px */
+  }
+
+  .packageInfo {
+    margin-top: calc(100vw / 384); /* 5px */
+  }
+
+  .packageTitle {
+    font-size: calc(100vw / 106.667); /* 18px */
+  }
+
+  .packageButton {
+    width: calc(100vw / 13.714); /* 140px */
+    font-size: calc(100vw / 120); /* 16px */
+    padding: calc(100vw / 384); /* 5px */
+  }
+  .button {
+    margin-top: calc(100vw / 96);
+  }
+  .buttonTitle {
+    font-size: calc(100vw / 96); /* 20px */
+  }
+
+  .priceWrapper {
+    gap: calc(100vw / 192); /* 10px */
+  }
+
+  .oldPrice {
+    font-size: calc(100vw / 87.273); /* 22px */
+  }
+
+  .newPrice {
+    font-size: calc(100vw / 73.846); /* 26px */
+  }
+
+  .discount {
+    top: calc(-100vw / 192); /* -10px */
+    left: calc(-100vw / 64); /* -30px */
+    font-size: calc(100vw / 120); /* 16px */
+    border-radius: 100px; /* фиксированное значение */
+    padding: calc(100vw / 384) calc(100vw / 106.667); /* 5px 18px */
+  }
+}
 @media screen and (max-width: 768px) {
   .discount {
+    top: -10px;
     transform: rotate(15deg);
     left: auto;
     right: -15px;
+    font-size: 16px;
+    border-radius: 100px;
+    padding: 5px 18px;
+  }
+  .description {
+    padding: 8px 16px;
+    border-radius: 12px;
+    font-size: 16px;
+    margin-top: 16px;
+  }
+  .title {
+    margin: 16px 0;
+    font-size: 24px;
+  }
+  .content {
+    padding: 5px 10px;
+    min-height: 200px;
+    border-radius: 6px;
+  }
+  .packageInfo {
+    margin-top: 5px;
+  }
+  .packageTitle {
+    font-size: 18px;
+  }
+  .packageButton {
+    width: 140px;
+    font-size: 16px;
+    padding: 5px;
+  }
+
+  .buttonTitle {
+    font-size: 20px;
+  }
+  .priceWrapper {
+    gap: 10px;
+  }
+  .oldPrice {
+    font-size: 22px;
+  }
+  .newPrice {
+    font-size: 26px;
+  }
+  .button {
+    margin-top: 20px;
   }
 }

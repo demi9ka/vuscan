@@ -11,7 +11,7 @@
   font-size: 20px;
   border: 2px solid var(--border);
   font-weight: 500;
-  font-family: var(--Eesti);
+  font-family: var(--ff-Eesti);
   padding: 11px 20px;
   transition: 0.1s;
   border-radius: 12px;

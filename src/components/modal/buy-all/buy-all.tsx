@@ -4,7 +4,6 @@ import { useLocation, useNavigate } from 'react-router-dom'
 import { Button, Modal } from '@/shared/ui'
 import { observer } from 'mobx-react-lite'
 import { scannerStore } from '@/store'
-import { LinkFounded } from './ui/link-founded'
 import { useBuyAll } from '@/entities/scanner'
 
 export const BuyAll = observer(() => {
@@ -24,6 +23,7 @@ export const BuyAll = observer(() => {
   const onBuyAll = async () => {
     if (!scannerId) return
     const { paymentLink } = await mutateAsync({ scannerId })
+    paymentLink
   }
 
   if (!packages) return <></>
@@ -34,26 +34,26 @@ export const BuyAll = observer(() => {
   const contentMapped = activePackages.map((el, i) => (
     <div key={i} className={css.packageInfo}>
       <p className={css.packageTitle}>{t(`home.levels.${el.id}.title`)}</p>
-      <LinkFounded linkFounded={el.linkFounded} />
+      <Button className={css.packageButton} variant='error'>
+        {t('home.link-btn', { count: el.linkFounded })}{' '}
+      </Button>
     </div>
   ))
 
   return (
-    <Modal onClose={onClose} opened={opened}>
-      <h1 className={css.title}>{t('home.buy-all-modal.title')}</h1>
+    <Modal title={t('home.buy-all-modal.title')} onClose={onClose} opened={opened}>
       <p className={css.description}>{t('home.buy-all-modal.description')}</p>
-      <h2 className={css.contentTitle}>{t('home.buy-all-modal.content-title')}</h2>
+      <h2 className={css.title}>{t('home.buy-all-modal.content-title')}</h2>
       <div className={css.content}>{contentMapped}</div>
-      <div className={css.buttonWrapper}>
-        <Button disabled={isPending || !scannerId} onClick={onBuyAll} className={css.button} variant='gradient'>
-          <div className={css.discount}>-10%</div>
-          <p className={css.buttonTitle}>{t('home.buy-all-btn')}</p>
-          <div className={css.priceWrapper}>
-            <div className={css.oldPrice}>{oldPrice}$</div>
-            <div className={css.newPrice}>{(oldPrice * 0.9).toFixed(1)}$</div>
-          </div>
-        </Button>
-      </div>
+
+      <Button disabled={isPending || !scannerId} onClick={onBuyAll} className={css.button} variant='gradient'>
+        <div className={css.discount}>-10%</div>
+        <p className={css.buttonTitle}>{t('home.buy-all-btn')}</p>
+        <div className={css.priceWrapper}>
+          <div className={css.oldPrice}>{oldPrice}$</div>
+          <div className={css.newPrice}>{(oldPrice * 0.9).toFixed(1)}$</div>
+        </div>
+      </Button>
     </Modal>
   )
 })

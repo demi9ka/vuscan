@@ -18,25 +18,18 @@ export const Soon = () => {
 
   const opened = urlModal == 'soon'
 
+  const contentMapped = t('header.soon-modal.content')
+    .split('\n\n')
+    .map((el, i) => (
+      <p key={i} className={css.info}>
+        {el}
+      </p>
+    ))
+
   return (
-    <Modal
-      opened={opened}
-      style={{
-        width: 700
-      }}
-      onClose={onClose}
-    >
-      <h1 className={css.title}>{t('header.soon-modal.title')}</h1>
-      <div className={css.scrollArea}>
-        {t('header.soon-modal.content')
-          .split('\n\n')
-          .map((el, i) => (
-            <p key={i} className={css.info}>
-              {el}
-            </p>
-          ))}
-      </div>
-      <div style={{ marginTop: 40 }} className={css.center}>
+    <Modal opened={opened} title={t('header.soon-modal.title')} onClose={onClose}>
+      <div className={css.scrollArea}>{contentMapped}</div>
+      <div className={css.center}>
         <Button variant='default' className={css.button} onClick={onClose}>
           {t('global.close')}
         </Button>

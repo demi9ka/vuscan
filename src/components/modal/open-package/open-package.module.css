@@ -1,6 +1,5 @@
 .modal {
   position: relative;
-  width: 700px;
   box-shadow: 0 0 12px var(--error);
 }
 .center {
@@ -9,10 +8,9 @@
   justify-content: center;
 }
 .level {
-  margin: 0 auto;
   position: absolute;
   background-color: var(--dark);
-  transform: translateY(-60px);
+  transform: translateY(-70px);
   font-family: var(--ff-Unbounded);
   font-size: 18px;
   font-weight: 600;
@@ -45,7 +43,6 @@
 }
 .linkButton {
   width: 150px;
-  margin: 0;
   height: 36px;
   display: flex;
   justify-content: center;
@@ -55,7 +52,7 @@
   width: 24px;
 }
 .scrollView {
-  max-height: 300px;
+  max-height: 400px;
   background-color: var(--dark-3);
   overflow-y: auto;
   margin: 20px 0;
@@ -77,13 +74,104 @@
   font-size: 20px;
   font-weight: 500;
 }
-
+.linkFoundedButton {
+  font-size: 16px;
+  margin: 20px 0;
+}
 @media screen and (max-width: 1680px) {
   .level {
-    font-size: 14px;
-    padding: 8px 38px;
+    transform: translateY(calc(-100vw / 27.429)); /* -70px */
+    font-size: calc(100vw / 106.667); /* 18px */
+    padding: calc(100vw / 192) calc(100vw / 38.4); /* 10px 50px */
+    border-radius: calc(100vw / 160); /* 12px */
   }
-  .modal {
-    width: 528px;
+
+  .title {
+    font-size: calc(100vw / 64); /* 30px */
+    margin-bottom: calc(100vw / 120); /* 16px */
+  }
+
+  .link {
+    font-size: calc(100vw / 106.667); /* 18px */
+  }
+
+  .description {
+    font-size: calc(100vw / 120); /* 16px */
+  }
+
+  .linkButton {
+    width: calc(100vw / 12.8); /* 150px */
+    height: calc(100vw / 53.333); /* 36px */
+  }
+
+  .iconWrapper {
+    width: calc(100vw / 80); /* 24px */
+  }
+
+  .scrollView {
+    max-height: calc(100vw / 4.8); /* 400px */
+    margin: calc(100vw / 96) 0; /* 20px 0 */
+    padding: calc(100vw / 240); /* 8px */
+    border-radius: calc(100vw / 160); /* 12px */
+    gap: calc(100vw / 384); /* 5px */
+  }
+
+  .button {
+    gap: calc(100vw / 96); /* 20px */
+  }
+
+  .button * {
+    font-size: calc(100vw / 96); /* 20px */
+  }
+
+  .linkFoundedButton {
+    font-size: calc(100vw / 120); /* 16px */
+    margin: calc(100vw / 96) 0; /* 20px 0 */
+  }
+}
+@media screen and (max-width: 768px) {
+  .level {
+    transform: translateY(-70px);
+
+    font-size: 18px;
+
+    padding: 10px 50px;
+    border-radius: 12px;
+  }
+  .title {
+    font-size: 30px;
+
+    margin-bottom: 16px;
+  }
+  .link {
+    font-size: 18px;
+  }
+  .description {
+    font-size: 16px;
+  }
+  .linkButton {
+    width: 150px;
+    height: 36px;
+  }
+  .iconWrapper {
+    width: 24px;
+  }
+  .scrollView {
+    max-height: 400px;
+
+    margin: 20px 0;
+    padding: 8px;
+    border-radius: 12px;
+    gap: 5px;
+  }
+  .button {
+    gap: 20px;
+  }
+  .button * {
+    font-size: 20px;
+  }
+  .linkFoundedButton {
+    font-size: 16px;
+    margin: 20px 0;
   }
 }

@@ -24,27 +24,25 @@ export const Faq = () => {
 
   const opened = urlModal == 'faq'
 
-  return (
-    <Modal opened={opened} className={css.modal} onClose={onClose}>
-      <h1 className={css.title}>FAQ</h1>
-      <div className={css.scrollArea}>
-        {[0, 1, 2, 3].map(i => (
-          <div onClick={() => handleToggleQuestion(i)} key={i} className={css.question}>
-            <div className={css.questionHeader}>
-              <h2 className={css.questionTitle}>{t(`header.questions.${i}.question`)}</h2>
-              <ArrowDownIcon
-                className={css.arrow}
-                style={{
-                  transform: `rotate(${openedQuestion == i ? 180 : 0}deg)`
-                }}
-              />
-            </div>
-            {openedQuestion == i ? <p className={css.answer}>{t(`header.questions.${i}.answer`)}</p> : <></>}
-          </div>
-        ))}
+  const questionMapped = [0, 1, 2, 3].map(i => (
+    <div onClick={() => handleToggleQuestion(i)} key={i} className={css.question}>
+      <div className={css.questionHeader}>
+        <h2 className={css.questionTitle}>{t(`header.questions.${i}.question`)}</h2>
+        <ArrowDownIcon
+          className={css.arrow}
+          style={{
+            transform: `rotate(${openedQuestion == i ? 180 : 0}deg)`
+          }}
+        />
       </div>
+      {openedQuestion == i ? <p className={css.answer}>{t(`header.questions.${i}.answer`)}</p> : <></>}
+    </div>
+  ))
 
-      <div style={{ marginTop: 40 }} className={css.center}>
+  return (
+    <Modal opened={opened} title='FAQ' onClose={onClose}>
+      <div className={css.scrollArea}>{questionMapped}</div>
+      <div className={css.center}>
         <Button variant='default' className={css.button} onClick={onClose}>
           {t('global.close')}
         </Button>

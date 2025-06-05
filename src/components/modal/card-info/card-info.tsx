@@ -31,13 +31,20 @@ export const CardInfo = ({ id }: Props) => {
   const opened = id == Number(urlId) && urlModal == 'card-info'
   const { color } = cardData
 
+  const infoMapped = t(`home.levels.${id}.info`)
+    .split('\n\n')
+    .map((el, i) => (
+      <p key={i} className={css.info}>
+        {el}
+      </p>
+    ))
+
   return (
     <Modal
       style={{
         boxShadow: `0px 0px 12px ${color}`
       }}
       opened={opened}
-      className={css.modal}
       onClose={onClose}
     >
       <div className={css.center}>
@@ -46,14 +53,8 @@ export const CardInfo = ({ id }: Props) => {
         </div>
       </div>
       <h1 className={css.title}>{t(`home.levels.${id}.title`)}</h1>
-      {t(`home.levels.${id}.info`)
-        .split('\n\n')
-        .map((el, i) => (
-          <p key={i} className={css.info}>
-            {el}
-          </p>
-        ))}
-      <div style={{ marginTop: 40 }} className={css.center}>
+      {infoMapped}
+      <div className={css.center}>
         <Button variant='default' className={css.button} onClick={onClose}>
           {t(`global.close`)}
         </Button>
