@@ -6,7 +6,7 @@
   visibility: hidden;
   opacity: 0;
   top: 50px;
-
+  z-index: 4;
   right: -17px;
   border: 1px solid var(--border);
   width: 240px;

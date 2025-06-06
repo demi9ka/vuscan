@@ -45,7 +45,9 @@ export const MenuMobile = () => {
           to={'/?modal=contact'}
           className={css.link}
         >
-          <Button className={css.button}> {t('header.contact')}</Button>
+          <Button variant='gradient' className={css.button}>
+            {t('header.contact')}
+          </Button>
         </Link>
       </div>
     </div>
