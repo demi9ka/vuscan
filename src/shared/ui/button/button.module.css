@@ -29,18 +29,42 @@
 
 @media screen and (max-width: 1680px) {
   .button {
-    font-size: calc(100vw / 96);
+    font-size: calc(100vw / 120);
     padding: calc(100vw / 174) calc(100vw / 96);
     border-radius: calc(100vw / 160);
     border: 1px solid var(--border);
   }
 }
 
-@media screen and (max-width: 768px) {
+@media (max-width: 480px) {
   .button {
-    font-size: 20px;
-    padding: 11px 20px;
-    border-radius: 12px;
-    border: 2px solid var(--border);
+    font-size: 14px; /* уменьшенный размер шрифта */
+    padding: 8px 16px; /* более компактные отступы */
+    border-radius: 8px; /* уменьшенный радиус скругления */
+  }
+}
+
+/* Адаптив для планшетов (481-768px) */
+@media (max-width: 768px) and (min-width: 481px) {
+  .button {
+    font-size: 16px;
+    padding: 10px 20px;
+    border-radius: 10px;
+  }
+}
+@media (max-width: 480px) {
+  .button {
+    font-size: 14px; /* уменьшенный размер шрифта */
+    padding: 8px 16px; /* более компактные отступы */
+    border-radius: 8px; /* уменьшенный радиус скругления */
+  }
+}
+
+/* Адаптив для планшетов (481-768px) */
+@media (max-width: 768px) and (min-width: 481px) {
+  .button {
+    font-size: 16px;
+    padding: 10px 20px;
+    border-radius: 10px;
   }
 }

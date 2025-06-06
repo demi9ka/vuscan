@@ -31,6 +31,9 @@
   z-index: 1;
   background-color: var(--accent);
 }
+.button.openPackage {
+  font-size: 18px;
+}
 
 @media screen and (max-width: 1680px) {
   .button {
@@ -41,6 +44,9 @@
   }
   .progressBar {
     border-radius: calc(100vw / 160);
+  }
+  .button.openPackage {
+    font-size: calc(100vw / 106);
   }
 }
 
@@ -54,5 +60,8 @@
   }
   .progressBar {
     border-radius: 12px;
+  }
+  .button.openPackage {
+    font-size: 20px;
   }
 }

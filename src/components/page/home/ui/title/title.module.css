@@ -17,7 +17,7 @@
 
 @media screen and (max-width: 1680px) {
   .wrapper {
-    margin-top: calc(100vw / 50);
+    margin-top: calc(100vw / 9.6);
     padding: calc(100vw / 120) 0;
   }
   .title {

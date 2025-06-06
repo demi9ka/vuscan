@@ -47,24 +47,49 @@
     margin: calc(100vw / 96) 0; /* 20px 0 */
   }
 }
-@media screen and (max-width: 768px) {
+@media (max-width: 480px) {
   .text {
-    margin-top: 16px;
-    font-size: 20px;
+    margin-top: 12px;
+    font-size: 16px;
   }
-  .emailInput {
-    margin: 36px 0 16px 0;
-    border-radius: 12px;
-    padding: 11px 20px;
-    font-size: 20px;
-  }
-  .button {
-    width: 100%;
 
-    font-size: 20px;
+  .emailInput {
+    margin: 24px 0 12px 0;
+    border-radius: 8px;
+    padding: 8px 16px;
+    font-size: 16px;
   }
+
+  .button {
+    font-size: 16px;
+  }
+
   .variant {
+    font-size: 14px;
+    margin: 16px 0;
+  }
+}
+
+/* Адаптив для планшетов */
+@media (max-width: 768px) and (min-width: 481px) {
+  .text {
+    margin-top: 14px;
     font-size: 18px;
-    margin: 20px 0;
+  }
+
+  .emailInput {
+    margin: 30px 0 14px 0;
+    border-radius: 10px;
+    padding: 9px 18px;
+    font-size: 18px;
+  }
+
+  .button {
+    font-size: 18px;
+  }
+
+  .variant {
+    font-size: 16px;
+    margin: 18px 0;
   }
 }

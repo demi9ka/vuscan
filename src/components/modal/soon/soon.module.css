@@ -22,9 +22,7 @@
   font-size: 20px;
   line-height: 155%;
 }
-.button {
-  width: 200px;
-}
+
 @media screen and (max-width: 1680px) {
   .scrollArea {
     border-radius: calc(100vw / 160); /* 12px */
@@ -41,28 +39,40 @@
     margin-top: calc(100vw / 192); /* 10px */
     font-size: calc(100vw / 96); /* 20px */
   }
-
-  .button {
-    width: calc(100vw / 9.6); /* 200px */
-  }
 }
-@media screen and (max-width: 768px) {
+@media (max-width: 480px) {
   .scrollArea {
-    border-radius: 12px;
-    height: 527px;
-
-    padding: 16px;
-
-    margin: 20px 0;
+    border-radius: 8px;
+    height: 360px;
+    padding: 12px;
+    margin: 12px 0;
   }
+
   .title {
-    font-size: 32px;
-  }
-  .info {
-    margin-top: 10px;
     font-size: 20px;
   }
-  .button {
-    width: 200px;
+
+  .info {
+    margin-top: 8px;
+    font-size: 16px;
+  }
+}
+
+/* Адаптив для планшетов */
+@media (max-width: 768px) and (min-width: 481px) {
+  .scrollArea {
+    border-radius: 10px;
+    height: 560px;
+    padding: 14px;
+    margin: 16px 0;
+  }
+
+  .title {
+    font-size: 24px;
+  }
+
+  .info {
+    margin-top: 10px;
+    font-size: 18px;
   }
 }

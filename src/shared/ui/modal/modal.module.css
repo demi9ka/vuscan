@@ -83,22 +83,51 @@
     padding: calc(100vw / 76.8) calc(100vw / 64) 0 calc(100vw / 64);
   }
 }
-@media screen and (max-width: 768px) {
+@media (max-width: 480px) {
   .modal {
-    border-radius: 25px;
-    width: 100%;
+    border-radius: 8px;
+    width: 90vw; /* Почти весь экран, с отступами */
   }
+
   .title {
-    font-size: 30px;
+    font-size: 18px;
   }
+
   .close {
-    width: 29px;
+    width: 24px;
   }
+
   .content {
-    padding: 20px;
+    padding: 12px;
     padding-top: 0;
   }
+
   .header {
-    padding: 25px 30px 0 30px;
+    padding: 10px 16px 0 16px;
+  }
+}
+
+/* Медиазапрос для планшетов */
+@media (max-width: 768px) and (min-width: 481px) {
+  .modal {
+    border-radius: 12px;
+    width: 70vw;
+  }
+
+  .title {
+    font-size: 22px;
+  }
+
+  .close {
+    width: 24px;
+  }
+
+  .content {
+    padding: 16px;
+    padding-top: 0;
+  }
+
+  .header {
+    padding: 12px 20px 0 20px;
   }
 }

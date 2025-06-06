@@ -52,6 +52,10 @@
   text-decoration: none;
   color: var(--text);
   font-family: var(--ff-Manrope);
+
+  -webkit-tap-highlight-color: transparent; /* Убирает синий подсвет */
+  -webkit-touch-callout: none; /* Отключает контекстное меню на iOS */
+  -webkit-user-select: none; /* Запрещает выделение текста */
 }
 
 :root {

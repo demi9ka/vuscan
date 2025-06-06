@@ -1,7 +1,8 @@
 .wrapper {
   position: relative;
   min-width: 270px;
-  min-height: 382px;
+  min-height: 318px;
+  max-height: 382px;
   flex: 0 0 270px;
   display: flex;
   flex-direction: column;
@@ -76,7 +77,8 @@
 @media screen and (max-width: 1680px) {
   .wrapper {
     min-width: calc(100vw / 7);
-    min-height: calc(100vw / 5.02);
+    min-height: calc(100vw / 6);
+    max-height: calc(100vw / 5.02);
     flex: 0 0 calc(100vw / 7);
     padding: calc(100vw / 42) calc(100vw / 160) calc(100vw / 120) calc(100vw / 160);
     margin: 0 calc(100vw / 120);
@@ -124,7 +126,8 @@
 @media screen and (max-width: 768px) {
   .wrapper {
     min-width: 270px;
-    min-height: 382px;
+    min-height: 318px;
+    max-height: 382px;
     padding: 45px 12px 16px 12px;
     margin: 0 16px;
     border-radius: 24px;

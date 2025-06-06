@@ -41,16 +41,34 @@
     font-size: calc(100vw / 120); /* 16px */
   }
 }
-@media screen and (max-width: 768px) {
+@media (max-width: 480px) {
   .imageWrapper {
-    width: 150px;
-    height: 150px;
+    width: 80px;
+    height: 80px;
   }
 
   .title {
-    font-size: 36px;
-    margin: 20px 0;
+    font-size: 20px;
+    margin: 12px 0;
   }
+
+  .text {
+    font-size: 14px;
+  }
+}
+
+/* Адаптив для планшетов */
+@media (max-width: 768px) and (min-width: 481px) {
+  .imageWrapper {
+    width: 120px;
+    height: 120px;
+  }
+
+  .title {
+    font-size: 28px;
+    margin: 16px 0;
+  }
+
   .text {
     font-size: 16px;
   }

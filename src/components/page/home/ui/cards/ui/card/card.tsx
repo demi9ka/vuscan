@@ -20,6 +20,7 @@ export const Card = observer(({ logo, color, id }: Props) => {
     <div
       className={css.wrapper}
       style={{
+        height: packages ? '382px' : 'auto',
         boxShadow: `0px 0px 22px ${isRenderErrorBoxShadow ? 'var(--error)' : color}`
       }}
     >

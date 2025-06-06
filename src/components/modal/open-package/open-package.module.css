@@ -32,7 +32,11 @@
 }
 
 .link {
+  max-width: 50%;
   font-size: 18px;
+  white-space: nowrap; /* Запрет переносов на новую строку */
+  overflow: hidden; /* Скрыть текст, выходящий за границы */
+  text-overflow: ellipsis;
 }
 .link.blur {
   filter: blur(4px);
@@ -129,49 +133,107 @@
     margin: calc(100vw / 96) 0; /* 20px 0 */
   }
 }
-@media screen and (max-width: 768px) {
+@media (max-width: 480px) {
+  .level {
+    transform: translateY(-55px);
+    font-size: 14px;
+    padding: 6px 16px;
+    border-radius: 8px;
+  }
+
+  .title {
+    font-size: 20px;
+    margin-bottom: 12px;
+  }
+
+  .link {
+    font-size: 14px;
+  }
+
+  .description {
+    font-size: 13px;
+  }
+
+  .linkButton {
+    width: 120px;
+    height: 28px;
+  }
+
+  .iconWrapper {
+    width: 18px;
+  }
+
+  .scrollView {
+    max-height: 360px;
+    margin: 12px 0;
+    padding: 6px;
+    border-radius: 8px;
+    gap: 4px;
+  }
+
+  .button {
+    gap: 12px;
+  }
+
+  .button * {
+    font-size: 16px;
+  }
+
+  .linkFoundedButton {
+    font-size: 13px;
+    margin: 12px 0;
+  }
+}
+
+/* Адаптив для планшетов */
+@media (max-width: 768px) and (min-width: 481px) {
   .level {
     transform: translateY(-70px);
-
-    font-size: 18px;
-
-    padding: 10px 50px;
-    border-radius: 12px;
-  }
-  .title {
-    font-size: 30px;
-
-    margin-bottom: 16px;
-  }
-  .link {
-    font-size: 18px;
-  }
-  .description {
     font-size: 16px;
+    padding: 8px 24px;
+    border-radius: 10px;
   }
-  .linkButton {
-    width: 150px;
-    height: 36px;
-  }
-  .iconWrapper {
-    width: 24px;
-  }
-  .scrollView {
-    max-height: 400px;
 
-    margin: 20px 0;
-    padding: 8px;
-    border-radius: 12px;
+  .title {
+    font-size: 24px;
+    margin-bottom: 14px;
+  }
+
+  .link {
+    font-size: 15px;
+  }
+
+  .description {
+    font-size: 15px;
+  }
+
+  .linkButton {
+    min-width: 100px;
+    height: 32px;
+  }
+
+  .iconWrapper {
+    width: 20px;
+  }
+
+  .scrollView {
+    max-height: 560px;
+    margin: 16px 0;
+    padding: 10px;
+    border-radius: 10px;
     gap: 5px;
   }
+
   .button {
-    gap: 20px;
+    gap: 16px;
   }
+
   .button * {
-    font-size: 20px;
+    font-size: 18px;
   }
+
   .linkFoundedButton {
-    font-size: 16px;
-    margin: 20px 0;
+    font-size: 15px;
+    margin: 16px 0;
   }
 }

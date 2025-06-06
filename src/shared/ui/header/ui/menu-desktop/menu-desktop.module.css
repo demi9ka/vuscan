@@ -11,7 +11,7 @@
   color: var(--text-6);
 }
 .button {
-  padding: 6px 16px;
+  padding: 8px 16px;
   font-size: 14px;
 }
 @media screen and (max-width: 1680px) {
@@ -22,7 +22,7 @@
     gap: calc(100vw / 33);
   }
   .button {
-    padding: calc(100vw / 320) calc(100vw / 120);
+    padding: calc(100vw / 240) calc(100vw / 120);
     font-size: calc(100vw / 110);
   }
 }

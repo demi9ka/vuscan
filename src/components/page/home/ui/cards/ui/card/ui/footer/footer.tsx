@@ -45,7 +45,7 @@ export const Footer = ({ cardPackage, cardId }: Props) => {
         <Button className={css.button} variant='error'>
           {t('home.link-btn', { count: linkFounded })}
         </Button>
-        <Button onClick={onOpenPackage} className={css.button} variant='default'>
+        <Button onClick={onOpenPackage} className={combaneCSS(css.button, css.openPackage)} variant='default'>
           {t('home.open-package')}
         </Button>
       </div>

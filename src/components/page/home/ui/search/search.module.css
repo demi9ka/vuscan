@@ -18,8 +18,11 @@
   font-family: var(--ff-Eesti);
   font-size: 20px;
   font-weight: 500;
+  min-width: 240px;
+  max-width: 240px;
+  text-align: center;
   border-radius: 12px;
-  padding: 11px 80px;
+  padding: 12px 0;
 }
 @media screen and (max-width: 1680px) {
   .wrapper {
@@ -30,19 +33,21 @@
   }
   .searchInput {
     border-radius: calc(100vw / 160);
-
     padding: calc(100vw / 147) calc(100vw / 80);
     font-size: calc(100vw / 106);
   }
   .button {
+    min-width: calc(100vw / 8);
+    max-width: calc(100vw / 8);
     font-size: calc(100vw / 96);
     border-radius: calc(100vw / 160);
-    padding: calc(100vw / 174) calc(100vw / 24);
+    padding: calc(100vw / 150) 0;
   }
 }
 @media screen and (max-width: 768px) {
   .wrapper {
-    width: 100%;
+    min-width: 100%;
+
     margin: 20px auto 35px auto;
     flex-direction: column;
     gap: 12px;
@@ -53,7 +58,7 @@
     font-size: 18px;
   }
   .button {
-    width: 100%;
+    min-width: 100%;
     padding: 10px 0;
     font-size: 18px;
   }
