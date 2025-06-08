@@ -11,9 +11,9 @@ export const App = () => {
     <Provider>
       <div className={css.wrapper}>
         <Header />
-        <div className={css.content}>
+        <main className={css.content}>
           <AppRouting />
-        </div>
+        </main>
       </div>
       <Modals />
     </Provider>

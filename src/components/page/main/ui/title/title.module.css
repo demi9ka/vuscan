@@ -1,30 +1,29 @@
 .wrapper {
-  margin-top: 200px;
-  padding: 16px 0;
+  margin-top: 190px;
 }
-.title {
-  text-align: center;
-  font-family: var(--ff-Eesti);
-  font-size: 52px;
-}
+.title,
 .subTitle {
   text-align: center;
   font-family: var(--ff-Eesti);
+}
+.title {
+  font-size: 52px;
+}
+.subTitle {
   font-size: 20px;
   color: var(--text-5);
-  margin-top: 27px;
+  margin-top: 20px;
 }
 
-@media screen and (max-width: 1680px) {
+@media screen and (max-width: 1920px) {
   .wrapper {
-    margin-top: calc(100vw / 9.6);
-    padding: calc(100vw / 120) 0;
+    margin-top: calc(100vw / 10.1);
   }
   .title {
-    font-size: calc(100vw / 36);
+    font-size: calc(100vw / 36.92);
   }
   .subTitle {
-    margin-top: calc(100vw / 71);
+    margin-top: calc(100vw / 96);
     font-size: calc(100vw / 96);
   }
 }
