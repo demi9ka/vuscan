@@ -22,7 +22,7 @@ export const WrongUrl = () => {
     <Modal opened={opened} className={css.modal} onClose={onClose}>
       <div className={css.center}>
         <div className={css.imageWrapper}>
-          <img src='/level3.png' alt='' />
+          <img src='/level3.webp' alt='' />
         </div>
       </div>
       <h1 className={css.title}>{t(`modal.wrong-url.title`)}</h1>

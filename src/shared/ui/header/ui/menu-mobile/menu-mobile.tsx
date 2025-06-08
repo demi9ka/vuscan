@@ -1,4 +1,4 @@
-import { combaneCSS, useOutsideClick } from '@/helpers'
+import { combaneCSS } from '@/helpers'
 import css from './menu-mobile.module.css'
 import { useState } from 'react'
 import { MenuBurgerIcon } from '@/shared/ui/svg'
@@ -6,6 +6,7 @@ import { Link } from 'react-router-dom'
 import { Button } from '@/shared/ui/button'
 import { useTranslation } from 'react-i18next'
 import { LanguageSelect } from '../language-select'
+import { useOutsideClick } from '@/hooks'
 
 export const MenuMobile = () => {
   const { t } = useTranslation()

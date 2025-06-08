@@ -51,7 +51,7 @@ export const Warning = observer(() => {
     <Modal opened={opened} onClose={onClose}>
       <div className={css.center}>
         <div className={css.imageWrapper}>
-          <img src='/money.png' alt='' />
+          <img src='/money.webp' alt='' />
         </div>
       </div>
       <h1 className={css.title}>{t(`modal.warning.title`)}</h1>
