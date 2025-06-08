@@ -1,7 +1,6 @@
 .wrapper {
   margin: 38px auto 50px auto;
   width: 950px;
-  padding: 0 16px;
   display: flex;
   align-items: center;
   gap: 16px;
@@ -11,55 +10,78 @@
   border-radius: 12px;
   background-color: var(--dark);
   border: 1px solid var(--border);
-  padding: 13px 24px;
+  padding: 11px 24px;
   font-size: 18px;
 }
 .button {
-  font-family: var(--ff-Eesti);
   font-size: 20px;
   font-weight: 500;
-  min-width: 240px;
-  max-width: 240px;
+  width: 280px;
   text-align: center;
   border-radius: 12px;
-  padding: 12px 0;
+  padding: 11px 0;
 }
-@media screen and (max-width: 1680px) {
+@media screen and (max-width: 1920px) {
   .wrapper {
-    margin: calc(100vw / 100) auto calc(100vw / 24) auto;
-    width: calc(100vw / 2);
-    padding: 0 calc(100vw / 120);
+    margin: calc(100vw / 50.2) auto calc(100vw / 38.4) auto;
+    width: calc(100vw / 2.02);
     gap: calc(100vw / 120);
   }
   .searchInput {
     border-radius: calc(100vw / 160);
-    padding: calc(100vw / 147) calc(100vw / 80);
-    font-size: calc(100vw / 106);
+    padding: calc(100vw / 174.54) calc(100vw / 80);
+    font-size: calc(100vw / 106.666);
   }
   .button {
-    min-width: calc(100vw / 8);
-    max-width: calc(100vw / 8);
     font-size: calc(100vw / 96);
+    width: calc(100vw / 6.85);
     border-radius: calc(100vw / 160);
-    padding: calc(100vw / 150) 0;
+    padding: calc(100vw / 174.54) 0;
   }
 }
 @media screen and (max-width: 768px) {
   .wrapper {
-    min-width: 100%;
-
-    margin: 20px auto 35px auto;
+    width: 100%;
+    margin: calc(100vw / 38.4) auto calc(100vw / 21.94) auto;
     flex-direction: column;
-    gap: 12px;
+    padding: 0 calc(100vw / 48);
+    gap: calc(100vw / 64);
   }
   .searchInput {
     width: 100%;
-    padding: 11px 24px;
-    font-size: 18px;
+    padding: calc(100vw / 69.81) calc(100vw / 32);
+    font-size: calc(100vw / 42.666);
+    border-radius: calc(100vw / 64);
   }
   .button {
-    min-width: 100%;
-    padding: 10px 0;
-    font-size: 18px;
+    border-radius: calc(100vw / 64);
+    width: 100%;
+    padding: calc(100vw / 69.81) 0;
+    font-size: calc(100vw / 38.4);
+    line-height: calc(100vw / 25.6);
+  }
+}
+@media screen and (max-width: 390px) {
+  .wrapper {
+    width: 100%;
+    margin: calc(100vw / 19.5) auto calc(100vw / 11.14) auto;
+    flex-direction: column;
+    padding: 0 calc(100vw / 24.37);
+    gap: calc(100vw / 32.5);
+  }
+
+  .searchInput {
+    width: 100%;
+    padding: calc(100vw / 35.45) calc(100vw / 16.25);
+    font-size: calc(100vw / 21.66);
+    border-radius: calc(100vw / 32.5);
+  }
+
+  .button {
+    border-radius: calc(100vw / 32.5);
+    width: 100%;
+    padding: calc(100vw / 27) 0;
+    font-size: calc(100vw / 21.66);
+    line-height: calc(100vw / 30);
   }
 }

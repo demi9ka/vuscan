@@ -19,9 +19,11 @@ export const Footer = ({ cardPackage, cardId }: Props) => {
   }
   if (!cardPackage) {
     return (
-      <Button className={css.button} onClick={onOpenInfo} variant='default'>
-        {t('global.more')}
-      </Button>
+      <div className={css.buttonWrapper}>
+        <Button className={css.button} onClick={onOpenInfo} variant='default'>
+          {t('global.more')}
+        </Button>
+      </div>
     )
   }
 
@@ -33,10 +35,12 @@ export const Footer = ({ cardPackage, cardId }: Props) => {
 
   if (status == 1) {
     return (
-      <Button className={combaneCSS(css.button, css.progressBarButton)} variant='default'>
-        <p className={css.progressBarText}>{progress}%</p>
-        <div className={css.progressBar} style={{ width: `${progress}%` }} />
-      </Button>
+      <div className={css.buttonWrapper}>
+        <Button className={combaneCSS(css.button, css.progressBarButton)} variant='default'>
+          <p className={css.progressBarText}>{progress}%</p>
+          <div className={css.progressBar} style={{ width: `${progress}%` }} />
+        </Button>
+      </div>
     )
   }
   if (status == 2) {
@@ -53,9 +57,12 @@ export const Footer = ({ cardPackage, cardId }: Props) => {
   }
   if (status == 3) {
     return (
-      <Button className={css.button} variant='default'>
-        {t('home.no-thread')}
-      </Button>
+      <div className={css.buttonWrapper}>
+        <Button className={combaneCSS(css.button, css.displayOff)}>0</Button>
+        <Button className={css.button} variant='default'>
+          {t('home.no-thread')}
+        </Button>
+      </div>
     )
   }
 }

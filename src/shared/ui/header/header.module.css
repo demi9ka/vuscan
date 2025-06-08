@@ -36,3 +36,12 @@
     font-size: calc(100vw / 27.42);
   }
 }
+@media screen and (max-width: 390px) {
+  .header {
+    padding: calc(100vw / 21.666) calc(100vw / 24.375);
+  }
+  .title * {
+    font-size: calc(100vw / 13.9);
+    line-height: calc(100vw / 13);
+  }
+}

@@ -39,6 +39,22 @@
     text-align: center;
     flex-grow: 2;
     font-size: calc(100vw / 48);
-    /* padding: 6px 0; */
+  }
+  .separator {
+    height: calc(100vw / 32);
+  }
+}
+@media screen and (max-width: 390px) {
+  .wrapper {
+    margin: calc(100vw / 31.7) 0;
+    width: 100%;
+    border-radius: calc(100vw / 47.63);
+  }
+  .variant {
+    font-size: calc(100vw / 23.81);
+    padding: calc(100vw / 65) 0;
+  }
+  .separator {
+    height: calc(100vw / 16.25);
   }
 }

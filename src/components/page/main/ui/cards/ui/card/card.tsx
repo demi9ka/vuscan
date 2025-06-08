@@ -1,8 +1,11 @@
 import css from './card.module.css'
-import { useTranslation } from 'react-i18next'
 import { scannerStore } from '@/store'
 import { observer } from 'mobx-react-lite'
 import { Footer } from './ui/footer'
+import { Content } from './ui/content'
+import { useTranslation } from 'react-i18next'
+import React from 'react'
+import { Level } from '@/shared/ui/level'
 
 export type Props = {
   color: string
@@ -13,34 +16,25 @@ export type Props = {
 export const Card = observer(({ logo, color, id }: Props) => {
   const { t } = useTranslation()
   const { packages } = scannerStore
+
   const cardPackage = packages ? packages.find(el => el.id == id)! : null
-  const isRenderErrorBoxShadow = cardPackage && cardPackage.linkFounded > 0
+  const isRenderErrorBoxShadow = Boolean(cardPackage && cardPackage.linkFounded > 0)
+
+  const primaryColor = isRenderErrorBoxShadow ? 'var(--error)' : color
 
   return (
     <div
       className={css.wrapper}
-      style={{
-        height: packages ? '382px' : 'auto',
-        boxShadow: `0px 0px 22px ${isRenderErrorBoxShadow ? 'var(--error)' : color}`
-      }}
+      style={
+        {
+          '--primary-color': primaryColor
+        } as React.CSSProperties
+      }
     >
-      <div
-        className={css.level}
-        style={{
-          color: isRenderErrorBoxShadow ? 'var(--error)' : color,
-          boxShadow: ` inset 0px 0px 12px ${isRenderErrorBoxShadow ? 'var(--error)' : color}`
-        }}
-      >
-        {t(`home.levels.${id}.level`)}
+      <div className={css.levelWrapper}>
+        <Level color={primaryColor} text={t(`home.levels.${id}.level`)} />
       </div>
-      <div className={css.avatarWrapper}>
-        <div className={css.logoWrapper}>
-          <img src={logo} />
-        </div>
-        {isRenderErrorBoxShadow ? <div className={css.errorBoxShadow} /> : <></>}
-      </div>
-      <h3 className={css.title}>{t(`home.levels.${id}.title`)}</h3>
-      <p className={css.description}>{t(`home.levels.${id}.description`)}</p>
+      <Content id={id} logo={logo} isRenderErrorBoxShadow={isRenderErrorBoxShadow} />
       <Footer cardPackage={cardPackage} cardId={id} />
     </div>
   )

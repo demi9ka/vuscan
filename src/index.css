@@ -86,3 +86,9 @@
     font-size: calc(100vw / 48);
   }
 }
+@media screen and (max-width: 390px) {
+  * {
+    line-height: calc(100vw / 13);
+    font-size: calc(100vw / 24.375);
+  }
+}

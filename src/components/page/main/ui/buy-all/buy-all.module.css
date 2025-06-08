@@ -2,7 +2,7 @@
   width: 100%;
   display: flex;
   justify-content: center;
-  padding: 18px 0;
+  margin: 57px 0;
 }
 .button {
   position: relative;
@@ -19,11 +19,11 @@
   font-size: 20px;
   font-weight: 500;
   border-radius: 100px;
-  padding: 8px 24px;
+  padding: 5px 24px;
 }
-@media screen and (max-width: 1680px) {
+@media screen and (max-width: 1920px) {
   .wrapper {
-    padding: calc(100vw / 48) 0;
+    margin: calc(100vw / 33.68) 0;
   }
   .button {
     position: relative;
@@ -34,21 +34,39 @@
     left: calc(-100vw / 64);
     font-size: calc(100vw / 96);
     border-radius: calc(100vw / 19.2);
-    padding: calc(100vw / 240) calc(100vw / 80);
+    padding: calc(100vw / 384) calc(100vw / 80);
   }
 }
 @media screen and (max-width: 768px) {
   .wrapper {
-    padding: 18px 20px;
+    margin: calc(100vw / 13.47) 0;
+    padding: 0 calc(100vw / 48);
   }
   .button {
-    font-size: 20px;
     width: 100%;
   }
   .discount {
     transform: rotate(15deg);
     left: auto;
-    right: -15px;
-    font-size: 20px;
+    top: calc(-100vw / 76.8);
+    right: calc(-100vw / 55.2);
+    padding: calc(100vw / 153) calc(100vw / 32);
+    font-size: calc(100vw / 38.4);
+  }
+}
+@media screen and (max-width: 390px) {
+  .wrapper {
+    margin: calc(100vw / 6.84) 0;
+    padding: 0 calc(100vw / 24.375);
+  }
+  .button {
+    width: 100%;
+  }
+  .discount {
+    transform: rotate(15deg);
+    top: calc(-100vw / 39);
+    right: calc(-100vw / 28);
+    padding: calc(100vw / 85) calc(100vw / 18);
+    font-size: calc(100vw / 21.5);
   }
 }
