@@ -8,13 +8,13 @@ export const Header = () => {
 
   return (
     <div className={css.wrapper}>
-      <div className={css.header}>
+      <header className={css.header}>
         <h1 className={css.title}>
-          <span>VU</span>
-          SCAN
+          <span className={css.accent}>VU</span>
+          <span>SCAN</span>
         </h1>
         {isMobile ? <MenuMobile /> : <MenuDesktop />}
-      </div>
+      </header>
     </div>
   )
 }

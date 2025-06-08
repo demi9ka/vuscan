@@ -11,18 +11,21 @@
   color: var(--text-6);
 }
 .button {
-  padding: 8px 16px;
-  font-size: 14px;
+  padding: 7px 22px;
+  font-size: 16px;
+  font-weight: 500;
 }
-@media screen and (max-width: 1680px) {
-  .link {
-    font-size: calc(100vw / 96);
-  }
+
+@media screen and (max-width: 1920px) {
   .wrapper {
-    gap: calc(100vw / 33);
+    gap: calc(100vw / 33.1);
   }
+  .link {
+    font-size: calc(100vw / 120);
+  }
+
   .button {
-    padding: calc(100vw / 240) calc(100vw / 120);
-    font-size: calc(100vw / 110);
+    padding: calc(100vw / 274.28) calc(100vw / 87.27);
+    font-size: calc(100vw / 120);
   }
 }

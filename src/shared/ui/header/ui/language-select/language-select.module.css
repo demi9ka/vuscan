@@ -6,7 +6,7 @@
 .separator {
   width: 1px;
   background-color: var(--text);
-  height: 20px;
+  height: 24px;
 }
 .variant {
   font-weight: 700;
@@ -15,24 +15,30 @@
 .variant.disable {
   color: var(--text-6);
 }
-@media screen and (max-width: 1680px) {
+@media screen and (max-width: 1920px) {
+  .wrapper {
+    gap: calc(100vw / 240);
+  }
   .variant {
-    font-size: calc(100vw / 96);
+    font-size: calc(100vw / 120);
+  }
+  .separator {
+    height: calc(100vw / 80);
   }
 }
 @media screen and (max-width: 768px) {
   .wrapper {
-    margin: 10px 0;
+    margin: calc(100vw / 64) 0;
     width: 100%;
     justify-content: space-between;
     border: 1px solid var(--border);
-    border-radius: 8px;
+    border-radius: calc(100vw / 96);
     background-color: var(--dark);
   }
   .variant {
     text-align: center;
     flex-grow: 2;
-    font-size: 20px;
-    padding: 6px 0;
+    font-size: calc(100vw / 48);
+    /* padding: 6px 0; */
   }
 }

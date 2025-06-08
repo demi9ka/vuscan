@@ -27,7 +27,7 @@
   pointer-events: none;
 }
 
-@media screen and (max-width: 1680px) {
+@media screen and (max-width: 1920px) {
   .button {
     font-size: calc(100vw / 120);
     padding: calc(100vw / 174) calc(100vw / 96);
@@ -35,36 +35,11 @@
     border: 1px solid var(--border);
   }
 }
-
-@media (max-width: 480px) {
+@media screen and (max-width: 768px) {
   .button {
-    font-size: 14px; /* уменьшенный размер шрифта */
-    padding: 8px 16px; /* более компактные отступы */
-    border-radius: 8px; /* уменьшенный радиус скругления */
-  }
-}
-
-/* Адаптив для планшетов (481-768px) */
-@media (max-width: 768px) and (min-width: 481px) {
-  .button {
-    font-size: 16px;
-    padding: 10px 20px;
-    border-radius: 10px;
-  }
-}
-@media (max-width: 480px) {
-  .button {
-    font-size: 14px; /* уменьшенный размер шрифта */
-    padding: 8px 16px; /* более компактные отступы */
-    border-radius: 8px; /* уменьшенный радиус скругления */
-  }
-}
-
-/* Адаптив для планшетов (481-768px) */
-@media (max-width: 768px) and (min-width: 481px) {
-  .button {
-    font-size: 16px;
-    padding: 10px 20px;
-    border-radius: 10px;
+    font-size: calc(100vw / 48);
+    padding: calc(100vw / 69.81) calc(100vw / 38.4);
+    border-radius: calc(100vw / 64);
+    border: 1px solid var(--border);
   }
 }

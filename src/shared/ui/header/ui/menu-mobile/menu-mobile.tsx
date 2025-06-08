@@ -24,33 +24,37 @@ export const MenuMobile = () => {
     <div ref={ref} className={css.wrapper} onClick={toggleOpen}>
       <MenuBurgerIcon
         style={{
-          transition: '.1s',
           transform: `rotate(${isOpen ? 90 : 0}deg)`
         }}
+        className={css.icon}
       />
-      <div className={combaneCSS(css.menu, isOpen ? css.opened : '')}>
-        <Link to={'/?modal=about-scanner'} className={css.link}>
-          {t('header.about')}
-        </Link>
-        <Link to={'/?modal=faq'} className={css.link}>
-          FAQ
-        </Link>
-        <Link to={'/?modal=soon'} className={combaneCSS(css.link, css.disable)}>
-          {t('header.soon')}
-        </Link>
-        <LanguageSelect />
-        <Link
-          style={{
-            padding: 0
-          }}
-          to={'/?modal=contact'}
-          className={css.link}
-        >
-          <Button variant='gradient' className={css.button}>
-            {t('header.contact')}
-          </Button>
-        </Link>
-      </div>
+      <nav className={combaneCSS(css.menu, isOpen ? css.opened : '')}>
+        <ul>
+          <li className={css.linkWrapper}>
+            <Link className={css.link} to={'/?modal=about-scanner'}>
+              {t('header.about')}
+            </Link>
+          </li>
+          <li className={css.linkWrapper}>
+            <Link to={'/?modal=faq'} className={css.link}>
+              FAQ
+            </Link>
+          </li>
+          <li className={css.linkWrapper}>
+            <Link to={'/?modal=soon'} className={combaneCSS(css.link, css.disable)}>
+              {t('header.soon')}
+            </Link>
+          </li>
+          <LanguageSelect />
+          <li>
+            <Link to={'/?modal=contact'}>
+              <Button variant='gradient' className={css.button}>
+                {t('header.contact')}
+              </Button>
+            </Link>
+          </li>
+        </ul>
+      </nav>
     </div>
   )
 }
