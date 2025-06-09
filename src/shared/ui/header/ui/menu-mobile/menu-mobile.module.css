@@ -85,7 +85,7 @@ button.button {
   }
   button.button {
     font-size: calc(100vw / 27.8);
-    padding: calc(100vw / 40) 0;
+    padding: calc(100vw / 100) 0;
     font-weight: 500;
   }
   .linkWrapper {

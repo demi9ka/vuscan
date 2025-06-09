@@ -54,7 +54,7 @@ export const Warning = observer(() => {
           <img src='/money.webp' alt='' />
         </div>
       </div>
-      <h1 className={css.title}>{t(`modal.warning.title`)}</h1>
+      <h2 className={css.title}>{t(`modal.warning.title`)}</h2>
       {textMapped}
       <p className={css.text} style={{ marginTop: '36px', marginBottom: '16px' }}>
         {t(`modal.warning.approval`)}

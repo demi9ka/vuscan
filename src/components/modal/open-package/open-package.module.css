@@ -7,17 +7,13 @@
   display: flex;
   justify-content: center;
 }
-.level {
+.levelWrapper {
   position: absolute;
-  background-color: var(--dark);
-  transform: translateY(-70px);
-  font-family: var(--ff-Unbounded);
-  font-size: 18px;
-  font-weight: 600;
-  padding: 10px 50px;
-  border-radius: 12px;
-  color: var(--error);
-  box-shadow: inset 0px 0px 12px var(--error);
+  top: -10px;
+  left: 0;
+  width: 100%;
+  display: flex;
+  justify-content: center;
 }
 .title {
   font-size: 30px;
@@ -34,8 +30,8 @@
 .link {
   max-width: 50%;
   font-size: 18px;
-  white-space: nowrap; /* Запрет переносов на новую строку */
-  overflow: hidden; /* Скрыть текст, выходящий за границы */
+  white-space: nowrap;
+  overflow: hidden;
   text-overflow: ellipsis;
 }
 .link.blur {
@@ -81,159 +77,158 @@
 .linkFoundedButton {
   font-size: 16px;
   margin: 20px 0;
+  width: 200px;
 }
-@media screen and (max-width: 1680px) {
-  .level {
-    transform: translateY(calc(-100vw / 27.429)); /* -70px */
-    font-size: calc(100vw / 106.667); /* 18px */
-    padding: calc(100vw / 192) calc(100vw / 38.4); /* 10px 50px */
-    border-radius: calc(100vw / 160); /* 12px */
-  }
 
+@media screen and (max-width: 1920px) {
   .title {
-    font-size: calc(100vw / 64); /* 30px */
-    margin-bottom: calc(100vw / 120); /* 16px */
+    font-size: calc(100vw / 64);
+    margin-bottom: calc(100vw / 120);
   }
 
   .link {
-    font-size: calc(100vw / 106.667); /* 18px */
+    font-size: calc(100vw / 106.667);
   }
-
+  .link.blur {
+    filter: blur(calc(100vw / 480));
+  }
   .description {
-    font-size: calc(100vw / 120); /* 16px */
+    font-size: calc(100vw / 120);
   }
 
   .linkButton {
-    width: calc(100vw / 12.8); /* 150px */
-    height: calc(100vw / 53.333); /* 36px */
+    width: calc(100vw / 12.8);
+    height: calc(100vw / 53.333);
   }
 
   .iconWrapper {
-    width: calc(100vw / 80); /* 24px */
+    width: calc(100vw / 80);
   }
 
   .scrollView {
-    max-height: calc(100vw / 4.8); /* 400px */
-    margin: calc(100vw / 96) 0; /* 20px 0 */
-    padding: calc(100vw / 240); /* 8px */
-    border-radius: calc(100vw / 160); /* 12px */
-    gap: calc(100vw / 384); /* 5px */
+    max-height: calc(100vw / 4.8);
+    margin: calc(100vw / 96) 0;
+    padding: calc(100vw / 240);
+    border-radius: calc(100vw / 160);
+    gap: calc(100vw / 384);
   }
 
   .button {
-    gap: calc(100vw / 96); /* 20px */
+    gap: calc(100vw / 96);
   }
 
   .button * {
-    font-size: calc(100vw / 96); /* 20px */
+    font-size: calc(100vw / 96);
   }
 
   .linkFoundedButton {
-    font-size: calc(100vw / 120); /* 16px */
-    margin: calc(100vw / 96) 0; /* 20px 0 */
+    font-size: calc(100vw / 120);
+    margin: calc(100vw / 96) 0;
+    width: calc(100vw / 9.6);
   }
 }
-@media (max-width: 480px) {
-  .level {
-    transform: translateY(-55px);
-    font-size: 14px;
-    padding: 6px 16px;
-    border-radius: 8px;
-  }
-
+@media screen and (max-width: 768px) {
   .title {
-    font-size: 20px;
-    margin-bottom: 12px;
+    font-size: calc(100vw / 25.6);
+    margin-bottom: calc(100vw / 48);
   }
 
   .link {
-    font-size: 14px;
+    font-size: calc(100vw / 42.6668);
   }
 
   .description {
-    font-size: 13px;
+    font-size: calc(100vw / 48);
   }
-
+  .link.blur {
+    filter: blur(calc(100vw / 192));
+  }
   .linkButton {
-    width: 120px;
-    height: 28px;
+    width: calc(100vw / 5.12);
+    height: calc(100vw / 21.3332);
   }
 
   .iconWrapper {
-    width: 18px;
+    width: calc(100vw / 32);
   }
 
   .scrollView {
-    max-height: 360px;
-    margin: 12px 0;
-    padding: 6px;
-    border-radius: 8px;
-    gap: 4px;
+    max-height: calc(100vw / 1.92);
+    margin: calc(100vw / 38.4) 0;
+    padding: calc(100vw / 96);
+    border-radius: calc(100vw / 64);
+    gap: calc(100vw / 153.6);
   }
 
   .button {
-    gap: 12px;
+    gap: calc(100vw / 38.4);
   }
 
   .button * {
-    font-size: 16px;
+    font-size: calc(100vw / 38.4);
   }
 
   .linkFoundedButton {
-    font-size: 13px;
-    margin: 12px 0;
+    font-size: calc(100vw / 48);
+    margin: calc(100vw / 38.4) 0;
+    width: calc(100vw / 3.84);
   }
 }
 
-/* Адаптив для планшетов */
-@media (max-width: 768px) and (min-width: 481px) {
-  .level {
-    transform: translateY(-70px);
-    font-size: 16px;
-    padding: 8px 24px;
-    border-radius: 10px;
-  }
-
+@media screen and (max-width: 390px) {
   .title {
-    font-size: 24px;
-    margin-bottom: 14px;
+    display: none;
   }
-
   .link {
-    font-size: 15px;
+    font-size: calc(100vw / 21.63);
+    max-width: 100%;
+  }
+  .linkWrapper {
+    margin: calc(100vw / 209);
+    display: flex;
+    gap: calc(100vw / 78);
+    flex-direction: column;
   }
 
   .description {
-    font-size: 15px;
+    margin-top: calc(100vw / 32.5);
+    font-size: calc(100vw / 24.34);
+  }
+
+  .link.blur {
+    filter: blur(calc(100vw / 97.34));
   }
 
   .linkButton {
-    min-width: 100px;
-    height: 32px;
+    width: 100%;
+    height: calc(100vw / 10.82);
   }
 
   .iconWrapper {
-    width: 20px;
+    width: calc(100vw / 16.22);
   }
 
   .scrollView {
-    max-height: 560px;
-    margin: 16px 0;
-    padding: 10px;
-    border-radius: 10px;
-    gap: 5px;
+    max-height: none;
+    height: auto;
+    margin: calc(100vw / 19.47);
+    padding: 0;
+    border-radius: 0;
+    gap: calc(100vw / 77.87);
+    background-color: transparent;
+    overflow-y: visible;
   }
-
   .button {
-    gap: 16px;
+    gap: calc(100vw / 19.47);
   }
 
   .button * {
-    font-size: 18px;
+    font-size: calc(100vw / 19.47);
   }
 
   .linkFoundedButton {
-    font-size: 15px;
-    margin: 16px 0;
+    font-size: calc(100vw / 24.34);
+    margin: calc(100vw / 19.47) 0;
+    width: calc(100vw / 1.95);
   }
 }

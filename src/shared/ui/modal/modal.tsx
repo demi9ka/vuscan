@@ -27,15 +27,14 @@ export const Modal = ({ onClose, opened, children, title, className, ...props }:
           {isMobile ? (
             <>
               <div className={css.closeWrapper} onClick={onClose}>
-                <BackIcon className={css.close} onClick={onClose} />
+                <BackIcon className={css.close} />
               </div>
               <h3 className={css.title}>{title}</h3>
             </>
           ) : (
             <>
-              <h1 className={css.title}>{title}</h1>
-
-              <CrossIcon className={css.close} />
+              <h2 className={css.title}>{title}</h2>
+              <CrossIcon className={css.close} onClick={onClose} />
             </>
           )}
         </div>

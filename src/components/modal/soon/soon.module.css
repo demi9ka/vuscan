@@ -51,7 +51,7 @@
     width: calc(100vw / 3.84);
   }
 }
-@media screen and (max-width: 360px) {
+@media screen and (max-width: 390px) {
   .scrollArea {
     border-radius: 0;
     height: auto; /* 527px */

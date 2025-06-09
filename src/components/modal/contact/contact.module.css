@@ -18,7 +18,7 @@
   font-weight: 500;
 }
 
-@media screen and (max-width: 1680px) {
+@media screen and (max-width: 1920px) {
   .text {
     font-size: calc(100vw / 96); /* 20px */
     margin-top: calc(100vw / 120); /* 16px */

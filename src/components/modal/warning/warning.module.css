@@ -26,7 +26,7 @@
 .button {
   width: 100%;
 }
-@media screen and (max-width: 1680px) {
+@media screen and (max-width: 1920px) {
   .imageWrapper {
     width: calc(100vw / 12.8); /* 150px */
     height: calc(100vw / 12.8); /* 150px */
@@ -41,35 +41,33 @@
     font-size: calc(100vw / 120); /* 16px */
   }
 }
-@media (max-width: 480px) {
+@media screen and (max-width: 768px) {
   .imageWrapper {
-    width: 80px;
-    height: 80px;
+    width: calc(100vw / 5.12); /* примерно 150px * 2.5 */
+    height: calc(100vw / 5.12); /* примерно 150px * 2.5 */
   }
 
   .title {
-    font-size: 20px;
-    margin: 12px 0;
+    font-size: calc(100vw / 21.33); /* примерно 36px * 2.5 */
+    margin: calc(100vw / 38.4) 0; /* примерно 20px * 2.5 0 */
   }
 
   .text {
-    font-size: 14px;
+    font-size: calc(100vw / 48); /* примерно 16px * 2.5 */
   }
 }
-
-/* Адаптив для планшетов */
-@media (max-width: 768px) and (min-width: 481px) {
+@media screen and (max-width: 390px) {
   .imageWrapper {
-    width: 120px;
-    height: 120px;
+    width: calc(100vw / 3.5); /* Примерно 150px * 2.5 * 0.507 */
+    height: calc(100vw / 3.5); /* Примерно 150px * 2.5 * 0.507 */
   }
 
   .title {
-    font-size: 28px;
-    margin: 16px 0;
+    font-size: calc(100vw / 17); /* Примерно 36px * 2.5 * 0.507 */
+    margin: calc(100vw / 19.47) 0; /* Примерно 20px * 2.5 * 0.507 0 */
   }
 
   .text {
-    font-size: 16px;
+    font-size: calc(100vw / 28); /* Примерно 16px * 2.5 * 0.507 */
   }
 }

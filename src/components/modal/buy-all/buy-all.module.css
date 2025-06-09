@@ -80,7 +80,7 @@
   padding: 5px 18px;
 }
 
-@media screen and (max-width: 1680px) {
+@media screen and (max-width: 1920px) {
   .description {
     padding: calc(100vw / 240) calc(100vw / 120);
     border-radius: calc(100vw / 320);

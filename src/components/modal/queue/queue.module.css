@@ -24,7 +24,7 @@
   margin: 20px 0;
   color: var(--text-5);
 }
-@media screen and (max-width: 1680px) {
+@media screen and (max-width: 1920px) {
   .text {
     margin-top: calc(100vw / 120); /* 16px */
     font-size: calc(100vw / 96);
@@ -47,49 +47,49 @@
     margin: calc(100vw / 96) 0; /* 20px 0 */
   }
 }
-@media (max-width: 480px) {
+@media screen and (max-width: 768px) {
   .text {
-    margin-top: 12px;
-    font-size: 16px;
+    margin-top: calc(100vw / 48); /* примерно 16px * 2.5 */
+    font-size: calc(100vw / 38.4);
   }
 
   .emailInput {
-    margin: 24px 0 12px 0;
-    border-radius: 8px;
-    padding: 8px 16px;
-    font-size: 16px;
+    margin: calc(100vw / 21.33) 0 calc(100vw / 48) 0; /* 36px 0 16px 0 */
+    border-radius: calc(100vw / 64); /* 12px */
+    padding: calc(100vw / 69.82) calc(100vw / 38.4); /* 11px 20px */
+    font-size: calc(100vw / 38.4); /* 20px */
   }
 
   .button {
-    font-size: 16px;
+    width: 100%;
+    font-size: calc(100vw / 38.4); /* 20px */
   }
 
   .variant {
-    font-size: 14px;
-    margin: 16px 0;
+    font-size: calc(100vw / 42.67); /* 18px */
+    margin: calc(100vw / 38.4) 0; /* 20px 0 */
   }
 }
-
-/* Адаптив для планшетов */
-@media (max-width: 768px) and (min-width: 481px) {
+@media screen and (max-width: 390px) {
   .text {
-    margin-top: 14px;
-    font-size: 18px;
+    margin-top: calc(100vw / 24.34); /* примерно 16px * 2.5 * 0.507 */
+    font-size: calc(100vw / 19.47);
   }
 
   .emailInput {
-    margin: 30px 0 14px 0;
-    border-radius: 10px;
-    padding: 9px 18px;
-    font-size: 18px;
+    margin: calc(100vw / 10.81) 0 calc(100vw / 24.34) 0; /* 36px 0 16px 0 */
+    border-radius: calc(100vw / 32.45); /* 12px */
+    padding: calc(100vw / 35.39) calc(100vw / 19.47); /* 11px 20px */
+    font-size: calc(100vw / 19.47); /* 20px */
   }
 
   .button {
-    font-size: 18px;
+    width: 100%;
+    font-size: calc(100vw / 19.47); /* 20px */
   }
 
   .variant {
-    font-size: 16px;
-    margin: 18px 0;
+    font-size: calc(100vw / 21.63); /* 18px */
+    margin: calc(100vw / 19.47) 0; /* 20px 0 */
   }
 }
