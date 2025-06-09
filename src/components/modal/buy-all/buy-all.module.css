@@ -82,61 +82,60 @@
 
 @media screen and (max-width: 1680px) {
   .description {
-    padding: calc(100vw / 240) calc(100vw / 120); /* 8px 16px */
+    padding: calc(100vw / 240) calc(100vw / 120);
     border-radius: calc(100vw / 320);
-    margin-top: calc(100vw / 120); /* 16px */
+    margin-top: calc(100vw / 120);
     font-size: calc(100vw / 120);
   }
 
   .title {
-    margin: calc(100vw / 120) calc(100vw / 240); /* 16px 0 */
+    margin: calc(100vw / 120) calc(100vw / 240);
     font-size: calc(100vw / 80);
   }
 
   .content {
-    padding: calc(100vw / 384) calc(100vw / 192); /* 5px 10px */
-    min-height: calc(100vw / 9.6); /* 200px */
-    border-radius: calc(100vw / 320); /* 6px */
+    padding: calc(100vw / 384) calc(100vw / 192);
+    min-height: calc(100vw / 9.6);
+    border-radius: calc(100vw / 320);
   }
 
   .packageInfo {
-    margin-top: calc(100vw / 384); /* 5px */
+    margin-top: calc(100vw / 384);
   }
 
   .packageTitle {
-    font-size: calc(100vw / 106.667); /* 18px */
+    font-size: calc(100vw / 106.667);
   }
 
   .packageButton {
-    width: calc(100vw / 13.714); /* 140px */
-    font-size: calc(100vw / 120); /* 16px */
-    padding: calc(100vw / 384); /* 5px */
+    width: calc(100vw / 13.714);
+    font-size: calc(100vw / 120); /* 5px */
   }
   .button {
     margin-top: calc(100vw / 96);
   }
   .buttonTitle {
-    font-size: calc(100vw / 96); /* 20px */
+    font-size: calc(100vw / 96);
   }
 
   .priceWrapper {
-    gap: calc(100vw / 192); /* 10px */
+    gap: calc(100vw / 192);
   }
 
   .oldPrice {
-    font-size: calc(100vw / 87.273); /* 22px */
+    font-size: calc(100vw / 87.273);
   }
 
   .newPrice {
-    font-size: calc(100vw / 73.846); /* 26px */
+    font-size: calc(100vw / 73.846);
   }
 
   .discount {
-    top: calc(-100vw / 192); /* -10px */
-    left: calc(-100vw / 64); /* -30px */
-    font-size: calc(100vw / 120); /* 16px */
-    border-radius: 100px; /* фиксированное значение */
-    padding: calc(100vw / 384) calc(100vw / 106.667); /* 5px 18px */
+    top: calc(-100vw / 192);
+    left: calc(-100vw / 64);
+    font-size: calc(100vw / 120);
+    border-radius: 100px;
+    padding: calc(100vw / 384) calc(100vw / 106.667);
   }
 }
 @media (max-width: 480px) {

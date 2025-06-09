@@ -35,3 +35,10 @@ export const LockIcon = (props: WrapperProps) => {
     </SVGWrapper>
   )
 }
+export const BackIcon = (props: WrapperProps) => {
+  return (
+    <SVGWrapper {...props}>
+      <img style={svgStyle} src='/back.svg' />
+    </SVGWrapper>
+  )
+}

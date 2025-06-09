@@ -78,6 +78,7 @@ button.button {
     padding: calc(100vw / 21.66) calc(100vw / 24.375);
     border-radius: 0 0 calc(100vw / 32.5) calc(100vw / 32.5);
     transform: translateY(calc(-100vw / 39));
+    z-index: 6;
   }
   .link {
     font-size: calc(100vw / 24.375);

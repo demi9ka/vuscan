@@ -3,12 +3,16 @@ import { useLocation, useNavigate } from 'react-router-dom'
 import css from './card-info.module.css'
 import { useTranslation } from 'react-i18next'
 import { cardsData } from '@/helpers'
+import { useMediaQuery } from '@/hooks'
+import { Level } from '@/shared/ui/level'
+import React from 'react'
 
 type Props = {
   id: number
 }
 
 export const CardInfo = ({ id }: Props) => {
+  const isMobile = useMediaQuery('(max-width: 390px)')
   const { t } = useTranslation()
   const navigate = useNavigate()
   const location = useLocation()
@@ -41,18 +45,22 @@ export const CardInfo = ({ id }: Props) => {
 
   return (
     <Modal
-      style={{
-        boxShadow: `0px 0px 12px ${color}`
-      }}
+      className={css.modal}
+      style={
+        {
+          '--primary-color': color
+        } as React.CSSProperties
+      }
+      title={isMobile ? t(`home.levels.${id}.title`) : ''}
       opened={opened}
       onClose={onClose}
     >
       <div className={css.center}>
-        <div className={css.level} style={{ color, boxShadow: `inset 0px 0px 12px ${color}` }}>
-          {t(`home.levels.${id}.level`)}
+        <div className={css.levelWrapper}>
+          <Level color={color} text={t(`home.levels.${id}.level`)} />
         </div>
       </div>
-      <h1 className={css.title}>{t(`home.levels.${id}.title`)}</h1>
+      {isMobile ? <></> : <h3 className={css.title}>{t(`home.levels.${id}.title`)}</h3>}
       {infoMapped}
       <div className={css.center}>
         <Button variant='default' className={css.button} onClick={onClose}>

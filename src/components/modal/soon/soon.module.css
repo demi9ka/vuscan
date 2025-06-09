@@ -11,19 +11,15 @@
   overflow-y: auto;
   margin: 20px 0;
 }
-.title {
-  font-family: var(--ff-Eesti);
-  font-size: 32px;
-  font-weight: 400;
-  text-align: center;
-}
 .info {
   margin-top: 10px;
-  font-size: 20px;
+  font-size: 16px;
   line-height: 155%;
 }
-
-@media screen and (max-width: 1680px) {
+.button {
+  width: 200px;
+}
+@media screen and (max-width: 1920px) {
   .scrollArea {
     border-radius: calc(100vw / 160); /* 12px */
     height: calc(100vw / 3.643); /* 527px */
@@ -31,48 +27,44 @@
     margin: calc(100vw / 96) 0; /* 20px 0 */
   }
 
-  .title {
-    font-size: calc(100vw / 60); /* 32px */
+  .info {
+    margin-top: calc(100vw / 192); /* 10px */
+    font-size: calc(100vw / 120); /* 20px */
+  }
+  .button {
+    width: calc(100vw / 9.6);
+  }
+}
+@media screen and (max-width: 768px) {
+  .scrollArea {
+    border-radius: calc(100vw / 160); /* 12px */
+    height: calc(100vw / 2); /* 527px */
+    padding: calc(100vw / 120); /* 16px */
+    margin: calc(100vw / 96) 0; /* 20px 0 */
   }
 
   .info {
     margin-top: calc(100vw / 192); /* 10px */
-    font-size: calc(100vw / 96); /* 20px */
+    font-size: calc(100vw / 48); /* 20px */
+  }
+  .button {
+    width: calc(100vw / 3.84);
   }
 }
-@media (max-width: 480px) {
+@media screen and (max-width: 360px) {
   .scrollArea {
-    border-radius: 8px;
-    height: 360px;
-    padding: 12px;
-    margin: 12px 0;
-  }
-
-  .title {
-    font-size: 20px;
+    border-radius: 0;
+    height: auto; /* 527px */
+    padding: 0; /* 16px */
+    background-color: transparent;
+    margin: 0; /* 20px 0 */
   }
 
   .info {
-    margin-top: 8px;
-    font-size: 16px;
+    margin-top: calc(100vw / 192); /* 10px */
+    font-size: calc(100vw / 24.336); /* 20px */
   }
-}
-
-/* Адаптив для планшетов */
-@media (max-width: 768px) and (min-width: 481px) {
-  .scrollArea {
-    border-radius: 10px;
-    height: 560px;
-    padding: 14px;
-    margin: 16px 0;
-  }
-
-  .title {
-    font-size: 24px;
-  }
-
-  .info {
-    margin-top: 10px;
-    font-size: 18px;
+  .button {
+    display: none;
   }
 }
