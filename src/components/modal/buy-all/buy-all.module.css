@@ -42,6 +42,7 @@
   align-items: center;
   justify-content: space-between;
   margin-top: 20px;
+  padding: 10px 20px;
 }
 .buttonTitle {
   font-family: var(--ff-Eesti);
@@ -113,6 +114,7 @@
   }
   .button {
     margin-top: calc(100vw / 96);
+    padding: calc(100vw / 174.54) calc(100vw / 96);
   }
   .buttonTitle {
     font-size: calc(100vw / 96);
@@ -138,125 +140,126 @@
     padding: calc(100vw / 384) calc(100vw / 106.667);
   }
 }
-@media (max-width: 480px) {
+@media screen and (max-width: 768px) {
   .description {
-    padding: 8px 16px;
-    border-radius: 6px;
-    margin-top: 12px;
-    font-size: 14px;
+    padding: calc(100vw / 96) calc(100vw / 48);
+    border-radius: calc(100vw / 128);
+    margin-top: calc(100vw / 48);
+    font-size: calc(100vw / 48);
   }
 
   .title {
-    margin: 12px 8px;
-    font-size: 18px;
+    margin: calc(100vw / 48) calc(100vw / 96);
+    font-size: calc(100vw / 32);
   }
 
   .content {
-    padding: 5px 10px;
-    min-height: 150px;
-    border-radius: 6px;
+    padding: calc(100vw / 153.6) calc(100vw / 76.8);
+    min-height: calc(100vw / 3.84);
+    border-radius: calc(100vw / 128);
   }
 
   .packageInfo {
-    margin-top: 5px;
+    margin-top: calc(100vw / 153.6);
   }
 
   .packageTitle {
-    font-size: 16px;
+    font-size: calc(100vw / 42.67);
   }
 
   .packageButton {
-    width: 120px;
-    font-size: 14px;
-    padding: 5px;
+    width: calc(100vw / 5.49);
+    font-size: calc(100vw / 48);
   }
 
   .button {
-    margin-top: 10px;
+    margin-top: calc(100vw / 38.4);
+    padding: calc(100vw / 69.816) calc(100vw / 38.4);
   }
 
   .buttonTitle {
-    font-size: 16px;
+    font-size: calc(100vw / 38.4);
   }
 
   .priceWrapper {
-    gap: 8px;
+    gap: calc(100vw / 76.8);
   }
 
   .oldPrice {
-    font-size: 18px;
+    font-size: calc(100vw / 34.91);
   }
 
   .newPrice {
-    font-size: 20px;
+    font-size: calc(100vw / 29.54);
   }
 
   .discount {
-    top: -10px;
-    left: -20px;
-    font-size: 14px;
-    padding: 5px 12px;
+    top: calc(-100vw / 76.8);
+    left: calc(-100vw / 25.6);
+    font-size: calc(100vw / 48);
+    border-radius: 100px;
+    padding: calc(100vw / 153.6) calc(100vw / 42.67);
   }
 }
-
-/* Адаптив для планшетов */
-@media (max-width: 768px) and (min-width: 481px) {
+@media screen and (max-width: 390px) {
   .description {
-    padding: 10px 20px;
-    border-radius: 8px;
-    margin-top: 14px;
-    font-size: 16px;
+    padding: calc(100vw / 48.67) calc(100vw / 24.34);
+    border-radius: calc(100vw / 64.9);
+    margin-top: calc(100vw / 24.34);
+    font-size: calc(100vw / 24.34);
   }
 
   .title {
-    margin: 14px 10px;
-    font-size: 20px;
+    margin: calc(100vw / 24.34) calc(100vw / 48.67);
+    font-size: calc(100vw / 16.22);
   }
 
   .content {
-    padding: 6px 12px;
-    min-height: 180px;
-    border-radius: 8px;
+    padding: calc(100vw / 77.87) calc(100vw / 39);
+    min-height: calc(100vw / 1.95);
+    border-radius: calc(100vw / 64.9);
   }
 
   .packageInfo {
-    margin-top: 6px;
+    gap: calc(100vw / 78);
+    margin-top: calc(100vw / 77.87);
   }
 
   .packageTitle {
-    font-size: 17px;
+    font-size: calc(100vw / 26);
   }
 
   .packageButton {
-    width: 130px;
-    font-size: 15px;
-    padding: 6px;
+    width: calc(100vw / 2.78);
+    font-size: calc(100vw / 24.34);
   }
 
   .button {
-    margin-top: 12px;
+    margin-top: calc(100vw / 19.47);
+    padding: calc(100vw / 35.39) calc(100vw / 19.46);
   }
 
   .buttonTitle {
-    font-size: 18px;
+    font-size: calc(100vw / 19.47);
   }
 
   .priceWrapper {
-    gap: 9px;
+    gap: calc(100vw / 39);
   }
 
   .oldPrice {
-    font-size: 20px;
+    font-size: calc(100vw / 17.7);
   }
 
   .newPrice {
-    font-size: 22px;
+    font-size: calc(100vw / 14.97);
   }
 
   .discount {
-    top: -12px;
-    left: -25px;
-    font-size: 15px;
-    padding: 6px 14px;
+    top: calc(-100vw / 39);
+    left: calc(-100vw / 12.98);
+    font-size: calc(100vw / 24.34);
+    border-radius: 100px;
+    padding: calc(100vw / 77.87) calc(100vw / 21.63);
   }
 }

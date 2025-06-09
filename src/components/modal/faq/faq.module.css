@@ -14,6 +14,7 @@
 
 .button {
   margin-top: 20px;
+  width: 200px;
 }
 .question {
   border-bottom: 1px solid var(--border);
@@ -50,6 +51,7 @@
 
   .button {
     margin-top: calc(100vw / 96);
+    width: calc(100vw / 9.6);
   }
 
   .questionHeader {
@@ -79,6 +81,7 @@
 
   .button {
     margin-top: calc(100vw / 38.4);
+    width: calc(100vw / 3.84);
   }
 
   .questionHeader {

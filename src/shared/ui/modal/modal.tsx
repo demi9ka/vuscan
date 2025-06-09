@@ -33,7 +33,7 @@ export const Modal = ({ onClose, opened, children, title, className, ...props }:
             </>
           ) : (
             <>
-              <h2 className={css.title}>{title}</h2>
+              <p className={css.title}>{title}</p>
               <CrossIcon className={css.close} onClick={onClose} />
             </>
           )}

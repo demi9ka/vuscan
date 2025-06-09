@@ -63,7 +63,7 @@ export const OpenPackage = observer(({ id }: Props) => {
       <div className={css.levelWrapper}>
         <Level text={t(`home.levels.${id}.level`)} color='var(--error)' />
       </div>
-      <h2 className={css.title}>{t(`home.levels.${id}.title`)}</h2>
+      <p className={css.title}>{t(`home.levels.${id}.title`)}</p>
       <p className={css.description}>{t('modal.open-package.description')}</p>
       <div className={css.center}>
         <Button className={css.linkFoundedButton} variant='error'>

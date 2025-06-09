@@ -1,7 +1,10 @@
 import { toast as showToast, ToastContainerProps } from 'react-toastify'
 
 export const toast = (content: string, variant?: 'success' | 'error') => {
-  showToast[variant || 'error'](content)
+  content
+  variant
+  showToast
+  // showToast[variant || 'error'](content)
 }
 
 export const toastContainerProps: ToastContainerProps = {

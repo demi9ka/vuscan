@@ -43,7 +43,7 @@ export const BuyAll = observer(() => {
   return (
     <Modal title={t('modal.buy-all.title')} onClose={onClose} opened={opened}>
       <p className={css.description}>{t('modal.buy-all.description')}</p>
-      <h2 className={css.title}>{t('modal.buy-all.content-title')}</h2>
+      <p className={css.title}>{t('modal.buy-all.content-title')}</p>
       <div className={css.content}>{contentMapped}</div>
 
       <Button disabled={isPending || !scannerId} onClick={onBuyAll} className={css.button} variant='gradient'>

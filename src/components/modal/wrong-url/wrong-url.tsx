@@ -22,10 +22,10 @@ export const WrongUrl = () => {
     <Modal opened={opened} className={css.modal} onClose={onClose}>
       <div className={css.center}>
         <div className={css.imageWrapper}>
-          <img src='/level3.webp' alt='' />
+          <img src='/level3.webp' alt='level3' />
         </div>
       </div>
-      <h2 className={css.title}>{t(`modal.wrong-url.title`)}</h2>
+      <p className={css.title}>{t(`modal.wrong-url.title`)}</p>
       <p className={css.text}>{t(`modal.wrong-url.text`)}</p>
       <Button variant='gradient' className={css.button} onClick={onClose}>
         {t(`global.close`)}

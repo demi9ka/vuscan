@@ -13,7 +13,7 @@ export const Content = ({ logo, isRenderErrorBoxShadow, id }: Props) => {
     <div className={css.wrapper}>
       <div className={css.avatarWrapper}>
         <div className={css.logoWrapper}>
-          <img src={logo} />
+          <img src={logo} alt='logo'/>
         </div>
         {isRenderErrorBoxShadow ? <div className={css.errorBoxShadow} /> : <></>}
       </div>

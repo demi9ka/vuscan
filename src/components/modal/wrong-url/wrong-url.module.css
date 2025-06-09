@@ -37,12 +37,12 @@
   }
 
   .title {
-    font-size: calc(100vw / 68.57);
+    font-size: calc(100vw / 64.57);
     margin-bottom: calc(100vw / 160);
   }
 
   .text {
-    font-size: calc(100vw / 160);
+    font-size: calc(100vw / 120);
   }
 
   .button {
@@ -61,7 +61,7 @@
   }
 
   .text {
-    font-size: calc(100vw / 64);
+    font-size: calc(100vw / 48);
   }
 
   .button {
@@ -80,7 +80,7 @@
   }
 
   .text {
-    font-size: calc(100vw / 32.45);
+    font-size: calc(100vw / 25);
   }
 
   .button {
