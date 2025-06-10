@@ -12,7 +12,7 @@
     min-height: calc(100vw / 1.7);
   }
 }
-@media screen and (max-width: 390px) {
+@media screen and (max-width: 480px) {
   .wrapper {
     padding: 0 calc(100vw / 24.375);
     overflow-x: auto;

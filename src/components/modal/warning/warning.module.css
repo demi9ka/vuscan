@@ -56,7 +56,7 @@
     font-size: calc(100vw / 48); /* примерно 16px * 2.5 */
   }
 }
-@media screen and (max-width: 390px) {
+@media screen and (max-width: 480px) {
   .imageWrapper {
     width: calc(100vw / 3.5); /* Примерно 150px * 2.5 * 0.507 */
     height: calc(100vw / 3.5); /* Примерно 150px * 2.5 * 0.507 */

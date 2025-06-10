@@ -52,7 +52,7 @@
     top: calc(-100vw / 51.2);
   }
 }
-@media screen and (max-width: 390px) {
+@media screen and (max-width: 480px) {
   .wrapper {
     min-width: auto;
     min-height: calc(100vw / 1.22);

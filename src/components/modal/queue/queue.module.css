@@ -70,7 +70,7 @@
     margin: calc(100vw / 38.4) 0; /* 20px 0 */
   }
 }
-@media screen and (max-width: 390px) {
+@media screen and (max-width: 480px) {
   .text {
     margin-top: calc(100vw / 24.34); /* примерно 16px * 2.5 * 0.507 */
     font-size: calc(100vw / 19.47);

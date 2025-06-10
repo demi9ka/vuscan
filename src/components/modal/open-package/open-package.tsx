@@ -28,7 +28,7 @@ export const OpenPackage = observer(({ id }: Props) => {
   const onClose = () => {
     navigate('/')
   }
-  const isMobile = useMediaQuery('(max-width: 390px)')
+  const isMobile = useMediaQuery('(max-width: 480px)')
 
   const activePackage = (packages || []).find(el => el.id == id)
   const fakeLinkList = useMemo(

@@ -61,7 +61,7 @@
     line-height: calc(100vw / 25.6);
   }
 }
-@media screen and (max-width: 390px) {
+@media screen and (max-width: 480px) {
   .wrapper {
     width: 100%;
     margin: calc(100vw / 19.5) auto calc(100vw / 11.14) auto;

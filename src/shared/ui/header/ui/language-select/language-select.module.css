@@ -44,7 +44,7 @@
     height: calc(100vw / 32);
   }
 }
-@media screen and (max-width: 390px) {
+@media screen and (max-width: 480px) {
   .wrapper {
     margin: calc(100vw / 31.7) 0;
     width: 100%;

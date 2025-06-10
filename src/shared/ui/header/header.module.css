@@ -36,7 +36,7 @@
     font-size: calc(100vw / 27.42);
   }
 }
-@media screen and (max-width: 390px) {
+@media screen and (max-width: 480px) {
   .header {
     padding: calc(100vw / 21.666) calc(100vw / 24.375);
   }

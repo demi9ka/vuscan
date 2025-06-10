@@ -12,7 +12,7 @@ type Props = {
 }
 
 export const CardInfo = ({ id }: Props) => {
-  const isMobile = useMediaQuery('(max-width: 390px)')
+  const isMobile = useMediaQuery('(max-width: 480px)')
   const { t } = useTranslation()
   const navigate = useNavigate()
   const location = useLocation()

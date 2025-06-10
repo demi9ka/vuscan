@@ -115,7 +115,7 @@
   }
 }
 
-@media screen and (max-width: 390px) {
+@media screen and (max-width: 480px) {
   .wrapper {
     background-image: url('/backgorund-image.webp');
     align-items: start;

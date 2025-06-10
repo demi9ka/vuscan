@@ -40,7 +40,7 @@
     font-size: calc(100vw / 48);
   }
 }
-@media screen and (max-width: 390px) {
+@media screen and (max-width: 480px) {
   .wrapper {
     margin-top: calc(100vw / 4.3);
     padding: 0 calc(100vw / 24.375);

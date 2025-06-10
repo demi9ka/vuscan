@@ -31,7 +31,7 @@
   }
 }
 
-@media screen and (max-width: 390px) {
+@media screen and (max-width: 480px) {
   .level {
     width: calc(100vw / 1.95);
     font-size: calc(100vw / 21.666);

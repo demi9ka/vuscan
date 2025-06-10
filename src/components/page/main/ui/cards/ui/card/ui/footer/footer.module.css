@@ -73,7 +73,7 @@
   }
 }
 
-@media screen and (max-width: 390px) {
+@media screen and (max-width: 480px) {
   .button {
     width: 100%;
     padding: calc(100vw / 35.45) 0;

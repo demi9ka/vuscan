@@ -71,7 +71,7 @@
     margin-top: calc(100vw / 38.4);
   }
 }
-@media (max-width: 390px) {
+@media (max-width: 480px) {
   .modal {
     box-shadow: 0 0 calc(100vw / 32.448) var(--primary-color);
   }

@@ -44,7 +44,7 @@
     line-height: calc(100vw / 25.6);
   }
 }
-@media screen and (max-width: 390px) {
+@media screen and (max-width: 480px) {
   .button {
     font-size: calc(100vw / 19.5);
     padding: calc(100vw / 35.454) 0;

@@ -11,7 +11,7 @@ type Props = {
 } & React.DetailedHTMLProps<React.HTMLAttributes<HTMLDivElement>, HTMLDivElement>
 
 export const Modal = ({ onClose, opened, children, title, className, ...props }: Props) => {
-  const isMobile = useMediaQuery('(max-width: 390px)')
+  const isMobile = useMediaQuery('(max-width: 480px)')
   useEffect(() => {
     const handleEsc = (event: KeyboardEvent) => event.key === 'Escape' && onClose()
     window.addEventListener('keydown', handleEsc)

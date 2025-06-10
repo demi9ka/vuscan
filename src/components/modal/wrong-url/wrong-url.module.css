@@ -68,7 +68,7 @@
     margin-top: calc(100vw / 38.4);
   }
 }
-@media screen and (max-width: 390px) {
+@media screen and (max-width: 480px) {
   .imageWrapper {
     width: calc(100vw / 3.04);
     height: calc(100vw / 3.04);

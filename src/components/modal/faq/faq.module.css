@@ -103,7 +103,7 @@
   }
 }
 
-@media (max-width: 390px) {
+@media (max-width: 480px) {
   .scrollArea {
     margin-top: 0;
     border-radius: 0;
