@@ -1,2 +1,2 @@
 export { NotFound } from './not-found'
-export { Home } from './home'
+export { Main } from './main'

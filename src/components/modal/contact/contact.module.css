@@ -18,7 +18,7 @@
   font-weight: 500;
 }
 
-@media screen and (max-width: 1680px) {
+@media screen and (max-width: 1920px) {
   .text {
     font-size: calc(100vw / 96); /* 20px */
     margin-top: calc(100vw / 120); /* 16px */
@@ -31,17 +31,31 @@
     font-size: calc(100vw / 96); /* 20px */
   }
 }
-@media screen and (max-width: 768px) {
+@media (max-width: 480px) {
   .text {
-    font-size: 20px;
-    margin-top: 16px;
+    font-size: 16px;
+    margin-top: 12px;
   }
+
   .emailInput {
-    margin: 60px 0 10px 0;
+    margin: 40px 0 8px 0;
+    border-radius: 8px;
+    padding: 8px 16px;
+    font-size: 16px;
+  }
+}
 
-    border-radius: 12px;
+/* Адаптив для планшетов */
+@media (max-width: 768px) and (min-width: 481px) {
+  .text {
+    font-size: 18px;
+    margin-top: 14px;
+  }
 
-    padding: 11px 20px;
-    font-size: 20px;
+  .emailInput {
+    margin: 50px 0 9px 0;
+    border-radius: 10px;
+    padding: 9px 18px;
+    font-size: 18px;
   }
 }

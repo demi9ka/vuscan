@@ -1,0 +1,32 @@
+/* @media (max-width: 480px) {
+  .button {
+    font-size: 14px; /* уменьшенный размер шрифта */
+    padding: 8px 16px; /* более компактные отступы */
+    border-radius: 8px; /* уменьшенный радиус скругления */
+  }
+} */
+
+/* Адаптив для планшетов (481-768px) */
+/* @media (max-width: 768px) and (min-width: 481px) {
+  .button {
+    font-size: 16px;
+    padding: 10px 20px;
+    border-radius: 10px;
+  }
+}
+@media (max-width: 480px) {
+  .button {
+    font-size: 14px; /* уменьшенный размер шрифта */
+    padding: 8px 16px; /* более компактные отступы */
+    border-radius: 8px; /* уменьшенный радиус скругления */
+  }
+}
+
+/* Адаптив для планшетов (481-768px) */
+@media (max-width: 768px) and (min-width: 481px) {
+  .button {
+    font-size: 16px;
+    padding: 10px 20px;
+    border-radius: 10px;
+  }
+} */

@@ -1,0 +1,126 @@
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 178px;
+}
+.avatarWrapper {
+  width: 80px;
+  height: 80px;
+  position: relative;
+  margin-bottom: 6px;
+}
+.logoWrapper {
+  position: relative;
+  z-index: 3;
+}
+.logoWrapper img {
+  z-index: 3;
+  width: 100%;
+  height: 100%;
+}
+.errorBoxShadow {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 80px;
+  height: 80px;
+  z-index: 1;
+  border-radius: 50%;
+  filter: blur(30px);
+  background-color: var(--error);
+}
+.title {
+  text-align: center;
+  font-weight: 700;
+  font-size: 17px;
+  line-height: 155%;
+}
+.description {
+  margin-top: 12px;
+  font-size: 13px;
+  color: var(--text-6);
+  letter-spacing: 0;
+  text-align: center;
+  line-height: 135%;
+}
+
+@media screen and (max-width: 1920px) {
+  .wrapper {
+    height: calc(100vw / 10.78);
+  }
+  .avatarWrapper {
+    width: calc(100vw / 24);
+    height: calc(100vw / 24);
+    margin-bottom: calc(100vw / 320);
+  }
+
+  .errorBoxShadow {
+    width: calc(100vw / 24);
+    height: calc(100vw / 24);
+    filter: blur(calc(100vw / 64));
+  }
+
+  .title {
+    font-size: calc(100vw / 113);
+  }
+
+  .description {
+    margin-top: calc(100vw / 160);
+    font-size: calc(100vw / 137);
+    line-height: 135%;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .wrapper {
+    height: calc(100vw / 4.31);
+  }
+  .avatarWrapper {
+    width: calc(100vw / 9.6);
+    height: calc(100vw / 9.6);
+    margin-bottom: calc(100vw / 128);
+  }
+
+  .errorBoxShadow {
+    width: calc(100vw / 9.6);
+    height: calc(100vw / 9.6);
+    filter: blur(calc(100vw / 25.6));
+  }
+
+  .title {
+    font-size: calc(100vw / 45.2);
+  }
+
+  .description {
+    margin-top: calc(100vw / 64);
+    font-size: calc(100vw / 54.8);
+    line-height: 135%;
+  }
+}
+@media screen and (max-width: 480px) {
+  .wrapper {
+    height: calc(100vw / 2.18);
+  }
+  .avatarWrapper {
+    width: calc(100vw / 4.87);
+    height: calc(100vw / 4.87);
+    margin-bottom: calc(100vw / 65);
+  }
+
+  .errorBoxShadow {
+    width: calc(100vw / 4.87);
+    height: calc(100vw / 4.87);
+    filter: blur(calc(100vw / 13));
+  }
+
+  .title {
+    font-size: calc(100vw / 22.97);
+  }
+
+  .description {
+    margin-top: calc(100vw / 31.7);
+    font-size: calc(100vw / 27.8);
+    line-height: 135%;
+  }
+}

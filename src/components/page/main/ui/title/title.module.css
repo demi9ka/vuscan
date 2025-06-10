@@ -1,0 +1,57 @@
+.wrapper {
+  margin-top: 190px;
+}
+.title,
+.subTitle {
+  text-align: center;
+  font-family: var(--ff-Eesti);
+}
+.title {
+  font-size: 52px;
+}
+.subTitle {
+  font-size: 20px;
+  color: var(--text-5);
+  margin-top: 20px;
+}
+
+@media screen and (max-width: 1920px) {
+  .wrapper {
+    margin-top: calc(100vw / 10.1);
+  }
+  .title {
+    font-size: calc(100vw / 36.92);
+  }
+  .subTitle {
+    margin-top: calc(100vw / 96);
+    font-size: calc(100vw / 96);
+  }
+}
+@media screen and (max-width: 768px) {
+  .wrapper {
+    margin-top: calc(100vw / 8.53);
+  }
+
+  .title {
+    font-size: calc(100vw / 27.4);
+  }
+  .subTitle {
+    margin-top: calc(100vw / 48);
+    font-size: calc(100vw / 48);
+  }
+}
+@media screen and (max-width: 480px) {
+  .wrapper {
+    margin-top: calc(100vw / 4.3);
+    padding: 0 calc(100vw / 24.375);
+  }
+  .title,
+  .title {
+    font-size: calc(100vw / 13.92);
+  }
+
+  .subTitle {
+    margin-top: calc(100vw / 24.375);
+    font-size: calc(100vw / 24.375);
+  }
+}

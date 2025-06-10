@@ -10,8 +10,8 @@
   width: 100%;
   display: flex;
   justify-content: center;
-  background-image: url('backgorund-image.png');
   background-size: cover;
   background-position: center center;
   background-repeat: no-repeat;
+  background-image: url('/backgorund-image.webp');
 }

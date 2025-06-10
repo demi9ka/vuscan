@@ -1,0 +1,24 @@
+.wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@media screen and (max-width: 768px) {
+  .wrapper {
+    justify-content: start;
+    overflow-x: auto;
+    overflow-y: visible;
+    min-height: calc(100vw / 1.7);
+  }
+}
+@media screen and (max-width: 480px) {
+  .wrapper {
+    padding: 0 calc(100vw / 24.375);
+    overflow-x: auto;
+    overflow-y: auto;
+    flex-direction: column;
+    justify-content: start;
+    height: auto;
+  }
+}

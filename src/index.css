@@ -41,19 +41,6 @@
   font-style: normal;
 }
 
-* {
-  /* user-select: none; */
-  padding: 0;
-  margin: 0;
-  outline: 0;
-  font-weight: 400;
-  border: 0;
-  box-sizing: border-box;
-  text-decoration: none;
-  color: var(--text);
-  font-family: var(--ff-Manrope);
-}
-
 :root {
   --accent: #ff8800;
   --error: #fb0000;
@@ -69,11 +56,58 @@
   --ff-Eesti: 'Eesti';
 }
 
-.Toastify__toast-icon svg {
-  width: 40px !important; /* нужная ширина */
-  height: 40px !important; /* нужная высота */
+* {
+  /* user-select: none; */
+  padding: 0;
+  margin: 0;
+  outline: 0;
+  font-weight: 400;
+  border: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+  color: var(--text);
+  font-family: var(--ff-Manrope);
+  font-size: 16px;
+  line-height: 30px;
+  list-style-type: none;
+  -webkit-tap-highlight-color: transparent; /* Убирает синий подсвет */
+  -webkit-touch-callout: none; /* Отключает контекстное меню на iOS */
+  -webkit-user-select: none; /* Запрещает выделение текста */
 }
-.Toastify__toast-container {
-  --toastify-toast-width: 400px;
-  --toastify-toast-padding: 15px 30px;
+@media screen and (max-width: 1920px) {
+  * {
+    line-height: calc(100vw / 64);
+    font-size: calc(100vw / 120);
+  }
+}
+@media screen and (max-width: 768px) {
+  * {
+    line-height: calc(100vw / 25.6);
+    font-size: calc(100vw / 48);
+  }
+}
+@media screen and (max-width: 480px) {
+  * {
+    line-height: calc(100vw / 13);
+    font-size: calc(100vw / 24.375);
+  }
+}
+
+.Toastify__toast-icon {
+  width: 22px;
+}
+@media screen and (max-width: 1920px) {
+  .Toastify__toast-icon {
+    width: calc(100vw / 85.27);
+  }
+}
+@media screen and (max-width: 768px) {
+  .Toastify__toast-icon {
+    width: calc(100vw / 32.9);
+  }
+}
+@media screen and (max-width: 480px) {
+  .Toastify__toast-icon {
+    width: calc(100vw / 15.69);
+  }
 }

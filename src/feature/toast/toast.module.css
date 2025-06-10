@@ -1,0 +1,37 @@
+.toast {
+  --toastify-toast-padding: 14px;
+  --toastify-toast-min-height: 64px;
+  --toastify-toast-width: 320px;
+  font-size: 18px;
+  font-family: var(--ff-Manrope);
+  padding: var(--toastify-toast-padding);
+  min-height: var(--toastify-toast-min-height);
+  width: var(--toastify-toast-width);
+  background-color: var(--dark);
+  border: 1px solid var(--border);
+}
+
+@media screen and (max-width: 1920px) {
+  .toast {
+    --toastify-toast-padding: calc(100vw / 137.14);
+    --toastify-toast-min-height: calc(100vw / 30);
+    --toastify-toast-width: calc(100vw / 5.06);
+    font-size: calc(100vw / 106.6);
+  }
+}
+@media screen and (max-width: 768px) {
+  .toast {
+    --toastify-toast-padding: calc(100vw / 109.71);
+    --toastify-toast-min-height: calc(100vw / 12);
+    --toastify-toast-width: calc(100vw / 2.025);
+    font-size: calc(100vw / 42.66);
+  }
+}
+@media screen and (max-width: 480px) {
+  .toast {
+    --toastify-toast-padding: calc(100vw / 27.85);
+    --toastify-toast-min-height: calc(100vw / 6.084);
+    --toastify-toast-width: calc(100vw / 1.026);
+    font-size: calc(100vw / 21.666);
+  }
+}

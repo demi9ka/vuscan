@@ -19,7 +19,7 @@
   margin-top: 20px;
   width: 200px;
 }
-@media screen and (max-width: 1680px) {
+@media screen and (max-width: 1920px) {
   .scrollArea {
     height: calc(100vw / 2.95);
     margin-top: calc(100vw / 120);
@@ -36,16 +36,33 @@
 }
 @media screen and (max-width: 768px) {
   .scrollArea {
-    margin-top: 16px;
-    border-radius: 12px;
-    padding: 8px;
-    height: 650px;
+    height: calc(100vw / 1.18);
+    margin-top: calc(100vw / 48);
+    border-radius: calc(100vw / 64);
+    padding: calc(100vw / 96);
   }
   .info {
-    font-size: 16px;
+    font-size: calc(100vw / 48);
   }
   .button {
-    margin-top: 20px;
-    width: 200px;
+    margin-top: calc(100vw / 38.4);
+    width: calc(100vw / 3.84);
+  }
+}
+@media screen and (max-width: 480px) {
+  .scrollArea {
+    height: auto;
+    margin: 0;
+    border-radius: 0;
+    background-color: transparent;
+    padding: 0;
+    overflow-y: visible;
+  }
+  .info {
+    font-size: calc(100vw / 24.375);
+    margin-top: calc(100vw / 30);
+  }
+  .button {
+    display: none;
   }
 }

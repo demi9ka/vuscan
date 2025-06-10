@@ -39,7 +39,6 @@ export const Queue = () => {
   }
 
   const onSubmit = async (formData: FormDataType) => {
-    console.log(2222)
     const { result } = await mutateAsync(formData)
     if (result) {
       toast('Вы успешно оставили заявку', 'success')

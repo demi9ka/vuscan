@@ -51,10 +51,10 @@ export const Warning = observer(() => {
     <Modal opened={opened} onClose={onClose}>
       <div className={css.center}>
         <div className={css.imageWrapper}>
-          <img src='/money.png' alt='' />
+          <img src='/money.webp' alt='level3' />
         </div>
       </div>
-      <h1 className={css.title}>{t(`modal.warning.title`)}</h1>
+      <p className={css.title}>{t(`modal.warning.title`)}</p>
       {textMapped}
       <p className={css.text} style={{ marginTop: '36px', marginBottom: '16px' }}>
         {t(`modal.warning.approval`)}

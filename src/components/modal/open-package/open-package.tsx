@@ -7,6 +7,8 @@ import { useBuyPackage } from '@/entities/scanner'
 import { Button, LockIcon, Modal } from '@/shared/ui'
 import { combaneCSS, generateRandomLinks } from '@/helpers'
 import { useMemo } from 'react'
+import { Level } from '@/shared/ui/level'
+import { useMediaQuery } from '@/hooks'
 
 type Props = {
   id: number
@@ -26,6 +28,7 @@ export const OpenPackage = observer(({ id }: Props) => {
   const onClose = () => {
     navigate('/')
   }
+  const isMobile = useMediaQuery('(max-width: 480px)')
 
   const activePackage = (packages || []).find(el => el.id == id)
   const fakeLinkList = useMemo(
@@ -56,11 +59,11 @@ export const OpenPackage = observer(({ id }: Props) => {
   ))
 
   return (
-    <Modal onClose={onClose} className={css.modal} opened={opened}>
-      <div className={css.center}>
-        <div className={css.level}>{t(`home.levels.${id}.level`)}</div>
+    <Modal onClose={onClose} title={isMobile ? t(`home.levels.${id}.title`) : ''} className={css.modal} opened={opened}>
+      <div className={css.levelWrapper}>
+        <Level text={t(`home.levels.${id}.level`)} color='var(--error)' />
       </div>
-      <h1 className={css.title}>{t(`home.levels.${id}.title`)}</h1>
+      <p className={css.title}>{t(`home.levels.${id}.title`)}</p>
       <p className={css.description}>{t('modal.open-package.description')}</p>
       <div className={css.center}>
         <Button className={css.linkFoundedButton} variant='error'>

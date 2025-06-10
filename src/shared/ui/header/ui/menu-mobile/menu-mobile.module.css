@@ -1,39 +1,94 @@
 .wrapper {
   position: relative;
 }
+.icon {
+  width: 32px;
+  height: 32px;
+  transition: 0.1s;
+}
 .menu {
   position: absolute;
   visibility: hidden;
   opacity: 0;
-  top: 50px;
-
-  right: -17px;
-  border: 1px solid var(--border);
-  width: 240px;
+  top: 45px;
+  z-index: 4;
+  right: -11px;
+  width: 222px;
   display: flex;
   flex-direction: column;
   transition: 0.1s;
-  padding: 12px;
-  border-radius: 12px;
+  padding: 18px 16px;
+  border-radius: 0 0 12px 12px;
   background-color: var(--dark-5);
+  transform: translateY(-10px);
 }
 .menu.opened {
   visibility: visible;
-  top: 60px;
   opacity: 1;
+  transform: translateY(0);
 }
 
 .link {
-  padding: 12px 0;
   font-weight: 700;
 }
 .link.disable {
   color: var(--text-6);
 }
-.button {
+button.button {
   width: 100%;
   font-weight: 700;
   font-size: 14px;
-  padding: 12px 0;
-  border-radius: 8px;
+  padding: 7px 0;
+}
+
+@media screen and (max-width: 768px) {
+  .icon {
+    width: calc(100vw / 24);
+    height: calc(100vw / 24);
+  }
+  .menu {
+    top: calc(100vw / 17.06);
+    right: calc(-100vw / 69.81);
+    width: calc(100vw / 3.45);
+    padding: calc(100vw / 42.66) calc(100vw / 48);
+    border-radius: 0 0 calc(100vw / 64) calc(100vw / 64);
+    transform: translateY(calc(-100vw / 76.8));
+  }
+  .link {
+    font-size: calc(100vw / 48);
+  }
+  .linkWrapper {
+    padding: calc(100vw / 96) 0;
+  }
+  button.button {
+    font-size: calc(100vw / 54.85);
+    padding: calc(100vw / 201) 0;
+    font-weight: 500;
+  }
+}
+@media screen and (max-width: 480px) {
+  .icon {
+    width: calc(100vw / 12.18);
+    height: calc(100vw / 12.18);
+  }
+  .menu {
+    top: calc(100vw / 10);
+    right: calc(-100vw / 36);
+    width: calc(100vw / 1.75);
+    padding: calc(100vw / 21.66) calc(100vw / 24.375);
+    border-radius: 0 0 calc(100vw / 32.5) calc(100vw / 32.5);
+    transform: translateY(calc(-100vw / 39));
+    z-index: 6;
+  }
+  .link {
+    font-size: calc(100vw / 24.375);
+  }
+  button.button {
+    font-size: calc(100vw / 27.8);
+    padding: calc(100vw / 100) 0;
+    font-weight: 500;
+  }
+  .linkWrapper {
+    padding: calc(100vw / 48.75) 0;
+  }
 }

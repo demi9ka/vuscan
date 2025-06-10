@@ -1,20 +1,20 @@
 import css from './header.module.css'
-import { useMediaQuery } from '@/helpers'
 import { MenuMobile } from './ui/menu-mobile'
 import { MenuDesktop } from './ui/menu-desktop'
+import { useMediaQuery } from '@/hooks'
 
 export const Header = () => {
   const isMobile = useMediaQuery('(max-width: 768px)')
 
   return (
     <div className={css.wrapper}>
-      <div className={css.header}>
+      <header className={css.header}>
         <h1 className={css.title}>
-          <span>VU</span>
-          SCAN
+          <span className={css.accent}>VU</span>
+          <span>SCAN</span>
         </h1>
         {isMobile ? <MenuMobile /> : <MenuDesktop />}
-      </div>
+      </header>
     </div>
   )
 }
