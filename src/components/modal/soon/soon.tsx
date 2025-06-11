@@ -1,6 +1,6 @@
 import { useLocation, useNavigate } from 'react-router-dom'
 import css from './soon.module.css'
-import { Button, Modal } from '@/shared/ui'
+import { Button, Modal, Trans } from '@/shared/ui'
 import { useTranslation } from 'react-i18next'
 
 export const Soon = () => {
@@ -18,17 +18,20 @@ export const Soon = () => {
 
   const opened = urlModal == 'soon'
 
-  const contentMapped = t('modal.soon.content')
-    .split('\n\n')
-    .map((el, i) => (
-      <p key={i} className={css.info}>
-        {el}
-      </p>
-    ))
-
   return (
     <Modal opened={opened} title={t('modal.soon.title')} onClose={onClose}>
-      <div className={css.scrollArea}>{contentMapped}</div>
+      <div className={css.content}>
+        <Trans
+          i18nKey={'modal.soon.content'}
+          components={{
+            h4: <h4 />,
+            p: <p />,
+            ul: <ul />,
+            li: <li style={{ listStyleType: 'disc' }} />
+          }}
+        />
+      </div>
+
       <div className={css.center}>
         <Button variant='default' className={css.button} onClick={onClose}>
           {t('global.close')}

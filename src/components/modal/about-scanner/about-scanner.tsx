@@ -1,7 +1,6 @@
 import { useLocation, useNavigate } from 'react-router-dom'
 import css from './about-scanner.module.css'
-import { Button, Modal } from '@/shared/ui'
-
+import { Button, Modal, Trans } from '@/shared/ui'
 import { useTranslation } from 'react-i18next'
 
 export const AboutScanner = () => {
@@ -20,15 +19,22 @@ export const AboutScanner = () => {
 
   return (
     <Modal title={t('header.about')} opened={opened} onClose={onClose}>
-      <div className={css.scrollArea}>
-        {t('modal.about-scanner.content')
-          .split('\n\n')
-          .map((el, i) => (
-            <p key={i} className={css.info}>
-              {el}
-            </p>
-          ))}
-      </div>
+      <Trans
+        i18nKey={'modal.about-scanner.content'}
+        components={{
+          h4: <h4 />,
+          p: <p />,
+          ul: <ul />,
+          li: <li style={{ listStyleType: 'decimal' }} />,
+          'li-number': (
+            <li
+              style={{
+                listStyleType: ''
+              }}
+            />
+          )
+        }}
+      />
       <div className={css.center}>
         <Button variant='default' className={css.button} onClick={onClose}>
           {t('global.close')}

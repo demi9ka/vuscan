@@ -1,4 +1,5 @@
 export { Header } from './header'
 export { Button } from './button'
 export { Modal } from './modal'
+export { Trans } from './trans'
 export * from './svg'

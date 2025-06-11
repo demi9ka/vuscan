@@ -1,4 +1,4 @@
-import { useEffect } from 'react'
+import { memo, useEffect } from 'react'
 import css from './modal.module.css'
 import { combaneCSS } from '@/helpers'
 import { BackIcon, CrossIcon } from '../svg'
@@ -13,12 +13,17 @@ type Props = {
 export const Modal = ({ onClose, opened, children, title, className, ...props }: Props) => {
   const isMobile = useMediaQuery('(max-width: 480px)')
   useEffect(() => {
-    const handleEsc = (event: KeyboardEvent) => event.key === 'Escape' && onClose()
+    if (!opened) return
+    const handleEsc = (event: KeyboardEvent) => {
+      if (event.key === 'Escape') {
+        onClose()
+      }
+    }
     window.addEventListener('keydown', handleEsc)
     return () => {
       window.removeEventListener('keydown', handleEsc)
     }
-  }, [])
+  }, [opened])
 
   return (
     <div className={combaneCSS(css.wrapper, opened ? css.opened : '')}>

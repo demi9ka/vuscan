@@ -28,6 +28,13 @@
   width: 200px;
   margin-top: 20px;
 }
+p.accent {
+  color: var(--accent);
+  font-size: 18px;
+}
+span.bold {
+  font-weight: 700;
+}
 @media screen and (max-width: 1920px) {
   .modal {
     box-shadow: 0 0 calc(100vw / 160) var(--primary-color);
@@ -46,6 +53,9 @@
   .button {
     width: calc(100vw / 9.6);
     margin-top: calc(100vw / 96);
+  }
+  p.accent {
+    font-size: calc(100vw / 106.66);
   }
 }
 @media (max-width: 768px) {
@@ -70,6 +80,9 @@
     width: calc(100vw / 3.84);
     margin-top: calc(100vw / 38.4);
   }
+  p.accent {
+    font-size: calc(100vw / 42.66);
+  }
 }
 @media (max-width: 480px) {
   .modal {
@@ -91,5 +104,8 @@
 
   .button {
     display: none;
+  }
+  p.accent {
+    font-size: calc(100vw / 21.632);
   }
 }

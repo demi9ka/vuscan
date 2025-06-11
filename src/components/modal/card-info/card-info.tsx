@@ -1,4 +1,4 @@
-import { Button, Modal } from '@/shared/ui'
+import { Button, Modal, Trans } from '@/shared/ui'
 import { useLocation, useNavigate } from 'react-router-dom'
 import css from './card-info.module.css'
 import { useTranslation } from 'react-i18next'
@@ -35,14 +35,6 @@ export const CardInfo = ({ id }: Props) => {
   const opened = id == Number(urlId) && urlModal == 'card-info'
   const { color } = cardData
 
-  const infoMapped = t(`modal.info.levels.${id}`)
-    .split('\n\n')
-    .map((el, i) => (
-      <p key={i} className={css.info}>
-        {el}
-      </p>
-    ))
-
   return (
     <Modal
       className={css.modal}
@@ -61,7 +53,17 @@ export const CardInfo = ({ id }: Props) => {
         </div>
       </div>
       {isMobile ? <></> : <h3 className={css.title}>{t(`home.levels.${id}.title`)}</h3>}
-      {infoMapped}
+      <Trans
+        i18nKey={t(`modal.info.levels.${id}`)}
+        components={{
+          h4: <h4 />,
+          p: <p />,
+          'p-accent': <p className={css.accent} />,
+          ul: <ul />,
+          li: <li style={{ listStyleType: 'decimal' }} />,
+          bold: <span className={css.bold} />
+        }}
+      />
       <div className={css.center}>
         <Button variant='default' className={css.button} onClick={onClose}>
           {t(`global.close`)}
