@@ -1,4 +1,4 @@
-import { memo, useEffect } from 'react'
+import { useEffect } from 'react'
 import css from './modal.module.css'
 import { combaneCSS } from '@/helpers'
 import { BackIcon, CrossIcon } from '../svg'

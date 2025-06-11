@@ -12,7 +12,7 @@
   },
   "home": {
     "title": "Online Vulnerability Scanner",
-    "description": "External website security analysis to detect vulnerabilities",
+    "description": "Based on an external site security analysis",
     "search-placeholder": "Enter URL here",
     "scan-btn": "Scan",
     "scan-btn-scanning": "Scanning",

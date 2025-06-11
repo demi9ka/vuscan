@@ -11,7 +11,7 @@
   width: 100%;
   display: flex;
   justify-content: center;
-  top: -10px;
+  top: -20px;
 }
 .title {
   font-family: var(--ff-Eesti);
@@ -41,7 +41,7 @@ span.bold {
   }
 
   .levelWrapper {
-    top: calc(-100vw / 192);
+    top: calc(-100vw / 96);
   }
   .title {
     font-size: calc(100vw / 60);
@@ -64,7 +64,7 @@ span.bold {
   }
 
   .levelWrapper {
-    top: calc(-100vw / 76.8);
+    top: calc(-100vw / 38.4);
   }
 
   .title {
@@ -90,7 +90,7 @@ span.bold {
   }
 
   .levelWrapper {
-    top: calc(-100vw / 38.9376);
+    top: calc(-100vw / 24);
   }
 
   .title {
