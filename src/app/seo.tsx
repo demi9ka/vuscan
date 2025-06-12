@@ -1,23 +1,19 @@
 import { Helmet } from 'react-helmet'
 
-export const Seo = () => {
+type Props = {
+  title: string
+  description: string
+  keywords: string
+}
+
+export const Seo = ({ title, description, keywords }: Props) => {
   return (
     <Helmet>
-      <title>Test Your Site Security Now (No Registration)</title>
-      <meta
-        name='description'
-        content={
-          'Free Online Website Vulnerability Scanner — Test Your Site for Security Holes in Seconds. Get Instant Alerts & Recommendations. Stay Safe from Cyber Attacks!'
-        }
-      />
-      <meta
-        name='keywords'
-        content={
-          'website vulnerability scanner, free security scan, SQLi detector, XSS checker, web security test, online hack scanner, site vulnerability check, cybersecurity tools'
-        }
-      />
+      <title>{title}</title>
+      <meta name='description' content={description} />
+      <meta name='keywords' content={keywords} />
 
-      <meta property='og:title' content='VulnScan —  Website Vulnerability Scanner | Secure Your Site for Free' />
+      <meta property='og:title' content='Vuscan —  Website Vulnerability Scanner | Secure Your Site for Free' />
       <meta
         property='og:description'
         content='Detect XSS, SQLi & security flaws in seconds. Get instant reports and protect your website from hackers.'

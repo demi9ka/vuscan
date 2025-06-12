@@ -116,5 +116,11 @@
         "<h4>Open configuration files, backups, database dumps and other service documents</h4><p>This is a 'gold mine' for cybercriminals.</p><p>Administrators often carelessly upload such files to the website root directory:</p><ul><li>env</li><li>config.php</li><li>backup.zip</li><li>db.sql</li><li>wp-config.php</li></ul><h4>If these files are accessible through a browser, anyone can download them and get:</h4><ul><li>Database access (login, password, host)</li><li>Secret API keys</li><li>Information about project structure and server</li></ul><p>In reality, this means instant project takeover. Even one such file can cost the entire infrastructure.</p><p-accent>Check your site right now with Vuscan - the scanner automatically finds accessible confidential files before attackers do.</p-accent>"
       ]
     }
+  },
+  "seo": {
+    "title-main": "Test Your Site Security Now (No Registration)",
+    "title-page-not-found": "Page not found",
+    "description": "Free Online Website Vulnerability Scanner — Test Your Site for Security Holes in Seconds. Get Instant Alerts & Recommendations. Stay Safe from Cyber Attacks!",
+    "keywords": "website vulnerability scanner, free security scan, SQLi detector, XSS checker, web security test, online hack scanner, site vulnerability check, cybersecurity tools"
   }
 }
