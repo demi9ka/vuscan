@@ -53,6 +53,7 @@ export const CardInfo = ({ id }: Props) => {
         </div>
       </div>
       {isMobile ? <></> : <h3 className={css.title}>{t(`home.levels.${id}.title`)}</h3>}
+
       <Trans
         i18nKey={t(`modal.info.levels.${id}`)}
         components={{
@@ -64,6 +65,7 @@ export const CardInfo = ({ id }: Props) => {
           bold: <span className={css.bold} />
         }}
       />
+
       <div className={css.center}>
         <Button variant='default' className={css.button} onClick={onClose}>
           {t(`global.close`)}

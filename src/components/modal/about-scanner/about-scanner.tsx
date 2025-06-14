@@ -25,16 +25,10 @@ export const AboutScanner = () => {
           h4: <h4 />,
           p: <p />,
           ul: <ul />,
-          li: <li style={{ listStyleType: 'decimal' }} />,
-          'li-number': (
-            <li
-              style={{
-                listStyleType: ''
-              }}
-            />
-          )
+          li: <li style={{ listStyleType: 'decimal' }} />
         }}
       />
+
       <div className={css.center}>
         <Button variant='default' className={css.button} onClick={onClose}>
           {t('global.close')}

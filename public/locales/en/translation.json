@@ -82,26 +82,35 @@
       "content": "You can leave your email and we will get back to you shortly."
     },
     "faq": {
+      "title": "Frequently Asked Questions (FAQ)",
       "questions": [
         {
-          "question": "Question 1",
-          "answer": "This is a sample answer to the first question. Here you can provide a brief explanation or instruction."
+          "question": "What is Vuscan?",
+          "answer": "<p>Vuscan is a cloud-based service for automated website vulnerability scanning. In just a couple of minutes, it provides an objective overview of your resource’s security: from open ports and outdated components to known vulnerabilities (CVEs). The service is especially useful for those who want to prevent attacks before they are exploited by malicious actors — quickly, simply, and without unnecessary costs.</p>"
         },
         {
-          "question": "Question 2",
-          "answer": "The second answer contains general information to help understand the essence of the question."
+          "question": "Do I need to install anything?",
+          "answer": "<p>No. Vuscan operates entirely in the cloud.</p>"
         },
         {
-          "question": "Question 3",
-          "answer": "Here is an example of a simple and clear answer for demonstration."
+          "question": "Do you scan internal networks or local addresses?",
+          "answer": "<p>No. We specialize exclusively in external analysis of public resources.</p>"
         },
         {
-          "question": "Question 4",
-          "answer": "This answer serves as a placeholder and can be replaced with more detailed text later."
+          "question": "How long does a scan take?",
+          "answer": "<p>Typically, scanning takes from 30 seconds to 5 minutes, depending on the size of the site, the number of services, and current load.</p>"
         },
         {
-          "question": "Question 5",
-          "answer": "The final answer contains basic information sufficient for the current task."
+          "question": "Can I save or download the report?",
+          "answer": "<p>Yes. After the scan is complete, you can download the report or view it directly in your browser.</p>"
+        },
+        {
+          "question": "Who is Vuscan for?",
+          "answer": "<p>Vuscan is designed for those who value security and speed. It will be useful for:</p><ul><li>Website owners and administrators;</li><li>DevOps and technical teams;</li><li>Small and medium businesses, especially those without a dedicated security specialist;</li><li>Startups and freelancers;</li><li>Anyone who wants to conduct a quick security audit without complexity or high costs.</li></ul>"
+        },
+        {
+          "question": "How safe is it to use Vuscan?",
+          "answer": "<p>It is absolutely safe. Vuscan does not integrate into your system, does not launch active attacks, and does not require access to internal data. We perform only external analysis to help you protect yourself in advance.</p>"
         }
       ]
     },

@@ -1,8 +1,13 @@
 import { useLocation, useNavigate } from 'react-router-dom'
 import css from './faq.module.css'
-import { ArrowDownIcon, Button, Modal } from '@/shared/ui'
+import { ArrowDownIcon, Button, Modal, Trans } from '@/shared/ui'
 import { useState } from 'react'
 import { useTranslation } from 'react-i18next'
+
+type QuestionType = {
+  question: string
+  answer: string
+}
 
 export const Faq = () => {
   const { t } = useTranslation()
@@ -24,7 +29,8 @@ export const Faq = () => {
 
   const opened = urlModal == 'faq'
 
-  const questionMapped = [0, 1, 2, 3].map(i => (
+  const questionsData = t('modal.faq.questions', { returnObjects: true }) as QuestionType[]
+  const questionMapped = questionsData.map((_, i) => (
     <div onClick={() => handleToggleQuestion(i)} key={i} className={css.question}>
       <div className={css.questionHeader}>
         <p className={css.questionTitle}>{t(`modal.faq.questions.${i}.question`)}</p>
@@ -35,7 +41,26 @@ export const Faq = () => {
           }}
         />
       </div>
-      {openedQuestion == i ? <p className={css.answer}>{t(`modal.faq.questions.${i}.answer`)}</p> : <></>}
+
+      {openedQuestion == i ? (
+        <Trans
+          className={css.transWrapper}
+          i18nKey={t(`modal.faq.questions.${i}.answer`)}
+          components={{
+            p: <p className={css.transContent} />,
+            ul: (
+              <ul
+                style={{
+                  listStyleType: ''
+                }}
+              />
+            ),
+            li: <li className={css.transContent} />
+          }}
+        />
+      ) : (
+        <></>
+      )}
     </div>
   ))
 
