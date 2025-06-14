@@ -27,7 +27,6 @@ export const Queue = () => {
     register,
     handleSubmit,
     reset,
-
     formState: { errors, isValid }
   } = useForm<FormDataType>({
     resolver: zodResolver(schema)

@@ -6,6 +6,7 @@ import { observer } from 'mobx-react-lite'
 import { scannerStore } from '@/store'
 import { searchStore } from '@/store'
 import { useScanner } from '@/entities/scanner'
+import { useEffect, useRef } from 'react'
 
 export const Search = observer(() => {
   const { t } = useTranslation()
@@ -13,6 +14,8 @@ export const Search = observer(() => {
   const { scannerId, isFinished, newScan } = scannerStore
   const { search, setSearch, clearSearch } = searchStore
   const { isPending } = useScanner()
+
+  const buttonRef = useRef<HTMLButtonElement>(null)
 
   const isInitialState = Boolean(!scannerId && !isFinished)
   const isScanning = Boolean(scannerId && !isFinished)
@@ -27,6 +30,22 @@ export const Search = observer(() => {
       clearSearch()
     }
   }
+
+  useEffect(() => {
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (e.key === 'Enter') {
+        e.preventDefault()
+        if (buttonRef.current) {
+          buttonRef.current.click()
+        }
+      }
+    }
+    document.addEventListener('keydown', handleKeyDown)
+    return () => {
+      document.removeEventListener('keydown', handleKeyDown)
+    }
+  }, [])
+
   return (
     <div className={css.wrapper}>
       <input
@@ -38,8 +57,10 @@ export const Search = observer(() => {
       />
       <Button
         variant='gradient'
+        ref={buttonRef}
         disabled={!search.length || isPending || isScanning}
         onClick={handleScan}
+        onKeyDown={e => e.key === 'Enter' && buttonRef.current?.click()}
         className={css.button}
       >
         {isInitialState && t('home.scan-btn')}

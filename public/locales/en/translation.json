@@ -127,9 +127,9 @@
     }
   },
   "seo": {
-    "title-main": "Test Your Site Security Now (No Registration)",
+    "title-main": "Online Website Vulnerability Scanner — VuScan | Fast Check",
     "title-page-not-found": "Page not found",
-    "description": "Free Online Website Vulnerability Scanner — Test Your Site for Security Holes in Seconds. Get Instant Alerts & Recommendations. Stay Safe from Cyber Attacks!",
+    "description": "Check your website for vulnerabilities online with VuScan: SQL injection, XSS, CMS and security errors. Results in a couple of minutes — no registration or installation required.",
     "keywords": "website vulnerability scanner, free security scan, SQLi detector, XSS checker, web security test, online hack scanner, site vulnerability check, cybersecurity tools"
   }
 }

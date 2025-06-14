@@ -9,7 +9,5 @@ export const toastContainerProps: ToastContainerProps = {
   theme: 'dark',
   position: 'bottom-right',
   hideProgressBar: true,
-  toastClassName: css.toast,
-
-  autoClose: false
+  toastClassName: css.toast
 }

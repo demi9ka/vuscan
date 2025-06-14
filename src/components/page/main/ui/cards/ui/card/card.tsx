@@ -32,7 +32,7 @@ export const Card = observer(({ logo, color, id }: Props) => {
       }
     >
       <div className={css.levelWrapper}>
-        <Level color={primaryColor} text={t(`home.levels.${id}.level`)} />
+        <Level color={color} text={t(`home.levels.${id}.level`)} />
       </div>
       <Content id={id} logo={logo} isRenderErrorBoxShadow={isRenderErrorBoxShadow} />
       <Footer cardPackage={cardPackage} cardId={id} />
