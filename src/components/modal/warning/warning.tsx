@@ -6,6 +6,7 @@ import { useScanner } from '@/entities/scanner'
 import { searchStore } from '@/store'
 import { observer } from 'mobx-react-lite'
 import { scannerStore } from '@/store'
+import { useEffect, useRef } from 'react'
 
 export const Warning = observer(() => {
   const { mutateAsync } = useScanner()
@@ -14,6 +15,7 @@ export const Warning = observer(() => {
   const { search } = searchStore
   const { start } = scannerStore
   const { t } = useTranslation()
+  const buttonRef = useRef<HTMLButtonElement>(null)
 
   const queryParams = new URLSearchParams(location.search)
 
@@ -38,6 +40,21 @@ export const Warning = observer(() => {
   }
 
   const opened = urlModal == 'warning'
+  useEffect(() => {
+    if (!opened) return
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (e.key === 'Enter' && opened) {
+        e.preventDefault()
+        if (buttonRef.current) {
+          buttonRef.current.click()
+        }
+      }
+    }
+    document.addEventListener('keydown', handleKeyDown)
+    return () => {
+      document.removeEventListener('keydown', handleKeyDown)
+    }
+  }, [opened])
 
   const textMapped = t(`modal.warning.text`)
     .split('\n\n')
@@ -59,7 +76,7 @@ export const Warning = observer(() => {
       <p className={css.text} style={{ marginTop: '36px', marginBottom: '16px' }}>
         {t(`modal.warning.approval`)}
       </p>
-      <Button variant='gradient' className={css.button} onClick={handleStartScan}>
+      <Button ref={buttonRef} variant='gradient' className={css.button} onClick={handleStartScan}>
         {t(`modal.warning.start-btn`)}
       </Button>
     </Modal>

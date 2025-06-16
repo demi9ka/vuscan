@@ -2,71 +2,70 @@ import css from './search.module.css'
 import { Button } from '@/shared/ui'
 import { useTranslation } from 'react-i18next'
 import { useNavigate } from 'react-router-dom'
-import { observer } from 'mobx-react-lite'
 import { scannerStore } from '@/store'
 import { searchStore } from '@/store'
 import { useScanner } from '@/entities/scanner'
-import { useEffect, useRef } from 'react'
+import { useForm } from 'react-hook-form'
 
-export const Search = observer(() => {
+type FormDataType = {
+  url: string
+}
+
+export const Search = () => {
   const { t } = useTranslation()
   const navigate = useNavigate()
   const { scannerId, isFinished, newScan } = scannerStore
-  const { search, setSearch, clearSearch } = searchStore
+  const { setSearch, clearSearch } = searchStore
   const { isPending } = useScanner()
-
-  const buttonRef = useRef<HTMLButtonElement>(null)
 
   const isInitialState = Boolean(!scannerId && !isFinished)
   const isScanning = Boolean(scannerId && !isFinished)
 
-  const handleScan = () => {
+  const {
+    register,
+    handleSubmit,
+    reset,
+    formState: { isValid, isDirty }
+  } = useForm<FormDataType>()
+
+  const onSubmit = (formData: FormDataType) => {
     if (isScanning) return
     if (isInitialState) {
+      setSearch(formData.url)
       navigate('/?modal=warning')
     }
     if (isFinished) {
       newScan()
       clearSearch()
+      reset()
     }
   }
 
-  useEffect(() => {
-    const handleKeyDown = (e: KeyboardEvent) => {
-      if (e.key === 'Enter') {
-        e.preventDefault()
-        if (buttonRef.current) {
-          buttonRef.current.click()
-        }
-      }
-    }
-    document.addEventListener('keydown', handleKeyDown)
-    return () => {
-      document.removeEventListener('keydown', handleKeyDown)
-    }
-  }, [])
-
   return (
-    <div className={css.wrapper}>
+    <form className={css.wrapper} onSubmit={handleSubmit(onSubmit)}>
       <input
         type='text'
         placeholder={t('home.search-placeholder')}
-        value={search}
-        onChange={e => setSearch(e.target.value)}
         className={css.searchInput}
+        {...register('url', {
+          validate: value => {
+            if (isFinished) return true
+            if (!value) return 'URL обязателен'
+            if (!/^https?:\/\/\S+$/i.test(value)) return 'Некорректный URL'
+            return true
+          }
+        })}
       />
       <Button
+        type='submit'
         variant='gradient'
-        ref={buttonRef}
-        disabled={!search.length || isPending || isScanning}
-        onClick={handleScan}
-        onKeyDown={e => e.key === 'Enter' && buttonRef.current?.click()}
+        disabled={!isValid || !isDirty || isPending || isScanning}
         className={css.button}
       >
         {isInitialState && t('home.scan-btn')}
         {isScanning && t('home.scan-btn-scanning')}
         {isFinished && t('home.scan-btn-finished')}
       </Button>
-    </div>
+    </form>
   )
-})
+}

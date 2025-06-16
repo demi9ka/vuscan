@@ -34,7 +34,7 @@
     padding: 0 calc(100vw / 120);
     margin: calc(100vw / 120) 0;
     padding-bottom: calc(100vw / 80);
-    height: calc(100vw / 3.64);
+    max-height: calc(100vw / 3.64);
     gap: calc(100vw / 120);
   }
   .wrapper p,
@@ -55,7 +55,7 @@
     padding: 0 calc(100vw / 48); /* 120 * 0.4 = 48 */
     margin: calc(100vw / 48) 0; /* 120 * 0.4 = 48 */
     padding-bottom: calc(100vw / 32); /* 80 * 0.4 = 32 */
-    height: calc(100vw / 1.456); /* 3.64 * 0.4 = 1.456 */
+    max-height: calc(100vw / 1.456); /* 3.64 * 0.4 = 1.456 */
     gap: calc(100vw / 48);
   }
   .wrapper p,
@@ -76,6 +76,7 @@
     padding: 0; /* 48 * 0.507 = 24.336 */
     margin: calc(100vw / 24.336) 0; /* 48 * 0.507 = 24.336 */
     padding-bottom: calc(100vw / 16.224); /* 32 * 0.507 = 16.224 */
+    max-height: max-content;
     height: auto;
     gap: calc(100vw / 24.336);
   }
