@@ -69,7 +69,7 @@
       "text": "Check if you entered the website URL correctly"
     },
     "warning": {
-      "title": "Attention! All content is paid!",
+      "title": "Attention! All content is paid",
       "text": "Scan results are available only after payment.\n\nIf vulnerabilities are found during the process, access to the detailed report will open only after payment confirmation.",
       "approval": "By clicking 'Start scan', you agree to these terms.",
       "start-btn": "Start scan"
