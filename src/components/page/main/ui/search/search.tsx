@@ -1,7 +1,7 @@
 import css from './search.module.css'
 import { Button } from '@/shared/ui'
 import { useTranslation } from 'react-i18next'
-import { useNavigate } from 'react-router-dom'
+import { useNavigate } from '@/hooks'
 import { scannerStore } from '@/store'
 import { searchStore } from '@/store'
 import { useScanner } from '@/entities/scanner'

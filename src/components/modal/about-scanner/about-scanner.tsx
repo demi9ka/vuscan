@@ -1,7 +1,9 @@
-import { useLocation, useNavigate } from 'react-router-dom'
+import { useLocation } from 'react-router-dom'
+
 import css from './about-scanner.module.css'
 import { Button, Modal, Trans } from '@/shared/ui'
 import { useTranslation } from 'react-i18next'
+import { useNavigate } from '@/hooks'
 
 export const AboutScanner = () => {
   const { t } = useTranslation()
@@ -12,7 +14,7 @@ export const AboutScanner = () => {
   const urlModal = queryParams.get('modal')
 
   const onClose = () => {
-    navigate('/')
+    navigate(-1)
   }
 
   const opened = urlModal == 'about-scanner'

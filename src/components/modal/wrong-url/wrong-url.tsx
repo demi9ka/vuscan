@@ -1,7 +1,8 @@
 import { Button, Modal } from '@/shared/ui'
-import { useLocation, useNavigate } from 'react-router-dom'
+import { useLocation } from 'react-router-dom'
 import css from './wrong-url.module.css'
 import { useTranslation } from 'react-i18next'
+import { useNavigate } from '@/hooks'
 
 export const WrongUrl = () => {
   const { t } = useTranslation()
@@ -13,7 +14,7 @@ export const WrongUrl = () => {
   const urlModal = queryParams.get('modal')
 
   const onClose = () => {
-    navigate('/')
+    navigate(-1)
   }
 
   const opened = urlModal == 'wrong-url'

@@ -2,13 +2,12 @@ import { observer } from 'mobx-react-lite'
 import css from './open-package.module.css'
 import { scannerStore } from '@/store'
 import { useTranslation } from 'react-i18next'
-import { useLocation, useNavigate } from 'react-router-dom'
+import { useLocation } from 'react-router-dom'
 import { useBuyPackage } from '@/entities/scanner'
-import { Button, LockIcon, Modal } from '@/shared/ui'
+import { Button, LockIcon, Modal, Level } from '@/shared/ui'
 import { combaneCSS, generateRandomLinks } from '@/helpers'
 import { useMemo } from 'react'
-import { Level } from '@/shared/ui/level'
-import { useMediaQuery } from '@/hooks'
+import { useMediaQuery, useNavigate } from '@/hooks'
 
 type Props = {
   id: number
@@ -26,7 +25,7 @@ export const OpenPackage = observer(({ id }: Props) => {
   const urlId = queryParams.get('id')
 
   const onClose = () => {
-    navigate('/')
+    navigate(-1)
   }
   const isMobile = useMediaQuery('(max-width: 480px)')
 

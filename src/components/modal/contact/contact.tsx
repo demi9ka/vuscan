@@ -1,7 +1,6 @@
 import css from './contact.module.css'
-import { Button } from '@/shared/ui/button'
-import { Modal } from '@/shared/ui/modal'
-import { useNavigate, useLocation } from 'react-router-dom'
+import { Button, Modal } from '@/shared/ui'
+import { useLocation } from 'react-router-dom'
 import { useContact } from '@/entities/contact'
 import { useForm } from 'react-hook-form'
 import { zodResolver } from '@hookform/resolvers/zod'
@@ -9,6 +8,7 @@ import { schema } from './schema'
 import z from 'zod'
 import { toast } from '@/feature/toast'
 import { useTranslation } from 'react-i18next'
+import { useNavigate } from '@/hooks'
 
 type FormDataType = z.infer<typeof schema>
 
@@ -31,7 +31,7 @@ export const Contact = () => {
   })
 
   const onClose = () => {
-    navigate('/')
+    navigate(-1)
     reset()
   }
 

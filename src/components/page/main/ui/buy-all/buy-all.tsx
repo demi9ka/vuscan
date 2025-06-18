@@ -2,7 +2,7 @@ import { observer } from 'mobx-react-lite'
 import css from './buy-all.module.css'
 import { scannerStore } from '@/store'
 import { useTranslation } from 'react-i18next'
-import { useNavigate } from 'react-router-dom'
+import { useNavigate } from '@/hooks'
 import { Button } from '@/shared/ui'
 import { useMemo } from 'react'
 

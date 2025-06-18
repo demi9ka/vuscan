@@ -5,7 +5,7 @@ import { Footer } from './ui/footer'
 import { Content } from './ui/content'
 import { useTranslation } from 'react-i18next'
 import React from 'react'
-import { Level } from '@/shared/ui/level'
+import { Level } from '@/shared/ui'
 
 export type Props = {
   color: string

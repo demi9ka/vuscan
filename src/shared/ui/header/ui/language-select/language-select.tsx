@@ -2,15 +2,15 @@ import { languageStore } from '@/store'
 import { observer } from 'mobx-react-lite'
 import css from './language-select.module.css'
 import { combaneCSS } from '@/helpers'
-import { useTranslation } from 'react-i18next'
+import { useNavigate } from '@/hooks'
 
 export const LanguageSelect = observer(() => {
   const { language, setLanguage } = languageStore
-  const { i18n } = useTranslation()
+  const navigate = useNavigate()
 
   const changeLanguage = (lng: 'ru' | 'en') => {
-    i18n.changeLanguage(lng)
     setLanguage(lng)
+    navigate(`/${lng}${location.pathname.slice(3)}`)
   }
 
   return (

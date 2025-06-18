@@ -1,5 +1,5 @@
 import { Button, Modal } from '@/shared/ui'
-import { useLocation, useNavigate } from 'react-router-dom'
+import { useLocation } from 'react-router-dom'
 import css from './warning.module.css'
 import { useTranslation } from 'react-i18next'
 import { useScanner } from '@/entities/scanner'
@@ -7,6 +7,7 @@ import { searchStore } from '@/store'
 import { observer } from 'mobx-react-lite'
 import { scannerStore } from '@/store'
 import { useEffect, useRef } from 'react'
+import { useNavigate } from '@/hooks'
 
 export const Warning = observer(() => {
   const { mutateAsync } = useScanner()
@@ -22,7 +23,7 @@ export const Warning = observer(() => {
   const urlModal = queryParams.get('modal')
 
   const onClose = () => {
-    navigate('/')
+    navigate(-1)
   }
 
   const handleStartScan = async () => {

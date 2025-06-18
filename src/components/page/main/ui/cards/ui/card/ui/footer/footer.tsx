@@ -1,7 +1,7 @@
 import { PackageType } from '@/store/scanner-store'
 import css from './footer.module.css'
 import { Button } from '@/shared/ui'
-import { useNavigate } from 'react-router-dom'
+import { useNavigate } from '@/hooks'
 import { useTranslation } from 'react-i18next'
 import { combaneCSS } from '@/helpers'
 

@@ -1,7 +1,6 @@
 import css from './queue.module.css'
-import { Button } from '@/shared/ui/button'
-import { Modal } from '@/shared/ui/modal'
-import { useNavigate, useLocation } from 'react-router-dom'
+import { Button, Modal } from '@/shared/ui'
+import { useLocation } from 'react-router-dom'
 import { useForm } from 'react-hook-form'
 import { zodResolver } from '@hookform/resolvers/zod'
 import { schema } from './schema'
@@ -9,6 +8,7 @@ import z from 'zod'
 import { useTranslation } from 'react-i18next'
 import { useQueue } from '@/entities/scanner'
 import { toast } from '@/feature/toast'
+import { useNavigate } from '@/hooks'
 
 const price = 12
 
@@ -33,7 +33,7 @@ export const Queue = () => {
   })
 
   const onClose = () => {
-    navigate('/')
+    navigate(-1)
     reset()
   }
 

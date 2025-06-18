@@ -1,10 +1,9 @@
-import { Button, Modal, Trans } from '@/shared/ui'
-import { useLocation, useNavigate } from 'react-router-dom'
+import { Button, Modal, Trans, Level } from '@/shared/ui'
+import { useLocation } from 'react-router-dom'
 import css from './card-info.module.css'
 import { useTranslation } from 'react-i18next'
 import { cardsData } from '@/helpers'
-import { useMediaQuery } from '@/hooks'
-import { Level } from '@/shared/ui/level'
+import { useMediaQuery, useNavigate } from '@/hooks'
 import React from 'react'
 
 type Props = {
@@ -23,7 +22,7 @@ export const CardInfo = ({ id }: Props) => {
   const urlId = queryParams.get('id')
 
   const onClose = () => {
-    navigate('/')
+    navigate(-1)
   }
 
   const cardData = cardsData.find(el => el.id == id)!

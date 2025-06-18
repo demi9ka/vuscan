@@ -1,8 +1,9 @@
-import { useLocation, useNavigate } from 'react-router-dom'
+import { useLocation } from 'react-router-dom'
 import css from './faq.module.css'
 import { ArrowDownIcon, Button, Modal, Trans } from '@/shared/ui'
 import { useState } from 'react'
 import { useTranslation } from 'react-i18next'
+import { useNavigate } from '@/hooks'
 
 type QuestionType = {
   question: string
@@ -20,7 +21,7 @@ export const Faq = () => {
   const urlModal = queryParams.get('modal')
 
   const onClose = () => {
-    navigate('/')
+    navigate(-1)
   }
 
   const handleToggleQuestion = (id: number) => {

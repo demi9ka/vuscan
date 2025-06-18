@@ -1,10 +1,11 @@
 import { useTranslation } from 'react-i18next'
 import css from './buy-all.module.css'
-import { useLocation, useNavigate } from 'react-router-dom'
+import { useLocation } from 'react-router-dom'
 import { Button, Modal } from '@/shared/ui'
 import { observer } from 'mobx-react-lite'
 import { scannerStore } from '@/store'
 import { useBuyAll } from '@/entities/scanner'
+import { useNavigate } from '@/hooks'
 
 export const BuyAll = observer(() => {
   const { t } = useTranslation()
@@ -17,7 +18,7 @@ export const BuyAll = observer(() => {
   const urlModal = queryParams.get('modal')
 
   const onClose = () => {
-    navigate('/')
+    navigate(-1)
   }
 
   const onBuyAll = async () => {

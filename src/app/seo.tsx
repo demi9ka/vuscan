@@ -32,23 +32,14 @@ export const Seo = ({ title, description, keywords }: Props) => {
       <meta name='twitter:image' content='https://vuscan.net/level1.webp' />
       {/* <meta name='twitter:site' content='@YourTwitterHandle' /> */}
 
-      <link rel='canonical' href='https://vuscan.net' />
-      <link rel='alternate' hrefLang='en' href='https://vuscan.net' />
-      <link rel='alternate' hrefLang='ru' href='https://vuscan.net' />
+      <link rel='canonical' href='https://vuscan.net/ru' />
+      <link rel='alternate' hrefLang='en' href='https://vuscan.net/en' />
+      <link rel='alternate' hrefLang='ru' href='https://vuscan.net/ru' />
       <meta name='viewport' content='width=device-width, initial-scale=1' />
       <meta name='theme-color' content='#242930' />
 
       <link rel='icon' href='/favicon.ico' sizes='any' />
       <link rel='icon' href='/icon.svg' type='image/svg+xml' />
-
-      <link
-        rel='preload'
-        href='/fonts/gteestiprodisplay_bold.woff2'
-        as='font'
-        type='font/woff2'
-        crossOrigin='anonymous'
-      />
-      <link rel='preload' href='/fonts/Manrope-Regular.woff2' as='font' type='font/woff2' crossOrigin='anonymous' />
     </Helmet>
   )
 }

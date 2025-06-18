@@ -1,9 +1,8 @@
 import { useTranslation } from 'react-i18next'
 import css from './menu-desktop.module.css'
 import { combaneCSS } from '@/helpers'
-import { Button } from '@/shared/ui/button'
-import { Link } from 'react-router-dom'
 import { LanguageSelect } from '../language-select'
+import { Button, Link } from '@/shared/ui'
 
 export const MenuDesktop = () => {
   const { t } = useTranslation()
