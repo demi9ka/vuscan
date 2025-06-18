@@ -51,7 +51,6 @@ export const Search = () => {
           validate: value => {
             if (isFinished) return true
             if (!value) return 'URL обязателен'
-            if (!/^https?:\/\/\S+$/i.test(value)) return 'Некорректный URL'
             return true
           }
         })}
