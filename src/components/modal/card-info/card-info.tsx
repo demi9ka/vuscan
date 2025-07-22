@@ -22,7 +22,7 @@ export const CardInfo = ({ id }: Props) => {
   const urlId = queryParams.get('id')
 
   const onClose = () => {
-    navigate(-1)
+    navigate('/')
   }
 
   const cardData = cardsData.find(el => el.id == id)!
@@ -39,7 +39,7 @@ export const CardInfo = ({ id }: Props) => {
       className={css.modal}
       style={
         {
-          '--primary-color': color
+          '--primary-color': color,
         } as React.CSSProperties
       }
       title={isMobile ? t(`home.levels.${id}.title`) : ''}
@@ -61,12 +61,12 @@ export const CardInfo = ({ id }: Props) => {
           'p-accent': <p className={css.accent} />,
           ul: <ul />,
           li: <li style={{ listStyleType: 'decimal' }} />,
-          bold: <span className={css.bold} />
+          bold: <span className={css.bold} />,
         }}
       />
 
       <div className={css.center}>
-        <Button variant='default' className={css.button} onClick={onClose}>
+        <Button variant="default" className={css.button} onClick={onClose}>
           {t(`global.close`)}
         </Button>
       </div>

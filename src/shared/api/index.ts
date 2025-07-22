@@ -4,10 +4,10 @@ import contact from './contact'
 import scanner from './scanner'
 
 export const api = axios.create({
-  baseURL: 'http://localhost:3333',
+  baseURL: 'http://localhost:3001/api',
   headers: {
-    'Content-Type': 'application/json'
-  }
+    'Content-Type': 'application/json',
+  },
 })
 
 api.interceptors.response.use(
@@ -15,12 +15,12 @@ api.interceptors.response.use(
     return response
   },
   error => {
-    toast(error.message, 'error')
+    toast(error.response.data.error, 'error')
     return Promise.reject(error)
-  }
+  },
 )
 
 export default {
   contact,
-  scanner
+  scanner,
 }

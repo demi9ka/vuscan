@@ -21,7 +21,7 @@ export const Faq = () => {
   const urlModal = queryParams.get('modal')
 
   const onClose = () => {
-    navigate(-1)
+    navigate('/')
   }
 
   const handleToggleQuestion = (id: number) => {
@@ -38,7 +38,7 @@ export const Faq = () => {
         <ArrowDownIcon
           className={css.arrow}
           style={{
-            transform: `rotate(${openedQuestion == i ? 180 : 0}deg)`
+            transform: `rotate(${openedQuestion == i ? 180 : 0}deg)`,
           }}
         />
       </div>
@@ -52,11 +52,11 @@ export const Faq = () => {
             ul: (
               <ul
                 style={{
-                  listStyleType: ''
+                  listStyleType: '',
                 }}
               />
             ),
-            li: <li className={css.transContent} />
+            li: <li className={css.transContent} />,
           }}
         />
       ) : (
@@ -66,10 +66,10 @@ export const Faq = () => {
   ))
 
   return (
-    <Modal opened={opened} title='FAQ' onClose={onClose}>
+    <Modal opened={opened} title="FAQ" onClose={onClose}>
       <div className={css.scrollArea}>{questionMapped}</div>
       <div className={css.center}>
-        <Button variant='default' className={css.button} onClick={onClose}>
+        <Button variant="default" className={css.button} onClick={onClose}>
           {t('global.close')}
         </Button>
       </div>

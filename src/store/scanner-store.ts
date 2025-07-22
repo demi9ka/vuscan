@@ -13,7 +13,6 @@ class ScannerStore {
   scannerId: string | null = null
   isFinished: boolean = false
   packages: PackageType | null = null
-  socket: SocketClient | null = null
 
   constructor() {
     makeAutoObservable(this)
@@ -30,26 +29,26 @@ class ScannerStore {
           id: 0,
           progress: 100,
           linkFounded: 44,
-          status: 2
+          status: 2,
         },
         {
           id: 1,
           progress: 100,
           linkFounded: 0,
-          status: 3
+          status: 3,
         },
         {
           id: 2,
           progress: 100,
           linkFounded: 2,
-          status: 2
+          status: 2,
         },
         {
           id: 3,
           progress: 100,
           linkFounded: 0,
-          status: 3
-        }
+          status: 3,
+        },
       ])
     }, 1000)
     this.stop()

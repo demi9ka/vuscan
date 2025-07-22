@@ -8,9 +8,10 @@ import { observer } from 'mobx-react-lite'
 import { scannerStore } from '@/store'
 import { useEffect, useRef } from 'react'
 import { useNavigate } from '@/hooks'
+import { combaneCSS } from '@/helpers'
 
 export const Warning = observer(() => {
-  const { mutateAsync } = useScanner()
+  const { mutateAsync, isPending } = useScanner()
   const navigate = useNavigate()
   const location = useLocation()
   const { search } = searchStore
@@ -23,11 +24,12 @@ export const Warning = observer(() => {
   const urlModal = queryParams.get('modal')
 
   const onClose = () => {
-    navigate(-1)
+    navigate('/')
   }
 
   const handleStartScan = async () => {
     const res = await mutateAsync({ url: search })
+    console.log(res)
     if (res.status === 0) {
       onClose()
       start(res.id)
@@ -69,7 +71,7 @@ export const Warning = observer(() => {
     <Modal opened={opened} onClose={onClose}>
       <div className={css.center}>
         <div className={css.imageWrapper}>
-          <img src='/money.webp' alt='level3' />
+          <img src="/money.webp" alt="level3" />
         </div>
       </div>
       <p className={css.title}>{t(`modal.warning.title`)}</p>
@@ -77,7 +79,7 @@ export const Warning = observer(() => {
       <p className={css.text} style={{ marginTop: '36px', marginBottom: '16px' }}>
         {t(`modal.warning.approval`)}
       </p>
-      <Button ref={buttonRef} variant='gradient' className={css.button} onClick={handleStartScan}>
+      <Button ref={buttonRef} variant="gradient" disabled={isPending} className={combaneCSS(css.button)} onClick={handleStartScan}>
         {t(`modal.warning.start-btn`)}
       </Button>
     </Modal>

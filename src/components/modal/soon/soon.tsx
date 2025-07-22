@@ -14,7 +14,7 @@ export const Soon = () => {
   const urlModal = queryParams.get('modal')
 
   const onClose = () => {
-    navigate(-1)
+    navigate('/')
   }
 
   const opened = urlModal == 'soon'
@@ -28,13 +28,13 @@ export const Soon = () => {
             h4: <h4 />,
             p: <p />,
             ul: <ul />,
-            li: <li style={{ listStyleType: 'disc' }} />
+            li: <li style={{ listStyleType: 'disc' }} />,
           }}
         />
       </div>
 
       <div className={css.center}>
-        <Button variant='default' className={css.button} onClick={onClose}>
+        <Button variant="default" className={css.button} onClick={onClose}>
           {t('global.close')}
         </Button>
       </div>

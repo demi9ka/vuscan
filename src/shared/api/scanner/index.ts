@@ -1,38 +1,28 @@
-import {
-  BuyAllParams,
-  BuyAllResponse,
-  BuyPackageParams,
-  BuyPackageResponse,
-  QueueParams,
-  QueueResponse,
-  ScannerParams,
-  ScannerResponse
-} from './types'
+import { BuyAllParams, BuyAllResponse, BuyPackageParams, BuyPackageResponse, checkScannerStateParams, checkScannerStateReponse, getPackageParams, getPackageResponse, ScannerParams, ScannerResponse } from './types'
 import { api } from '..'
-import { mockQueue, mockScanner0, mockBuyAll } from './mock'
 
 const PREFIX = '/scanner'
 
 const scanner = async (data: ScannerParams) => {
-  return mockScanner0
-  return await api.post<ScannerResponse>(PREFIX + '/scanner', data)
+  return await api.post<ScannerResponse>(PREFIX + '/', data)
 }
-const queue = async (data: QueueParams) => {
-  return mockQueue
-  return await api.post<QueueResponse>(PREFIX + '/queue', data)
+const checkScannerState = async (data: checkScannerStateParams) => {
+  return await api.post<checkScannerStateReponse>(PREFIX + '/check-scanner-state', data)
+}
+const getPackage = async (data: getPackageParams) => {
+  return await api.post<getPackageResponse>(PREFIX + '/check-scanner-state', data)
 }
 const buyAll = async (data: BuyAllParams) => {
-  return mockBuyAll
   return await api.post<BuyAllResponse>(PREFIX + '/buy-all', data)
 }
 const buyPackage = async (data: BuyPackageParams) => {
-  return mockBuyAll
   return await api.post<BuyPackageResponse>(PREFIX + '/buy-package', data)
 }
 
 export default {
   scanner,
-  queue,
+  getPackage,
+  checkScannerState,
   buyAll,
-  buyPackage
+  buyPackage,
 }

@@ -18,7 +18,7 @@ export const BuyAll = observer(() => {
   const urlModal = queryParams.get('modal')
 
   const onClose = () => {
-    navigate(-1)
+    navigate('/')
   }
 
   const onBuyAll = async () => {
@@ -35,7 +35,7 @@ export const BuyAll = observer(() => {
   const contentMapped = activePackages.map((el, i) => (
     <div key={i} className={css.packageInfo}>
       <p className={css.packageTitle}>{t(`home.levels.${el.id}.title`)}</p>
-      <Button className={css.packageButton} variant='error'>
+      <Button className={css.packageButton} variant="error">
         {t('home.link-btn', { count: el.linkFounded })}{' '}
       </Button>
     </div>
@@ -47,7 +47,7 @@ export const BuyAll = observer(() => {
       <p className={css.title}>{t('modal.buy-all.content-title')}</p>
       <div className={css.content}>{contentMapped}</div>
 
-      <Button disabled={isPending || !scannerId} onClick={onBuyAll} className={css.button} variant='gradient'>
+      <Button disabled={isPending || !scannerId} onClick={onBuyAll} className={css.button} variant="gradient">
         <div className={css.discount}>-10%</div>
         <p className={css.buttonTitle}>{t('home.buy-all-btn')}</p>
         <div className={css.priceWrapper}>

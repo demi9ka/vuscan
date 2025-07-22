@@ -25,15 +25,12 @@ export const OpenPackage = observer(({ id }: Props) => {
   const urlId = queryParams.get('id')
 
   const onClose = () => {
-    navigate(-1)
+    navigate('/')
   }
   const isMobile = useMediaQuery('(max-width: 480px)')
 
   const activePackage = (packages || []).find(el => el.id == id)
-  const fakeLinkList = useMemo(
-    () => generateRandomLinks(activePackage ? activePackage.linkFounded : 0),
-    [activePackage]
-  )
+  const fakeLinkList = useMemo(() => generateRandomLinks(activePackage ? activePackage.linkFounded : 0), [activePackage])
 
   const onBuyPackage = async () => {
     if (!scannerId) return
@@ -51,7 +48,7 @@ export const OpenPackage = observer(({ id }: Props) => {
   const fakeLinks = fakeLinkList.map((link, i) => (
     <div key={i} className={css.linkWrapper}>
       <p className={combaneCSS(css.link, !isWasPaid ? css.blur : '')}>{link}</p>
-      <Button variant='default' className={css.linkButton}>
+      <Button variant="default" className={css.linkButton}>
         <LockIcon className={css.iconWrapper} />
       </Button>
     </div>
@@ -60,19 +57,19 @@ export const OpenPackage = observer(({ id }: Props) => {
   return (
     <Modal onClose={onClose} title={isMobile ? t(`home.levels.${id}.title`) : ''} className={css.modal} opened={opened}>
       <div className={css.levelWrapper}>
-        <Level text={t(`home.levels.${id}.level`)} color='var(--error)' />
+        <Level text={t(`home.levels.${id}.level`)} color="var(--error)" />
       </div>
       <p className={css.title}>{t(`home.levels.${id}.title`)}</p>
       <p className={css.description}>{t('modal.open-package.description')}</p>
       <div className={css.center}>
-        <Button className={css.linkFoundedButton} variant='error'>
+        <Button className={css.linkFoundedButton} variant="error">
           {t('modal.open-package.link-founded', { count: activePackage.linkFounded })}
         </Button>
       </div>
       <p className={css.description}>{t('modal.open-package.content-description')}</p>
       <div className={css.scrollView}>{isWasPaid ? <></> : fakeLinks}</div>
       <div className={css.center}>
-        <Button onClick={onBuyPackage} className={css.button} variant='gradient'>
+        <Button onClick={onBuyPackage} className={css.button} variant="gradient">
           <p className={css.buttonText}>{t('home.open-package')}</p>
           <p className={css.price}>12$</p>
         </Button>

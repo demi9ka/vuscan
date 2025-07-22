@@ -1,4 +1,4 @@
-// 0-Успешно, 1-неверный url, 2-большая очередь
+// 0-Успешно, 1-неверный url
 export type ScannerResponse =
   | {
       status: 0 | 2
@@ -7,16 +7,16 @@ export type ScannerResponse =
   | {
       status: 1
     }
-
 export type ScannerParams = {
   url: string
 }
-
-export type QueueParams = {
-  email: string
+export type checkScannerStateParams = {
+  id: string
 }
-export type QueueResponse = {
-  result: boolean
+export type checkScannerStateReponse = {
+  data: {
+    findedLinks?: number
+  }[]
 }
 export type BuyAllParams = {
   scannerId: string
@@ -30,4 +30,15 @@ export type BuyPackageParams = {
 }
 export type BuyPackageResponse = {
   paymentLink: string
+}
+export type getPackageParams = {
+  packageId: number
+  scannerId: string
+}
+export type getPackageResponse = {
+  freeLinks?: string
+  linkCount?: number
+  price?: number
+
+  links?: string[]
 }
