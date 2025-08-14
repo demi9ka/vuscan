@@ -3,12 +3,20 @@ import css from './menu-desktop.module.css'
 import { combaneCSS } from '@/helpers'
 import { LanguageSelect } from '../language-select'
 import { Button, Link } from '@/shared/ui'
+import { ScanningCount } from '../scanning-count'
 
 export const MenuDesktop = () => {
   const { t } = useTranslation()
+
+  const onOpenContact = () => {
+    window.open('https://t.me/vuscanteam', '_blank')
+  }
   return (
     <nav>
       <ul className={css.wrapper}>
+        <li>
+          <ScanningCount />
+        </li>
         <li>
           <Link to={'/?modal=about-scanner'} className={css.link}>
             {t('header.about')}
@@ -25,11 +33,10 @@ export const MenuDesktop = () => {
           </Link>
         </li>
         <LanguageSelect />
-        <Link to={'/?modal=contact'} className={css.link}>
-          <Button className={css.button} variant='gradient'>
-            {t('header.contact')}
-          </Button>
-        </Link>
+
+        <Button className={css.button} onClick={onOpenContact} variant='gradient'>
+          {t('header.contact')}
+        </Button>
       </ul>
     </nav>
   )

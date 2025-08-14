@@ -18,6 +18,10 @@ export const MenuMobile = () => {
     setIsOpen(!isOpen)
   }
 
+  const onOpenContact = () => {
+    window.open('https://t.me/vuscanteam', '_blank')
+  }
+
   return (
     <div ref={ref} className={css.wrapper} onClick={toggleOpen}>
       <MenuBurgerIcon
@@ -45,11 +49,9 @@ export const MenuMobile = () => {
           </li>
           <LanguageSelect />
           <li>
-            <Link to={'/?modal=contact'}>
-              <Button variant='gradient' className={css.button}>
-                {t('header.contact')}
-              </Button>
-            </Link>
+            <Button variant='gradient' onClick={onOpenContact} className={css.button}>
+              {t('header.contact')}
+            </Button>
           </li>
         </ul>
       </nav>

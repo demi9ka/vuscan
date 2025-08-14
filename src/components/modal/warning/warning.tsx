@@ -9,12 +9,14 @@ import { scannerStore } from '@/store'
 import { useEffect, useRef } from 'react'
 import { useNavigate } from '@/hooks'
 import { combaneCSS } from '@/helpers'
+import { toast } from '@/feature/toast'
+import { LoadingDots } from './ui/loading-dots'
 
 export const Warning = observer(() => {
   const { mutateAsync, isPending } = useScanner()
   const navigate = useNavigate()
   const location = useLocation()
-  const { search } = searchStore
+  const { search, setSearch } = searchStore
   const { start } = scannerStore
   const { t } = useTranslation()
   const buttonRef = useRef<HTMLButtonElement>(null)
@@ -24,21 +26,31 @@ export const Warning = observer(() => {
   const urlModal = queryParams.get('modal')
 
   const onClose = () => {
-    navigate('/')
+    navigate('/', { replace: true })
   }
 
   const handleStartScan = async () => {
-    const res = await mutateAsync({ url: search })
-    console.log(res)
-    if (res.status === 0) {
+    try {
+      const res = await mutateAsync({ url: search })
       onClose()
-      start(res.id)
-    }
-    if (res.status === 1) {
-      navigate('/?modal=wrong-url')
-    }
-    if (res.status === 2) {
-      navigate('/?modal=queue')
+      if (res.status === 0) {
+        setSearch(res.url)
+        start(res.id)
+        localStorage.setItem('scannerId', res.id)
+        if (res.attempsLeft) toast(t('toast.scan-left', { count: res.attempsLeft }))
+      }
+      if (res.status === 1) {
+        navigate('/?modal=wrong-url')
+      }
+      if (res.status === 2) {
+        setSearch(res.url)
+        localStorage.setItem('scannerId', res.id)
+        scannerStore.scannerId = res.id
+        scannerStore.isFinished = true
+        scannerStore.packages = res.data
+      }
+    } catch {
+      onClose()
     }
   }
 
@@ -71,7 +83,7 @@ export const Warning = observer(() => {
     <Modal opened={opened} onClose={onClose}>
       <div className={css.center}>
         <div className={css.imageWrapper}>
-          <img src="/money.webp" alt="level3" />
+          <img src='/money.webp' alt='level3' />
         </div>
       </div>
       <p className={css.title}>{t(`modal.warning.title`)}</p>
@@ -79,8 +91,21 @@ export const Warning = observer(() => {
       <p className={css.text} style={{ marginTop: '36px', marginBottom: '16px' }}>
         {t(`modal.warning.approval`)}
       </p>
-      <Button ref={buttonRef} variant="gradient" disabled={isPending} className={combaneCSS(css.button)} onClick={handleStartScan}>
-        {t(`modal.warning.start-btn`)}
+      <Button
+        ref={buttonRef}
+        variant='gradient'
+        disabled={isPending}
+        className={combaneCSS(css.button)}
+        onClick={handleStartScan}
+      >
+        {isPending ? (
+          <>
+            {t('modal.warning.load-btn')}
+            <LoadingDots />
+          </>
+        ) : (
+          t(`modal.warning.start-btn`)
+        )}
       </Button>
     </Modal>
   )

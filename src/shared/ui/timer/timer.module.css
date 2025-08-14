@@ -1,0 +1,23 @@
+.timer {
+  font-weight: 600;
+  font-size: 28px;
+  margin-left: 8px;
+}
+@media screen and (max-width: 1920px) {
+  .timer {
+    font-size: calc(100vw / 68.57);
+    margin-left: calc(100vw / 240);
+  }
+}
+@media screen and (max-width: 768px) {
+  .timer {
+    font-size: calc(100vw / 27.42);
+    margin-left: calc(100vw / 96);
+  }
+}
+@media screen and (max-width: 480px) {
+  .timer {
+    font-size: calc(100vw / 12.85);
+    margin-left: calc(100vw / 45);
+  }
+}

@@ -8,7 +8,10 @@
   "header": {
     "about": "ABOUT SCANNER",
     "soon": "SOON",
-    "contact": "Contact us"
+    "contact": "Contact us",
+    "scanner-count-title": "Scanned:",
+    "scanner-count_one": "{{count}} website",
+    "scanner-count_other": "{{count}} websites"
   },
   "home": {
     "title": "Online Vulnerability Scanner",
@@ -19,9 +22,10 @@
     "scan-btn-finished": "New Scan",
     "link-btn_one": "{{count}} LINK",
     "link-btn_other": "{{count}} LINKS",
-
+    "loading": "ЗАГРУЗКА...",
     "open-package": "OPEN PACKAGE",
     "no-thread": "NO THREATS",
+    "pre-complete-parse": "Preparing the result",
     "buy-all-btn": "OPEN ALL PACKAGES",
     "levels": [
       {
@@ -50,8 +54,13 @@
     "open-package": {
       "description": "Unrestricted access to website content can expose internal files and structure.",
       "content-description": "Vulnerabilities detected. Links with vulnerabilities are listed in the report. Pass them to your developer for fixing.",
+      "send-to-email": "SEND THE REPORT BY EMAIL",
+      "enter-email": "Enter your email",
+      "warning": "There is still time to send the report by mail, then it will be deleted.",
+      "go-to-all-packages": "Go to packages",
       "link-founded_one": "{{count}} LINK FOUND",
-      "link-founded_other": "{{count}} LINKS FOUND"
+      "link-founded_other": "{{count}} LINKS FOUND",
+      "follow": "follow "
     },
     "buy-all": {
       "title": "Buy all packages",
@@ -72,7 +81,14 @@
       "title": "Attention! All content is paid",
       "text": "Scan results are available only after payment.\n\nIf vulnerabilities are found during the process, access to the detailed report will open only after payment confirmation.",
       "approval": "By clicking 'Start scan', you agree to these terms.",
-      "start-btn": "Start scan"
+      "start-btn": "Start scan",
+      "load-btn": "Loading"
+    },
+    "buy-warning": {
+      "title": "Read the terms before paying",
+      "text": "By continuing, you confirm that you have read the FAQ, understand the essence of the service provided, and agree to the terms of the information service.\n\nThe service is considered rendered at the time the result is provided and is non-refundable.\n\n You make the purchase decision yourself and realize that the payment is voluntary.",
+      "start-btn": "Pay",
+      "load-btn": "Download"
     },
     "soon": {
       "title": "Soon...",
@@ -111,6 +127,10 @@
         {
           "question": "How safe is it to use Vuscan?",
           "answer": "<p>It is absolutely safe. Vuscan does not integrate into your system, does not launch active attacks, and does not require access to internal data. We perform only external analysis to help you protect yourself in advance.</p>"
+        },
+        {
+          "question": "Is there a refund option?",
+          "answer": "<p>We provide information services upon your request, the result of which is not subject to cancellation or revocation after provision.</p><p>Since the service is considered to have been rendered at the time the result is issued, no refund is provided.</p>"
         }
       ]
     },
@@ -131,5 +151,23 @@
     "title-page-not-found": "Page not found",
     "description": "Check your website for vulnerabilities online with VuScan: SQL injection, XSS, CMS and security errors. Results in a couple of minutes — no registration or installation required.",
     "keywords": "website vulnerability scanner, free security scan, SQLi detector, XSS checker, web security test, online hack scanner, site vulnerability check, cybersecurity tools"
+  },
+  "toast": {
+    "not-found-param": "Parameters not passed",
+    "not-found-package": "Package not found",
+    "not-found-scan": "Scanner not found",
+    "not-found-user": "User could not be identified",
+    "server-error": "Server error",
+    "this-package-already-buy": "This package has already been purchased",
+    "url-is-block": "URL is blocked",
+    "limit-exceeded": "Scan limit exceeded",
+    "access-denied": "Access denied",
+    "send-report-error": "Report could not be sent",
+    "send-report-success": "Successfully sent",
+    "scan-left": "Scans remaining: {{count}}",
+    "scan-finish": "Scan completed",
+    "wait-scan-end": "Wait for the scan to complete",
+    "payment-error": "Payment failed",
+    "payment-success": "Successful purchase"
   }
 }

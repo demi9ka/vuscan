@@ -31,7 +31,7 @@ export const Contact = () => {
   })
 
   const onClose = () => {
-    navigate(-1)
+    navigate('/', { replace: true })
     reset()
   }
 

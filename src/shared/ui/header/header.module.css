@@ -18,6 +18,11 @@
 .title span.accent {
   color: var(--accent);
 }
+.flex {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
 
 @media screen and (max-width: 1920px) {
   .header {
@@ -27,6 +32,9 @@
     font-size: calc(100vw / 68.57);
     line-height: calc(100vw / 64);
   }
+  .flex {
+    gap: calc(100vw / 120);
+  }
 }
 @media screen and (max-width: 768px) {
   .header {
@@ -34,6 +42,9 @@
   }
   .title * {
     font-size: calc(100vw / 27.42);
+  }
+  .flex {
+    gap: calc(100vw / 48);
   }
 }
 @media screen and (max-width: 480px) {
@@ -43,5 +54,8 @@
   .title * {
     font-size: calc(100vw / 13.9);
     line-height: calc(100vw / 13);
+  }
+  .flex {
+    gap: calc(100vw / 22.5);
   }
 }

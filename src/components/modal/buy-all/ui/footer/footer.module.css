@@ -1,0 +1,242 @@
+.input {
+  width: 100%;
+  border-radius: 12px;
+  background-color: var(--dark);
+  border: 1px solid var(--border);
+  padding: 11px 24px;
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+.form {
+  width: 100%;
+}
+
+.warningWrapper {
+  margin-top: 16px;
+  display: flex;
+  align-items: center;
+}
+.timerIcon {
+  width: 44px;
+}
+.divider {
+  margin: 0 24px;
+  width: 2px;
+  height: 38px;
+  background-color: var(--border);
+}
+.warning {
+  font-size: 18px;
+  font-weight: 500;
+  flex-grow: 2;
+}
+
+.button {
+  position: relative;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 20px;
+}
+.button.sendToEmailButton {
+  justify-content: center;
+}
+
+.buttonTitle {
+  font-family: var(--ff-Eesti);
+  font-weight: 500;
+  font-size: 20px;
+}
+.priceWrapper {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+.oldPrice {
+  color: var(--text-6);
+  font-size: 22px;
+  font-weight: 700;
+  text-decoration: line-through;
+  font-family: var(--ff-Eesti);
+}
+.newPrice {
+  font-family: var(--ff-Eesti);
+  font-weight: 700;
+  font-size: 26px;
+}
+
+.discount {
+  position: absolute;
+  top: -10px;
+  left: -30px;
+  transform: rotate(-15deg);
+  background-color: #ffffff;
+  color: var(--accent);
+  font-family: var(--ff-Eesti);
+  font-size: 16px;
+  font-weight: 500;
+  border-radius: 100px;
+  padding: 5px 18px;
+}
+
+@media screen and (max-width: 1920px) {
+  .input {
+    border-radius: calc(100vw / 160);
+    padding: calc(100vw / 174.54) calc(100vw / 80);
+    font-size: calc(100vw / 106.666);
+  }
+
+  .warningWrapper {
+    margin-top: calc(100vw / 120); /* 16px */
+  }
+
+  .timerIcon {
+    width: calc(100vw / 43.636); /* ~44px */
+  }
+
+  .divider {
+    margin: 0 calc(100vw / 80); /* 24px */
+    height: calc(100vw / 50.526); /* ~38px */
+  }
+
+  .warning {
+    font-size: calc(100vw / 106.667); /* 18px */
+  }
+  .button {
+    padding: calc(100vw / 174.54) calc(100vw / 96);
+  }
+  .buttonTitle {
+    font-size: calc(100vw / 96);
+  }
+
+  .priceWrapper {
+    gap: calc(100vw / 192);
+  }
+
+  .oldPrice {
+    font-size: calc(100vw / 87.273);
+  }
+
+  .newPrice {
+    font-size: calc(100vw / 73.846);
+  }
+
+  .discount {
+    top: calc(-100vw / 192);
+    left: calc(-100vw / 64);
+    font-size: calc(100vw / 120);
+    border-radius: 100px;
+    padding: calc(100vw / 384) calc(100vw / 106.667);
+  }
+}
+@media screen and (max-width: 768px) {
+  .input {
+    width: 100%;
+    padding: calc(100vw / 69.81) calc(100vw / 32);
+    font-size: calc(100vw / 42.666);
+    border-radius: calc(100vw / 64);
+  }
+
+  .warningWrapper {
+    margin-top: calc(100vw / 48); /* 16px */
+  }
+
+  .timerIcon {
+    width: calc(100vw / 17.455); /* ~44px */
+  }
+
+  .divider {
+    margin: 0 calc(100vw / 32); /* 24px */
+    height: calc(100vw / 20.211); /* ~38px */
+  }
+
+  .warning {
+    font-size: calc(100vw / 42.667); /* 18px */
+  }
+  .button {
+    padding: calc(100vw / 69.816) calc(100vw / 38.4);
+  }
+
+  .buttonTitle {
+    font-size: calc(100vw / 38.4);
+  }
+
+  .priceWrapper {
+    gap: calc(100vw / 76.8);
+  }
+
+  .oldPrice {
+    font-size: calc(100vw / 34.91);
+  }
+
+  .newPrice {
+    font-size: calc(100vw / 29.54);
+  }
+
+  .discount {
+    top: calc(-100vw / 76.8);
+    left: calc(-100vw / 25.6);
+    font-size: calc(100vw / 48);
+    border-radius: 100px;
+    padding: calc(100vw / 153.6) calc(100vw / 42.67);
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .input {
+    width: 100%;
+    padding: calc(100vw / 45) calc(100vw / 20);
+    font-size: calc(100vw / 21.66);
+    border-radius: calc(100vw / 32.5);
+  }
+
+  .warningWrapper {
+    margin-top: calc(100vw / 22.5); /* 16px */
+  }
+
+  .timerIcon {
+    width: calc(100vw / 8.182); /* ~44px */
+  }
+
+  .divider {
+    margin: 0 calc(100vw / 15); /* 24px */
+    height: calc(100vw / 9.474); /* ~38px */
+  }
+
+  .warning {
+    font-size: calc(100vw / 30); /* 18px */
+    line-height: calc(100vw / 20);
+  }
+  .button {
+    padding: calc(100vw / 35.39) calc(100vw / 25);
+  }
+
+  .buttonTitle {
+    font-size: calc(100vw / 20.47);
+  }
+
+  .priceWrapper {
+    gap: calc(100vw / 39);
+  }
+
+  .oldPrice {
+    font-size: calc(100vw / 17.7);
+  }
+
+  .newPrice {
+    font-size: calc(100vw / 14.97);
+  }
+
+  .discount {
+    top: calc(-100vw / 39);
+    left: calc(-100vw / 30.98);
+    font-size: calc(100vw / 32.34);
+    line-height: calc(100vw / 32.34);
+    border-radius: 100px;
+    padding: calc(100vw / 60) calc(100vw / 40.63);
+  }
+  .button.sendToEmailButton {
+    font-size: calc(100vw / 23);
+  }
+}

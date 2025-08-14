@@ -5,60 +5,56 @@ import { useNavigate } from '@/hooks'
 import { scannerStore } from '@/store'
 import { searchStore } from '@/store'
 import { useScanner } from '@/entities/scanner'
-import { useForm } from 'react-hook-form'
+import { observer } from 'mobx-react-lite'
+import { FormEvent, useEffect, useState } from 'react'
 
-type FormDataType = {
-  url: string
-}
-
-export const Search = () => {
+export const Search = observer(() => {
   const { t } = useTranslation()
   const navigate = useNavigate()
   const { scannerId, isFinished, newScan } = scannerStore
-  const { setSearch, clearSearch } = searchStore
+  const { setSearch, search, clearSearch } = searchStore
+  const [isFormValid, setIsFormValid] = useState(false)
   const { isPending } = useScanner()
 
   const isInitialState = Boolean(!scannerId && !isFinished)
   const isScanning = Boolean(scannerId && !isFinished)
 
-  const {
-    register,
-    handleSubmit,
-    reset,
-    formState: { isValid, isDirty }
-  } = useForm<FormDataType>()
-
-  const onSubmit = (formData: FormDataType) => {
+  useEffect(() => {
+    try {
+      const pattern =
+        /^(https?:\/\/)?(www\.)?([a-zа-яё0-9-]+)(\.[a-zа-яё]{2,}){1,2}(:\d{1,5})?(\/[^\s?#]*)?(\?[^\s#]*)?(#[^\s]*)?$/iu
+      setIsFormValid(pattern.test(search))
+    } catch {
+      setIsFormValid(false)
+    }
+  }, [search])
+  const onSubmit = (e: FormEvent) => {
+    e.preventDefault()
     if (isScanning) return
     if (isInitialState) {
-      setSearch(formData.url)
-      navigate('/?modal=warning')
+      if (!isFormValid) return
+      navigate('/?modal=warning', { replace: true })
     }
     if (isFinished) {
       newScan()
       clearSearch()
-      reset()
     }
   }
 
   return (
-    <form className={css.wrapper} onSubmit={handleSubmit(onSubmit)}>
+    <form className={css.wrapper} onSubmit={onSubmit}>
       <input
         type='text'
         placeholder={t('home.search-placeholder')}
+        disabled={!isInitialState}
+        value={search}
+        onChange={vl => isInitialState && setSearch(vl.target.value)}
         className={css.searchInput}
-        {...register('url', {
-          validate: value => {
-            if (isFinished) return true
-            if (!value) return 'URL обязателен'
-            return true
-          }
-        })}
       />
       <Button
         type='submit'
         variant='gradient'
-        disabled={!isValid || !isDirty || isPending || isScanning}
+        disabled={!isFinished && ((isInitialState && !isFormValid) || isPending || isScanning)}
         className={css.button}
       >
         {isInitialState && t('home.scan-btn')}
@@ -67,4 +63,4 @@ export const Search = () => {
       </Button>
     </form>
   )
-}
+})

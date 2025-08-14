@@ -42,3 +42,10 @@ export const BackIcon = (props: WrapperProps) => {
     </SVGWrapper>
   )
 }
+export const TimerIcon = (props: WrapperProps) => {
+  return (
+    <SVGWrapper {...props}>
+      <img style={svgStyle} src='/timer.svg' alt='timer' />
+    </SVGWrapper>
+  )
+}

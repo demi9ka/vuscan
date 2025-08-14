@@ -1,44 +1,88 @@
-// 0-Успешно, 1-неверный url
-export type ScannerResponse =
+import { PackageType } from '@/store/scanner-store'
+
+export type scannerResponse =
   | {
-      status: 0 | 2
+      status: 0
       id: string
+      url: string
+      attempsLeft?: number
     }
   | {
       status: 1
     }
-export type ScannerParams = {
+  | {
+      status: 2
+      id: string
+      data: PackageType[]
+      url: string
+    }
+
+export type scannerParams = {
   url: string
 }
 export type checkScannerStateParams = {
   id: string
 }
-export type checkScannerStateReponse = {
-  data: {
-    findedLinks?: number
-  }[]
-}
-export type BuyAllParams = {
+export type checkScannerStateReponse = { data: PackageType[]; isFinished: boolean; url: string }
+export type BuyAllPackagesParams = {
   scannerId: string
 }
-export type BuyAllResponse = {
-  paymentLink: string
+export type BuyAllPackagesResponse = {
+  result: true
 }
 export type BuyPackageParams = {
-  id: number
+  packageId: number
   scannerId: string
 }
 export type BuyPackageResponse = {
-  paymentLink: string
+  result: boolean
 }
 export type getPackageParams = {
   packageId: number
   scannerId: string
 }
-export type getPackageResponse = {
-  freeLinks?: string
-  linkCount?: number
-  price?: number
-
-  links?: string[]
+export type getPackageResponse =
+  | {
+      isBuy: false
+      links?: string[]
+      baseLinks: string[]
+      price: number
+    }
+  | {
+      isBuy: true
+      isFullBuy?: true
+      links: string[]
+      time?: number
+    }
+  | undefined
+export type getAllPackagesParams = {
+  scannerId: string
+}
+export type getAllPackagesResponse =
+  | {
+      isBuy: false
+      oldPrice: number
+      price: number
+    }
+  | {
+      isBuy: true
+      time: number
+    }
+export type sendReportToEmailResponse = {
+  result: boolean
+}
+export type sendReportToEmailParams = {
+  email: string
+  scannerId: string
+  packageId: number
+}
+export type sendAllReportsToEmailResponse = {
+  result: boolean
+}
+export type sendAllReportsToEmailParams = {
+  email: string
+  scannerId: string
+}
+export type scannerCountResponse = {
+  count: number
 }

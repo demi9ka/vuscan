@@ -4,39 +4,37 @@ import { useLocation } from 'react-router-dom'
 import { Button, Modal } from '@/shared/ui'
 import { observer } from 'mobx-react-lite'
 import { scannerStore } from '@/store'
-import { useBuyAll } from '@/entities/scanner'
 import { useNavigate } from '@/hooks'
+import { useGetAllPackages } from '@/entities/scanner'
+import { Footer } from './ui/footer'
 
 export const BuyAll = observer(() => {
+  const { packages, scannerId } = scannerStore
   const { t } = useTranslation()
   const navigate = useNavigate()
-  const { isPending, mutateAsync } = useBuyAll()
-  const location = useLocation()
-  const { packages, scannerId } = scannerStore
+  const { data: packagesData } = useGetAllPackages({ scannerId: scannerId || '' })
 
+  const location = useLocation()
   const queryParams = new URLSearchParams(location.search)
   const urlModal = queryParams.get('modal')
 
   const onClose = () => {
-    navigate('/')
+    navigate('/', { replace: true })
   }
 
-  const onBuyAll = async () => {
-    if (!scannerId) return
-    const { paymentLink } = await mutateAsync({ scannerId })
-    paymentLink
+  const onOpenPackage = (id: number) => {
+    navigate(`/?modal=open-package&id=${id}`, { replace: true })
   }
 
   if (!packages) return <></>
-  const activePackages = packages.filter(el => el.linkFounded > 0)
+  const activePackages = packages.filter(el => el.findedLinks > 0)
   const opened = urlModal == 'buy-all'
-  const oldPrice = activePackages.length * 12
 
-  const contentMapped = activePackages.map((el, i) => (
-    <div key={i} className={css.packageInfo}>
+  const contentMapped = activePackages.map(el => (
+    <div key={el.id} className={css.packageInfo}>
       <p className={css.packageTitle}>{t(`home.levels.${el.id}.title`)}</p>
-      <Button className={css.packageButton} variant="error">
-        {t('home.link-btn', { count: el.linkFounded })}{' '}
+      <Button onClick={() => onOpenPackage(el.id)} className={css.packageButton} variant='error'>
+        {t('home.link-btn', { count: el.findedLinks })}
       </Button>
     </div>
   ))
@@ -46,15 +44,7 @@ export const BuyAll = observer(() => {
       <p className={css.description}>{t('modal.buy-all.description')}</p>
       <p className={css.title}>{t('modal.buy-all.content-title')}</p>
       <div className={css.content}>{contentMapped}</div>
-
-      <Button disabled={isPending || !scannerId} onClick={onBuyAll} className={css.button} variant="gradient">
-        <div className={css.discount}>-10%</div>
-        <p className={css.buttonTitle}>{t('home.buy-all-btn')}</p>
-        <div className={css.priceWrapper}>
-          <div className={css.oldPrice}>{oldPrice}$</div>
-          <div className={css.newPrice}>{(oldPrice * 0.9).toFixed(1)}$</div>
-        </div>
-      </Button>
+      <Footer packagesData={packagesData} />
     </Modal>
   )
 })

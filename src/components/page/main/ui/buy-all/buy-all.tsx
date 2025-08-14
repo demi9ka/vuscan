@@ -12,7 +12,7 @@ export const BuyAll = observer(() => {
   const { isFinished, packages } = scannerStore
 
   const isRender = useMemo(() => {
-    return isFinished && packages && packages.filter(el => el.linkFounded > 0).length > 1
+    return isFinished && packages && packages.filter(el => el.findedLinks > 0).length > 1
   }, [isFinished, packages])
 
   if (!isRender) {

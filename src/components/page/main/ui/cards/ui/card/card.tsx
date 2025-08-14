@@ -18,7 +18,7 @@ export const Card = observer(({ logo, color, id }: Props) => {
   const { packages } = scannerStore
 
   const cardPackage = packages ? packages.find(el => el.id == id)! : null
-  const isRenderErrorBoxShadow = Boolean(cardPackage && cardPackage.linkFounded > 0)
+  const isRenderErrorBoxShadow = Boolean(cardPackage && cardPackage.findedLinks > 0)
 
   const primaryColor = isRenderErrorBoxShadow ? 'var(--error)' : color
 

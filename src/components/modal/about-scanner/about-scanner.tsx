@@ -14,7 +14,7 @@ export const AboutScanner = () => {
   const urlModal = queryParams.get('modal')
 
   const onClose = () => {
-    navigate('/')
+    navigate('/', { replace: true })
   }
 
   const opened = urlModal == 'about-scanner'
@@ -27,12 +27,12 @@ export const AboutScanner = () => {
           h4: <h4 />,
           p: <p />,
           ul: <ul />,
-          li: <li style={{ listStyleType: 'decimal' }} />,
+          li: <li style={{ listStyleType: 'decimal' }} />
         }}
       />
 
       <div className={css.center}>
-        <Button variant="default" className={css.button} onClick={onClose}>
+        <Button variant='default' className={css.button} onClick={onClose}>
           {t('global.close')}
         </Button>
       </div>

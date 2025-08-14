@@ -13,6 +13,9 @@
   padding: 11px 24px;
   font-size: 18px;
 }
+.searchInput:disabled {
+  opacity: 0.8;
+}
 .button {
   font-size: 20px;
   font-weight: 500;
