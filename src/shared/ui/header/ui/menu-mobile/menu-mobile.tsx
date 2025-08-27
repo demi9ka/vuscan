@@ -26,12 +26,17 @@ export const MenuMobile = () => {
     <div ref={ref} className={css.wrapper} onClick={toggleOpen}>
       <MenuBurgerIcon
         style={{
-          transform: `rotate(${isOpen ? 90 : 0}deg)`
+          transform: `rotate(${isOpen ? 90 : 0}deg)`,
         }}
         className={css.icon}
       />
       <nav className={combaneCSS(css.menu, isOpen ? css.opened : '')}>
         <ul>
+          <li className={css.linkWrapper}>
+            <a href="/Privacy_Policy.docx" target="_blank" className={css.link}>
+              Privacy policy
+            </a>
+          </li>
           <li className={css.linkWrapper}>
             <Link className={css.link} to={'/?modal=about-scanner'}>
               {t('header.about')}
@@ -49,7 +54,7 @@ export const MenuMobile = () => {
           </li>
           <LanguageSelect />
           <li>
-            <Button variant='gradient' onClick={onOpenContact} className={css.button}>
+            <Button variant="gradient" onClick={onOpenContact} className={css.button}>
               {t('header.contact')}
             </Button>
           </li>

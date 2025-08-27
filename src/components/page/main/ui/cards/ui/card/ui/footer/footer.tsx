@@ -13,7 +13,7 @@ type Props = {
 }
 
 export const Footer = observer(({ cardPackage, cardId }: Props) => {
-  const { scannerId, isFinished } = scannerStore
+  const { scannerId, isFinished, packages } = scannerStore
   const navigate = useNavigate()
   const { t } = useTranslation()
 
@@ -29,7 +29,7 @@ export const Footer = observer(({ cardPackage, cardId }: Props) => {
   if (!scannerId) {
     return (
       <div className={css.buttonWrapper}>
-        <Button className={css.button} onClick={onOpenInfo} variant='default'>
+        <Button className={css.button} onClick={onOpenInfo} variant="default">
           {t('global.more')}
         </Button>
       </div>
@@ -39,7 +39,7 @@ export const Footer = observer(({ cardPackage, cardId }: Props) => {
   if (!cardPackage)
     return (
       <div className={css.buttonWrapper}>
-        <Button className={css.button} variant='default'>
+        <Button className={css.button} variant="default">
           Загрузка...
         </Button>
       </div>
@@ -51,11 +51,7 @@ export const Footer = observer(({ cardPackage, cardId }: Props) => {
   if (progress !== 100) {
     return (
       <div className={css.buttonWrapper}>
-        <Button
-          style={{ cursor: 'default' }}
-          className={combaneCSS(css.button, css.progressBarButton)}
-          variant='default'
-        >
+        <Button style={{ cursor: 'default' }} className={combaneCSS(css.button, css.progressBarButton)} variant="default">
           <p className={css.progressBarText}>{progress.toFixed(0)}%</p>
           <div className={css.progressBar} style={{ width: `${progress}%` }} />
         </Button>
@@ -64,12 +60,12 @@ export const Footer = observer(({ cardPackage, cardId }: Props) => {
   } else if (findedLinks > 0) {
     return (
       <div className={css.buttonWrapper} style={{ cursor: 'default' }}>
-        <Button onClick={onClickNotFinished} className={css.button} variant='error'>
+        <Button onClick={onClickNotFinished} className={css.button} variant="error">
           {t('home.link-btn', { count: findedLinks })}
         </Button>
 
         {isFinished && (
-          <Button onClick={onOpenPackage} className={combaneCSS(css.button, css.openPackage)} variant='gradient'>
+          <Button onClick={onOpenPackage} className={combaneCSS(css.button, css.openPackage)} variant="gradient">
             {t('home.open-package')}
           </Button>
         )}
@@ -78,12 +74,12 @@ export const Footer = observer(({ cardPackage, cardId }: Props) => {
   } else {
     return (
       <div className={css.buttonWrapper}>
-        {isFinished && (
+        {isFinished && packages && packages!.filter(el => el.findedLinks == 0).length != 0 && (
           <Button disabled className={combaneCSS(css.button, css.displayOff)}>
             0
           </Button>
         )}
-        <Button style={{ cursor: 'default' }} className={css.button} variant='default'>
+        <Button style={{ cursor: 'default' }} className={css.button} variant="default">
           {t('home.no-thread')}
         </Button>
       </div>

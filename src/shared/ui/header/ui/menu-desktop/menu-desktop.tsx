@@ -18,6 +18,11 @@ export const MenuDesktop = () => {
           <ScanningCount />
         </li>
         <li>
+          <a href="/Privacy_Policy.docx" target="_blank" className={css.link}>
+            Privacy policy
+          </a>
+        </li>
+        <li>
           <Link to={'/?modal=about-scanner'} className={css.link}>
             {t('header.about')}
           </Link>
@@ -34,7 +39,7 @@ export const MenuDesktop = () => {
         </li>
         <LanguageSelect />
 
-        <Button className={css.button} onClick={onOpenContact} variant='gradient'>
+        <Button className={css.button} onClick={onOpenContact} variant="gradient">
           {t('header.contact')}
         </Button>
       </ul>

@@ -28,7 +28,7 @@ class ScannerStore {
         if (!this.scannerId) clearInterval(interval)
         const {
           data: { data, isFinished },
-          status
+          status,
         } = await api.scanner.checkScannerState({ id: this.scannerId! })
         if (status !== 200) return
 
@@ -36,12 +36,10 @@ class ScannerStore {
         if (isFinished === true) {
           clearInterval(interval)
 
+          this.isFinished = true
           toast(i18next.t('toast.scan-finish'), 'success')
           queryClient.invalidateQueries({ queryKey: ['scanner', 'get-package'], exact: false })
           queryClient.invalidateQueries({ queryKey: ['scanner', 'get-all-packages'], exact: false })
-          runInAction(() => {
-            this.isFinished = true
-          })
         }
       } catch {
         return 0
@@ -65,23 +63,23 @@ class ScannerStore {
       {
         id: 0,
         findedLinks: 0,
-        progress: 0
+        progress: 0,
       },
       {
         id: 1,
         findedLinks: 0,
-        progress: 0
+        progress: 0,
       },
       {
         id: 2,
         findedLinks: 0,
-        progress: 0
+        progress: 0,
       },
       {
         id: 3,
         findedLinks: 0,
-        progress: 0
-      }
+        progress: 0,
+      },
     ])
   }
   restoreScanner = async () => {
@@ -90,7 +88,7 @@ class ScannerStore {
     try {
       this.scannerId = id
       const {
-        data: { data, isFinished, url }
+        data: { data, isFinished, url },
       } = await api.scanner.checkScannerState({ id })
       searchStore.setSearch(url)
       this.setPackages(data as PackageType[])
