@@ -63,7 +63,9 @@
       "go-to-all-packages": "Перейти к пакетам",
       "link-founded_one": "{{count}} ССЫЛКА НАЙДЕНА",
       "link-founded_few": "{{count}} ССЫЛКИ НАЙДЕНЫ",
-      "link-founded_many": "{{count}} ССЫЛОК НАЙДЕНО"
+      "link-founded_many": "{{count}} ССЫЛОК НАЙДЕНО",
+      "enter-promocode": "Введите промокод",
+      "apply-promocode": "Применить"
     },
     "buy-all": {
       "title": "Купить ве пакеты",
@@ -171,6 +173,9 @@
     "scan-finish": "Сканирование завершено",
     "wait-scan-end": "Дождитесь завершения сканирования",
     "payment-error": "Не удалось оплатить",
-    "payment-success": "Успешная покупка"
+    "payment-success": "Успешная покупка",
+    "already-active-subscribe": "У вас есть активная подписка",
+    "promocode-error": "Не удалось применить промокод",
+    "promocode-success": "Промокод применён"
   }
 }

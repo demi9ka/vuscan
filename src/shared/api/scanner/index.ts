@@ -15,7 +15,9 @@ import {
   sendReportToEmailResponse,
   BuyAllPackagesParams,
   BuyAllPackagesResponse,
-  scannerCountResponse
+  scannerCountResponse,
+  applyPromocodeParams,
+  applyPromocodeResponse,
 } from './types'
 import { api } from '..'
 
@@ -48,6 +50,9 @@ const sendAllReportsToEmail = async (data: sendAllReportsToEmailParams) => {
 const scannerCount = async () => {
   return await api.get<scannerCountResponse>(PREFIX + '/scanner-count')
 }
+const applyPromocode = async (data: applyPromocodeParams) => {
+  return await api.post<applyPromocodeResponse>(PREFIX + '/apply-promocode', data)
+}
 
 export default {
   scanner,
@@ -58,5 +63,6 @@ export default {
   sendReportToEmail,
   sendAllReportsToEmail,
   getAllPackages,
-  scannerCount
+  scannerCount,
+  applyPromocode,
 }

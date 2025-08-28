@@ -60,7 +60,9 @@
       "go-to-all-packages": "Go to packages",
       "link-founded_one": "{{count}} LINK FOUND",
       "link-founded_other": "{{count}} LINKS FOUND",
-      "follow": "follow "
+      "follow": "follow ",
+      "enter-promocode": "Enter promocode",
+      "apply-promocode": "Apply"
     },
     "buy-all": {
       "title": "Buy all packages",
@@ -167,7 +169,10 @@
     "scan-left": "Scans remaining: {{count}}",
     "scan-finish": "Scan completed",
     "wait-scan-end": "Wait for the scan to complete",
+    "already-active-subscribe": "already-have-active-subscribe",
     "payment-error": "Payment failed",
-    "payment-success": "Successful purchase"
+    "payment-success": "Successful purchase",
+    "promocode-error": "Promocode error",
+    "promocode-success": "Promocode success"
   }
 }

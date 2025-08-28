@@ -74,7 +74,7 @@ export const Footer = observer(({ cardPackage, cardId }: Props) => {
   } else {
     return (
       <div className={css.buttonWrapper}>
-        {isFinished && packages && packages!.filter(el => el.findedLinks == 0).length != 0 && (
+        {isFinished && packages && packages.filter(el => el.findedLinks != 0).length != 0 && (
           <Button disabled className={combaneCSS(css.button, css.displayOff)}>
             0
           </Button>

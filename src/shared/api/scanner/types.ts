@@ -86,3 +86,12 @@ export type sendAllReportsToEmailParams = {
 export type scannerCountResponse = {
   count: number
 }
+export type applyPromocodeParams = {
+  scannerId: string
+  packageId?: number
+  promocode: string
+  isFullScan?: boolean
+}
+export type applyPromocodeResponse = {
+  result: boolean
+}
