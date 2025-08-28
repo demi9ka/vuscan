@@ -13,16 +13,16 @@ i18next
     fallbackLng: 'ru',
     debug: false,
     interpolation: {
-      escapeValue: false
+      escapeValue: false,
     },
     backend: {
-      loadPath: '/locales/{{lng}}/translation.json'
-    }
+      loadPath: '/locales/{{lng}}/translation.json',
+    },
   })
   .then(() => scannerStore.restoreScanner())
 
 const originalSetLanguage = languageStore.setLanguage
-languageStore.setLanguage = (language: 'ru' | 'en') => {
+languageStore.setLanguage = (language: 'ru' | 'en' | 'he') => {
   originalSetLanguage(language)
   i18next.changeLanguage(language)
   document.documentElement.lang = language

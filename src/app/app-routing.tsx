@@ -16,14 +16,14 @@ export const AppRouting = () => {
   }
 
   // Если языка в URL нет - добавляем
-  if (!['ru', 'en'].includes(urlLang)) {
+  if (!['ru', 'en', 'he'].includes(urlLang)) {
     const newPath = `/${languageStore.language}${location.pathname}`
     return <Navigate to={newPath} replace />
   }
   return (
     <Routes>
-      <Route path='/:lang' element={<Main />} />
-      <Route path='*' element={<NotFound />} />
+      <Route path="/:lang" element={<Main />} />
+      <Route path="*" element={<NotFound />} />
     </Routes>
   )
 }

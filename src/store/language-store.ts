@@ -1,6 +1,6 @@
 import { makeAutoObservable } from 'mobx'
 
-type LanguageType = 'ru' | 'en'
+type LanguageType = 'ru' | 'en' | 'he'
 
 class LanguageStore {
   language: LanguageType = 'en'
@@ -34,7 +34,7 @@ class LanguageStore {
 
   // Вспомогательный метод для проверки поддерживаемых языков
   private isSupportedLanguage = (lang: string): boolean => {
-    return ['ru', 'en'].includes(lang)
+    return ['ru', 'en', 'he'].includes(lang)
   }
 
   // Метод для точного определения языка браузера

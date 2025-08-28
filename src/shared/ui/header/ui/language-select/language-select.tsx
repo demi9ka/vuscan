@@ -8,7 +8,7 @@ export const LanguageSelect = observer(() => {
   const { language, setLanguage } = languageStore
   const navigate = useNavigate()
 
-  const changeLanguage = (lng: 'ru' | 'en') => {
+  const changeLanguage = (lng: 'ru' | 'en' | 'he') => {
     setLanguage(lng)
     navigate(`/${lng}${location.pathname.slice(3)}`)
   }
@@ -21,6 +21,10 @@ export const LanguageSelect = observer(() => {
       <div className={css.separator} />
       <p onClick={() => changeLanguage('en')} className={combaneCSS(css.variant, language != 'en' ? css.disable : '')}>
         EN
+      </p>
+      <div className={css.separator} />
+      <p onClick={() => changeLanguage('he')} className={combaneCSS(css.variant, language != 'he' ? css.disable : '')}>
+        HE
       </p>
     </div>
   )
