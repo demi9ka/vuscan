@@ -17,7 +17,7 @@ export const Warning = observer(() => {
   const navigate = useNavigate()
   const location = useLocation()
   const { search, setSearch } = searchStore
-  const { start } = scannerStore
+  const { checkScanner } = scannerStore
   const { t } = useTranslation()
   const buttonRef = useRef<HTMLButtonElement>(null)
 
@@ -35,7 +35,7 @@ export const Warning = observer(() => {
       onClose()
       if (res.status === 0) {
         setSearch(res.url)
-        start(res.id)
+        checkScanner(res.id)
         localStorage.setItem('scannerId', res.id)
         if (res.attempsLeft) toast(t('toast.scan-left', { count: res.attempsLeft }))
       }
@@ -83,7 +83,7 @@ export const Warning = observer(() => {
     <Modal opened={opened} onClose={onClose}>
       <div className={css.center}>
         <div className={css.imageWrapper}>
-          <img src='/money.webp' alt='level3' />
+          <img src="/money.webp" alt="level3" />
         </div>
       </div>
       <p className={css.title}>{t(`modal.warning.title`)}</p>
@@ -91,13 +91,7 @@ export const Warning = observer(() => {
       <p className={css.text} style={{ marginTop: '36px', marginBottom: '16px' }}>
         {t(`modal.warning.approval`)}
       </p>
-      <Button
-        ref={buttonRef}
-        variant='gradient'
-        disabled={isPending}
-        className={combaneCSS(css.button)}
-        onClick={handleStartScan}
-      >
+      <Button ref={buttonRef} variant="gradient" disabled={isPending} className={combaneCSS(css.button)} onClick={handleStartScan}>
         {isPending ? (
           <>
             {t('modal.warning.load-btn')}

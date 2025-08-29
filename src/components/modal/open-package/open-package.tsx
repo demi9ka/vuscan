@@ -35,7 +35,7 @@ export const OpenPackage = observer(({ id }: Props) => {
   return (
     <Modal onClose={onClose} title={isMobile ? t(`home.levels.${id}.title`) : ''} className={css.modal} opened={opened}>
       <div className={css.levelWrapper}>
-        <Level text={t(`home.levels.${id}.level`)} color='var(--error)' />
+        <Level text={t(`home.levels.${id}.level`)} color="var(--error)" />
       </div>
       <p className={css.title}>{t(`home.levels.${id}.title`)}</p>
       <div className={css.center}>
@@ -44,16 +44,16 @@ export const OpenPackage = observer(({ id }: Props) => {
       {packageData ? (
         <>
           <div className={css.center}>
-            <Button className={css.linkFoundedButton} variant='error'>
+            <Button className={css.linkFoundedButton} variant="error">
               {t('modal.open-package.link-founded', {
-                count: packageData.isBuy ? packageData.links.length : packageData.baseLinks?.length || 0
+                count: packageData.isBuy ? packageData.links.length : packageData.baseLinks?.length || 0,
               })}
             </Button>
           </div>
           <div className={css.center}>
             <p className={css.description}>{t('modal.open-package.content-description')}</p>
           </div>
-          <div className={combaneCSS(css.scrollView, packageData.isBuy && packageData.time ? css.short : '')}>
+          <div className={combaneCSS(css.scrollView)}>
             <Links packageData={packageData} />
           </div>
           <Footer packageData={packageData} packageId={id} />

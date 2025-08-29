@@ -28,14 +28,16 @@ export type BuyAllPackagesParams = {
   scannerId: string
 }
 export type BuyAllPackagesResponse = {
-  result: true
+  url: string
+  orderId: string
 }
 export type BuyPackageParams = {
   packageId: number
   scannerId: string
 }
 export type BuyPackageResponse = {
-  result: boolean
+  url: string
+  orderId: string
 }
 export type getPackageParams = {
   packageId: number

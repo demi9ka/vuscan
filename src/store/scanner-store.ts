@@ -20,7 +20,7 @@ class ScannerStore {
     makeAutoObservable(this)
   }
 
-  start = (scannerId: string) => {
+  checkScanner = (scannerId: string) => {
     this.scannerId = scannerId
     this.initPackages()
     const f = async () => {
@@ -98,7 +98,7 @@ class ScannerStore {
           this.isFinished = true
         })
       } else {
-        this.start(id)
+        this.checkScanner(id)
       }
     } catch {
       this.newScan()

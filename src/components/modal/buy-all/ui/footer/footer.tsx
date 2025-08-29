@@ -29,7 +29,7 @@ export const Footer = ({ packagesData }: Props) => {
   const [promocode, setPromocode] = useState('')
 
   const onBuyAllPackages = () => {
-    navigate('/?modal=buy-warning&isFullBuy=true')
+    navigate('/?modal=buy-warning')
   }
 
   const onApplyPromocode = async () => {

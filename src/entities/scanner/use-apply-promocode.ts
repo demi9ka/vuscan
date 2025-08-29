@@ -10,7 +10,7 @@ export const useApplyPromocode = () => {
   return useMutation({
     mutationFn: async (data: applyPromocodeParams) => (await api.scanner.applyPromocode(data)).data,
 
-    onSuccess: (data, { packageId, scannerId, isFullScan }) => {
+    onSuccess: (data, { scannerId, isFullScan }) => {
       if (!data.result) return toast(t('toast.promocode-error'), 'error')
       toast(t('toast.promocode-success'), 'success')
       if (isFullScan) queryClient.invalidateQueries({ queryKey: ['scanner', 'get-all-packages', { scannerId }] })
