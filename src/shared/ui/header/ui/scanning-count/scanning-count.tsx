@@ -1,4 +1,4 @@
-import { useScannerCount } from '@/entities/scanner'
+import { useScannerCount } from '@/entities'
 import css from './scanning-count.module.css'
 import { useTranslation } from 'react-i18next'
 

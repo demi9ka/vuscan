@@ -5,9 +5,9 @@ import { Seo } from '@/app'
 export const NotFound = () => {
   const { t } = useTranslation()
   const seoProps = {
-    title: t('seo.title-main'),
+    title: t('seo.title-page-not-found'),
     description: t('seo.description'),
-    keywords: t('seo.keywords')
+    keywords: t('seo.keywords'),
   }
   return (
     <div className={css.wrapper}>

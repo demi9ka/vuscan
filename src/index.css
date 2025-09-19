@@ -68,7 +68,7 @@
   color: var(--text);
   font-family: var(--ff-Manrope);
   font-size: 16px;
-  line-height: 30px;
+
   list-style-type: none;
   -webkit-tap-highlight-color: transparent; /* Убирает синий подсвет */
   -webkit-touch-callout: none; /* Отключает контекстное меню на iOS */

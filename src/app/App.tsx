@@ -14,6 +14,7 @@ export const App = () => {
         <main className={css.content}>
           <AppRouting />
         </main>
+        {/* <Footer /> */}
       </div>
       <Modals />
     </Provider>

@@ -6,7 +6,7 @@
 // import { schema } from './schema'
 // import z from 'zod'
 // import { useTranslation } from 'react-i18next'
-// // import { useQueue } from '@/entities/scanner'
+// // import { useQueue } from '@/entities'
 // import { toast } from '@/feature/toast'
 // import { useNavigate } from '@/hooks'
 

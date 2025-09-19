@@ -9,8 +9,8 @@ export const Title = observer(() => {
   const { isFinished } = scannerStore
   return (
     <div className={combaneCSS(css.wrapper, isFinished ? css.finished : '')}>
-      <h2 className={css.title}>{t('home.title')}</h2>
-      <h3 className={css.subTitle}>{t('home.description')}</h3>
+      <h1 className={css.title}>{t('home.title')}</h1>
+      <h2 className={css.subTitle}>{t('home.description')}</h2>
     </div>
   )
 })

@@ -18,9 +18,9 @@ export const MenuDesktop = () => {
           <ScanningCount />
         </li>
         <li>
-          <a href="/Privacy_Policy.docx" target="_blank" className={css.link}>
+          <Link to={'/?modal=privacy'} className={css.link}>
             Privacy policy
-          </a>
+          </Link>
         </li>
         <li>
           <Link to={'/?modal=about-scanner'} className={css.link}>

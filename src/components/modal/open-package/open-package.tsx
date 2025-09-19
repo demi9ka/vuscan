@@ -3,7 +3,7 @@ import css from './open-package.module.css'
 import { scannerStore } from '@/store'
 import { useTranslation } from 'react-i18next'
 import { useLocation } from 'react-router-dom'
-import { useGetPackage } from '@/entities/scanner'
+import { useGetPackage } from '@/entities'
 import { Button, Modal, Level } from '@/shared/ui'
 import { useMediaQuery, useNavigate } from '@/hooks'
 import { Footer } from './ui/footer'
@@ -35,7 +35,7 @@ export const OpenPackage = observer(({ id }: Props) => {
   return (
     <Modal onClose={onClose} title={isMobile ? t(`home.levels.${id}.title`) : ''} className={css.modal} opened={opened}>
       <div className={css.levelWrapper}>
-        <Level text={t(`home.levels.${id}.level`)} color="var(--error)" />
+        <Level text={t(`home.levels.${id}.level`)} color='var(--error)' />
       </div>
       <p className={css.title}>{t(`home.levels.${id}.title`)}</p>
       <div className={css.center}>
@@ -44,9 +44,9 @@ export const OpenPackage = observer(({ id }: Props) => {
       {packageData ? (
         <>
           <div className={css.center}>
-            <Button className={css.linkFoundedButton} variant="error">
+            <Button className={css.linkFoundedButton} variant='error'>
               {t('modal.open-package.link-founded', {
-                count: packageData.isBuy ? packageData.links.length : packageData.baseLinks?.length || 0,
+                count: packageData.isBuy ? packageData.links.length : packageData.baseLinks?.length || 0
               })}
             </Button>
           </div>

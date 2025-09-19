@@ -1,7 +1,7 @@
 import { Button, Modal } from '@/shared/ui'
 import { useLocation } from 'react-router-dom'
 import { useTranslation } from 'react-i18next'
-import { useBuyAllPackages, useBuyPackage } from '@/entities/scanner'
+import { useBuyAllPackages, useBuyPackage } from '@/entities'
 import { observer } from 'mobx-react-lite'
 import { scannerStore } from '@/store'
 import { useEffect, useRef } from 'react'
@@ -37,10 +37,10 @@ export const BuyWarning = observer(() => {
       const { url, orderId } = isFinite(packageId)
         ? await buyPackageMutateAsync({
             packageId,
-            scannerId,
+            scannerId
           })
         : await buyAllPackagesMutateAsync({
-            scannerId,
+            scannerId
           })
       const paymentsId = JSON.parse(localStorage.getItem('paymentsId') || '[]') as PaymentStorageType[]
       if (paymentsId.find(el => el.orderId == orderId)) return
@@ -81,12 +81,18 @@ export const BuyWarning = observer(() => {
     <Modal opened={opened} onClose={onClose}>
       <div className={css.center}>
         <div className={css.imageWrapper}>
-          <img src="/money.webp" alt="level3" />
+          <img src='/money.webp' alt='level3' />
         </div>
       </div>
       <p className={css.title}>{t(`modal.buy-warning.title`)}</p>
       {textMapped}
-      <Button ref={buttonRef} variant="gradient" disabled={buyAllPackagesIsPending || buyPackageIsPending} className={css.button} onClick={handleBuy}>
+      <Button
+        ref={buttonRef}
+        variant='gradient'
+        disabled={buyAllPackagesIsPending || buyPackageIsPending}
+        className={css.button}
+        onClick={handleBuy}
+      >
         {buyAllPackagesIsPending || buyPackageIsPending ? (
           <>
             {t('modal.warning.load-btn')}

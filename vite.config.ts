@@ -3,9 +3,9 @@ import react from '@vitejs/plugin-react-swc'
 import path from 'path'
 
 export default defineConfig({
-  base: '/',
+  base: '/scanner',
   plugins: [react()],
-  publicDir: './public/',
+  publicDir: './public/scanner/',
   resolve: {
     alias: {
       '@': `${path.resolve(__dirname, 'src')}/`

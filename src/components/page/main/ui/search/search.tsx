@@ -4,7 +4,7 @@ import { useTranslation } from 'react-i18next'
 import { useNavigate } from '@/hooks'
 import { scannerStore } from '@/store'
 import { searchStore } from '@/store'
-import { useScanner } from '@/entities/scanner'
+import { useScanner } from '@/entities'
 import { observer } from 'mobx-react-lite'
 import { FormEvent, useEffect, useState } from 'react'
 

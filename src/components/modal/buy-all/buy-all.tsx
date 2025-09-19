@@ -5,7 +5,7 @@ import { Button, Modal } from '@/shared/ui'
 import { observer } from 'mobx-react-lite'
 import { scannerStore } from '@/store'
 import { useNavigate } from '@/hooks'
-import { useGetAllPackages } from '@/entities/scanner'
+import { useGetAllPackages } from '@/entities'
 import { Footer } from './ui/footer'
 
 export const BuyAll = observer(() => {

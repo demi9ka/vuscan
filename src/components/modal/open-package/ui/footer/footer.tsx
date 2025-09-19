@@ -3,7 +3,7 @@ import css from './footer.module.css'
 import { Button, TimerIcon } from '@/shared/ui'
 import { useTranslation } from 'react-i18next'
 import { useForm } from 'react-hook-form'
-import { useApplyPromocode, useSendReportToEmail } from '@/entities/scanner'
+import { useApplyPromocode, useSendReportToEmail } from '@/entities'
 import { observer } from 'mobx-react-lite'
 import { scannerStore } from '@/store'
 import { combaneCSS } from '@/helpers'
@@ -50,10 +50,10 @@ export const Footer = observer(({ packageData, packageId }: Props) => {
     register,
     handleSubmit,
     reset,
-    formState: { isValid },
+    formState: { isValid }
   } = useForm<FormDataType>({
     resolver: zodResolver(schema),
-    mode: 'onChange',
+    mode: 'onChange'
   })
 
   const onSubmit = async (formData: FormDataType) => {
@@ -61,7 +61,7 @@ export const Footer = observer(({ packageData, packageId }: Props) => {
     await sendReportToEmailmutateAsync({
       email,
       packageId,
-      scannerId: scannerId || '',
+      scannerId: scannerId || ''
     })
     reset()
   }
@@ -72,7 +72,7 @@ export const Footer = observer(({ packageData, packageId }: Props) => {
 
   if (packageData.isBuy && packageData.isFullBuy) {
     return (
-      <Button onClick={onGoToAllPackages} className={css.button} variant="gradient">
+      <Button onClick={onGoToAllPackages} className={css.button} variant='gradient'>
         {t('modal.open-package.go-to-all-packages')}
       </Button>
     )
@@ -82,8 +82,18 @@ export const Footer = observer(({ packageData, packageId }: Props) => {
     return (
       <>
         <form className={css.form} onSubmit={handleSubmit(onSubmit)}>
-          <input type="text" placeholder={t('modal.open-package.enter-email')} className={css.input} {...register('email')} />
-          <Button disabled={!isValid || sendReportToEmailIsPending} type="submit" className={combaneCSS(css.button, css.sendToEmail)} variant="gradient">
+          <input
+            type='text'
+            placeholder={t('modal.open-package.enter-email')}
+            className={css.input}
+            {...register('email')}
+          />
+          <Button
+            disabled={!isValid || sendReportToEmailIsPending}
+            type='submit'
+            className={combaneCSS(css.button, css.sendToEmail)}
+            variant='gradient'
+          >
             <p className={css.buttonText}>{t('modal.open-package.send-to-email')}</p>
           </Button>
         </form>
@@ -103,13 +113,25 @@ export const Footer = observer(({ packageData, packageId }: Props) => {
 
   return (
     <div className={css.wrapper}>
-      <Button onClick={onBuyPackage} className={css.button} variant="gradient">
+      <Button onClick={onBuyPackage} className={css.button} variant='gradient'>
         <p className={css.buttonText}>{t('home.open-package')}</p>
         <p className={css.price}>{packageData?.price || 0}$</p>
       </Button>
       <p>{t('global.or')}</p>
-      <input type="text" placeholder={t('modal.open-package.enter-promocode')} className={css.input} style={{ marginBottom: 0 }} value={promocode} onChange={v => setPromocode(v.target.value)} />
-      <Button disabled={!promocode.length || applyPromocodePending} onClick={onApplyPromocode} className={css.button} variant="default">
+      <input
+        type='text'
+        placeholder={t('modal.open-package.enter-promocode')}
+        className={css.input}
+        style={{ marginBottom: 0 }}
+        value={promocode}
+        onChange={v => setPromocode(v.target.value)}
+      />
+      <Button
+        disabled={!promocode.length || applyPromocodePending}
+        onClick={onApplyPromocode}
+        className={css.button}
+        variant='default'
+      >
         {t('modal.open-package.apply-promocode')}
       </Button>
     </div>

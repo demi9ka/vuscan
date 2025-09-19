@@ -2,7 +2,7 @@ import { Button, Modal } from '@/shared/ui'
 import { useLocation } from 'react-router-dom'
 import css from './warning.module.css'
 import { useTranslation } from 'react-i18next'
-import { useScanner } from '@/entities/scanner'
+import { useScanner } from '@/entities'
 import { searchStore } from '@/store'
 import { observer } from 'mobx-react-lite'
 import { scannerStore } from '@/store'
@@ -83,7 +83,7 @@ export const Warning = observer(() => {
     <Modal opened={opened} onClose={onClose}>
       <div className={css.center}>
         <div className={css.imageWrapper}>
-          <img src="/money.webp" alt="level3" />
+          <img src='/money.webp' alt='level3' />
         </div>
       </div>
       <p className={css.title}>{t(`modal.warning.title`)}</p>
@@ -91,7 +91,13 @@ export const Warning = observer(() => {
       <p className={css.text} style={{ marginTop: '36px', marginBottom: '16px' }}>
         {t(`modal.warning.approval`)}
       </p>
-      <Button ref={buttonRef} variant="gradient" disabled={isPending} className={combaneCSS(css.button)} onClick={handleStartScan}>
+      <Button
+        ref={buttonRef}
+        variant='gradient'
+        disabled={isPending}
+        className={combaneCSS(css.button)}
+        onClick={handleStartScan}
+      >
         {isPending ? (
           <>
             {t('modal.warning.load-btn')}

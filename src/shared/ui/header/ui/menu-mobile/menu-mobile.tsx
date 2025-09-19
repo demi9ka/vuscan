@@ -5,10 +5,13 @@ import { useTranslation } from 'react-i18next'
 import { LanguageSelect } from '../language-select'
 import { useOutsideClick } from '@/hooks'
 import { Link, Button, MenuBurgerIcon } from '@/shared/ui'
+import { languageStore } from '@/store'
+import { observer } from 'mobx-react-lite'
 
-export const MenuMobile = () => {
+export const MenuMobile = observer(() => {
   const { t } = useTranslation()
   const [isOpen, setIsOpen] = useState(false)
+  const { language } = languageStore
 
   const ref = useOutsideClick(() => {
     isOpen && setIsOpen(false)
@@ -30,13 +33,14 @@ export const MenuMobile = () => {
         }}
         className={css.icon}
       />
-      <nav className={combaneCSS(css.menu, isOpen ? css.opened : '')}>
+      <nav className={combaneCSS(css.menu, language == 'he' ? css.rtl : css.ltr, isOpen ? css.opened : '')}>
         <ul>
           <li className={css.linkWrapper}>
-            <a href="/Privacy_Policy.docx" target="_blank" className={css.link}>
+            <Link to={'/?modal=privacy'} className={css.link}>
               Privacy policy
-            </a>
+            </Link>
           </li>
+
           <li className={css.linkWrapper}>
             <Link className={css.link} to={'/?modal=about-scanner'}>
               {t('header.about')}
@@ -62,4 +66,4 @@ export const MenuMobile = () => {
       </nav>
     </div>
   )
-}
+})
