@@ -3,8 +3,10 @@ import { AppRouting } from './app-routing'
 import { Header } from '@/shared/ui'
 import { Modals } from '@/components/modal'
 import css from './app.module.css'
+import { lazy, Suspense } from 'react'
 import '@/feature/locale'
-import 'react-toastify/dist/ReactToastify.css'
+
+const ToastifyCSS = lazy(() => import('@/helpers/lazy-toastify-css'))
 
 export const App = () => {
   return (
@@ -14,9 +16,12 @@ export const App = () => {
         <main className={css.content}>
           <AppRouting />
         </main>
-        {/* <Footer /> */}
       </div>
       <Modals />
+
+      <Suspense fallback={null}>
+        <ToastifyCSS />
+      </Suspense>
     </Provider>
   )
 }

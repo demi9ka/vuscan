@@ -22,8 +22,8 @@ export const AppRouting = () => {
   }
   return (
     <Routes>
-      <Route path="/:lang" element={<Main />} />
-      <Route path="*" element={<NotFound />} />
+      <Route path='/:lang' element={<Main />} />
+      <Route path='/:lang/*' element={<NotFound />} />
     </Routes>
   )
 }

@@ -57,8 +57,7 @@ class LanguageStore {
     this.language = language
     localStorage.setItem('language', language)
     document.documentElement.lang = language // Устанавливаем атрибут lang в <html>
-    if (language == 'he') document.documentElement.setAttribute('dir', 'rtl')
-    else document.documentElement.setAttribute('dir', 'ltr')
+    document.documentElement.setAttribute('dir', language === 'he' ? 'rtl' : 'ltr')
   }
 }
 
