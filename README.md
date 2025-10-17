@@ -12,7 +12,7 @@
 - ⚛️ React + TypeScript - UI
 - 🔄 MobX - state manager
 - 🌐 Axios - HTTP-запросы к API
-- 🔌 React Query - кэширование запросов 
+- 🔌 TanStack Query - кэширование запросов 
 - 🎨 CSS Modules - стилизация
 - 📏 ESLint + 💅 Prettier - линтинг и форматирование кода
 
