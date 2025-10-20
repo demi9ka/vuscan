@@ -1,5 +1,9 @@
 .wrapper {
   margin-top: 190px;
+  transition: 0.1s ease-in-out;
+}
+.wrapper.finished {
+  margin-top: 40px;
 }
 .title,
 .subTitle {
@@ -19,6 +23,9 @@
   .wrapper {
     margin-top: calc(100vw / 10.1);
   }
+  .wrapper.finished {
+    margin-top: calc(100vw / 40.2);
+  }
   .title {
     font-size: calc(100vw / 36.92);
   }
@@ -30,6 +37,9 @@
 @media screen and (max-width: 768px) {
   .wrapper {
     margin-top: calc(100vw / 8.53);
+  }
+  .wrapper.finished {
+    margin-top: calc(100vw / 34);
   }
 
   .title {
@@ -43,9 +53,11 @@
 @media screen and (max-width: 480px) {
   .wrapper {
     margin-top: calc(100vw / 4.3);
-    padding: 0 calc(100vw / 24.375);
+    padding: 0 calc(100vw / 12);
   }
-  .title,
+  .wrapper.finished {
+    margin-top: calc(100vw / 8);
+  }
   .title {
     font-size: calc(100vw / 13.92);
   }

@@ -1,0 +1,95 @@
+.wrapper {
+  padding: 0 16px;
+  margin: 16px 0;
+  padding-bottom: 24px;
+  max-height: 527px;
+  min-height: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  overflow-y: auto;
+  border-bottom: 1px solid var(--border);
+}
+/* .wrapper p,
+.wrapper h4,
+.wrapper ul {
+  margin: 8px 0;
+} */
+.wrapper h4 {
+  font-size: 24px;
+  font-weight: bold;
+}
+.wrapper p,
+.wrapper li {
+  list-style-position: inside;
+  font-size: 18px;
+}
+.wrapper * {
+  user-select: text;
+  line-height: 155%;
+}
+
+@media screen and (max-width: 1920px) {
+  .wrapper {
+    padding: 0 calc(100vw / 120);
+    margin: calc(100vw / 120) 0;
+    padding-bottom: calc(100vw / 80);
+    max-height: calc(100vw / 3.64);
+    gap: calc(100vw / 120);
+  }
+  .wrapper p,
+  .wrapper h4,
+  .wrapper ul {
+    margin: calc(100vw / 240) 0;
+  }
+  .wrapper h4 {
+    font-size: calc(100vw / 79.84);
+  }
+  .wrapper p,
+  .wrapper li {
+    font-size: calc(100vw / 106.666);
+  }
+}
+@media screen and (max-width: 768px) {
+  .wrapper {
+    padding: 0 calc(100vw / 48); /* 120 * 0.4 = 48 */
+    margin: calc(100vw / 48) 0; /* 120 * 0.4 = 48 */
+    padding-bottom: calc(100vw / 32); /* 80 * 0.4 = 32 */
+    max-height: calc(100vw / 1.456); /* 3.64 * 0.4 = 1.456 */
+    gap: calc(100vw / 48);
+  }
+  .wrapper p,
+  .wrapper h4,
+  .wrapper ul {
+    margin: calc(100vw / 96) 0; /* 240 * 0.4 = 96 */
+  }
+  .wrapper h4 {
+    font-size: calc(100vw / 33.53); /* 87.27 * 0.4 = 34.908 */
+  }
+  .wrapper p,
+  .wrapper li {
+    font-size: calc(100vw / 42.666); /* 120 * 0.4 = 48 */
+  }
+}
+@media screen and (max-width: 480px) {
+  .wrapper {
+    padding: 0; /* 48 * 0.507 = 24.336 */
+    margin: calc(100vw / 24.336) 0; /* 48 * 0.507 = 24.336 */
+    padding-bottom: calc(100vw / 16.224); /* 32 * 0.507 = 16.224 */
+    max-height: max-content;
+    height: auto;
+    gap: calc(100vw / 24.336);
+  }
+  .wrapper p,
+  .wrapper h4,
+  .wrapper ul {
+    margin: calc(100vw / 48.672) 0; /* 96 * 0.507 = 48.672 */
+  }
+  .wrapper h4 {
+    font-size: calc(100vw / 19.976); /* 34.908 * 0.507 ≈ 17.700156 */
+  }
+  .wrapper p,
+  .wrapper li {
+    font-size: calc(100vw / 21.632); /* 48 * 0.507 = 24.336 */
+  }
+}

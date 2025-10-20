@@ -21,38 +21,14 @@
   text-align: center;
   margin-bottom: 16px;
 }
-.linkWrapper {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-
-.link {
-  max-width: 50%;
-  font-size: 18px;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-}
-.link.blur {
-  filter: blur(4px);
-}
 .description {
   text-align: center;
   font-size: 16px;
-}
-.linkButton {
-  width: 150px;
-  height: 36px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-.iconWrapper {
-  width: 24px;
+  width: 80%;
 }
 .scrollView {
-  max-height: 400px;
+  height: 295px;
+
   background-color: var(--dark-3);
   overflow-y: auto;
   margin: 20px 0;
@@ -62,22 +38,11 @@
   flex-direction: column;
   gap: 5px;
 }
-.button {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 20px;
-  width: 100%;
-}
-.button * {
-  font-family: var(--ff-Eesti);
-  font-size: 20px;
-  font-weight: 500;
-}
+
 .linkFoundedButton {
   font-size: 16px;
   margin: 20px 0;
-  width: 200px;
+  padding: 4px 12px;
 }
 
 @media screen and (max-width: 1920px) {
@@ -86,45 +51,21 @@
     margin-bottom: calc(100vw / 120);
   }
 
-  .link {
-    font-size: calc(100vw / 106.667);
-  }
-  .link.blur {
-    filter: blur(calc(100vw / 480));
-  }
   .description {
     font-size: calc(100vw / 120);
   }
 
-  .linkButton {
-    width: calc(100vw / 12.8);
-    height: calc(100vw / 53.333);
-  }
-
-  .iconWrapper {
-    width: calc(100vw / 80);
-  }
-
   .scrollView {
-    max-height: calc(100vw / 4.8);
+    height: calc(100vw / 6.9);
     margin: calc(100vw / 96) 0;
     padding: calc(100vw / 240);
     border-radius: calc(100vw / 160);
     gap: calc(100vw / 384);
   }
 
-  .button {
-    gap: calc(100vw / 96);
-  }
-
-  .button * {
-    font-size: calc(100vw / 96);
-  }
-
   .linkFoundedButton {
     font-size: calc(100vw / 120);
     margin: calc(100vw / 96) 0;
-    width: calc(100vw / 9.6);
   }
 }
 @media screen and (max-width: 768px) {
@@ -133,45 +74,22 @@
     margin-bottom: calc(100vw / 48);
   }
 
-  .link {
-    font-size: calc(100vw / 42.6668);
-  }
-
   .description {
     font-size: calc(100vw / 48);
-  }
-  .link.blur {
-    filter: blur(calc(100vw / 192));
-  }
-  .linkButton {
-    width: calc(100vw / 5.12);
-    height: calc(100vw / 21.3332);
-  }
-
-  .iconWrapper {
-    width: calc(100vw / 32);
+    width: 90%;
   }
 
   .scrollView {
-    max-height: calc(100vw / 1.92);
+    height: calc(100vw / 2.7);
     margin: calc(100vw / 38.4) 0;
     padding: calc(100vw / 96);
     border-radius: calc(100vw / 64);
     gap: calc(100vw / 153.6);
   }
 
-  .button {
-    gap: calc(100vw / 38.4);
-  }
-
-  .button * {
-    font-size: calc(100vw / 38.4);
-  }
-
   .linkFoundedButton {
     font-size: calc(100vw / 48);
     margin: calc(100vw / 38.4) 0;
-    width: calc(100vw / 3.84);
   }
 }
 
@@ -179,56 +97,29 @@
   .title {
     display: none;
   }
-  .link {
-    font-size: calc(100vw / 21.63);
-    max-width: 100%;
-  }
-  .linkWrapper {
-    margin: calc(100vw / 209);
-    display: flex;
-    gap: calc(100vw / 78);
-    flex-direction: column;
-  }
 
   .description {
     margin-top: calc(100vw / 32.5);
     font-size: calc(100vw / 24.34);
+    width: 100%;
   }
 
   .link.blur {
     filter: blur(calc(100vw / 97.34));
   }
 
-  .linkButton {
-    width: 100%;
-    height: calc(100vw / 10.82);
-  }
-
-  .iconWrapper {
-    width: calc(100vw / 16.22);
-  }
-
   .scrollView {
-    max-height: none;
-    height: auto;
-    margin: calc(100vw / 19.47);
+    max-height: 600px;
+    height: calc(100vw / 1.3);
+    margin: calc(100vw / 26) 0;
     padding: 0;
     border-radius: 0;
     gap: calc(100vw / 77.87);
     background-color: transparent;
-    overflow-y: visible;
-  }
-  .button {
-    gap: calc(100vw / 19.47);
-  }
-
-  .button * {
-    font-size: calc(100vw / 19.47);
   }
 
   .linkFoundedButton {
     font-size: calc(100vw / 24.34);
     margin: calc(100vw / 19.47) 0;
-    width: calc(100vw / 1.95);
   }
 }

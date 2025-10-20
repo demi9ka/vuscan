@@ -5,7 +5,7 @@ import { Footer } from './ui/footer'
 import { Content } from './ui/content'
 import { useTranslation } from 'react-i18next'
 import React from 'react'
-import { Level } from '@/shared/ui/level'
+import { Level } from '@/shared/ui'
 
 export type Props = {
   color: string
@@ -18,7 +18,7 @@ export const Card = observer(({ logo, color, id }: Props) => {
   const { packages } = scannerStore
 
   const cardPackage = packages ? packages.find(el => el.id == id)! : null
-  const isRenderErrorBoxShadow = Boolean(cardPackage && cardPackage.linkFounded > 0)
+  const isRenderErrorBoxShadow = Boolean(cardPackage && cardPackage.findedLinks > 0)
 
   const primaryColor = isRenderErrorBoxShadow ? 'var(--error)' : color
 
@@ -32,7 +32,7 @@ export const Card = observer(({ logo, color, id }: Props) => {
       }
     >
       <div className={css.levelWrapper}>
-        <Level color={primaryColor} text={t(`home.levels.${id}.level`)} />
+        <Level color={color} text={t(`home.levels.${id}.level`)} />
       </div>
       <Content id={id} logo={logo} isRenderErrorBoxShadow={isRenderErrorBoxShadow} />
       <Footer cardPackage={cardPackage} cardId={id} />

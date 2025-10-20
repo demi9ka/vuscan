@@ -10,6 +10,9 @@
   width: 200px;
   text-align: center;
 }
+.bigFontSize {
+  font-size: 24px;
+}
 
 @media screen and (max-width: 1920px) {
   .level {
@@ -18,6 +21,9 @@
     border-radius: calc(100vw / 160);
     width: calc(100vw / 9.6);
     box-shadow: inset 0 0 calc(100vw / 160);
+  }
+  .bigFontSize {
+    font-size: calc(100vw / 80);
   }
 }
 
@@ -29,6 +35,9 @@
     border-radius: calc(100vw / 64);
     box-shadow: inset 0 0 calc(100vw / 64);
   }
+  .bigFontSize {
+    font-size: calc(100vw / 32);
+  }
 }
 
 @media screen and (max-width: 480px) {
@@ -38,5 +47,8 @@
     padding: calc(100vw / 78) 0;
     border-radius: calc(100vw / 32.5);
     box-shadow: inset 0 0 calc(100vw / 32.5);
+  }
+  .bigFontSize {
+    font-size: calc(100vw / 15);
   }
 }

@@ -1,18 +1,33 @@
 import i18n from 'i18next'
 import { initReactI18next } from 'react-i18next'
 import HttpBackend from 'i18next-http-backend'
-import { languageStore } from '@/store'
+import { languageStore, scannerStore } from '@/store'
+import { paymentStore } from '@/store/payment-store'
 
-export const i18next = i18n
-  .use(HttpBackend) // загрузка переводов по HTTP
-  .use(initReactI18next) // интеграция с React
+export const i18next = i18n.createInstance()
+
+i18next
+  .use(HttpBackend)
+  .use(initReactI18next)
   .init({
-    fallbackLng: languageStore.language, // язык по умолчанию
+    lng: languageStore.language,
+    fallbackLng: 'ru',
     debug: false,
     interpolation: {
-      escapeValue: false // React сам экранирует значения
+      escapeValue: false,
     },
     backend: {
-      loadPath: '/locales/{{lng}}/translation.json' // путь к переводам
-    }
+      loadPath: '/locales/{{lng}}/translation.json',
+    },
   })
+  .then(() => {
+    scannerStore.restoreScanner()
+    paymentStore.restoreCheckPayments()
+  })
+
+const originalSetLanguage = languageStore.setLanguage
+languageStore.setLanguage = (language: 'ru' | 'en' | 'he') => {
+  originalSetLanguage(language)
+  i18next.changeLanguage(language)
+  document.documentElement.lang = language
+}

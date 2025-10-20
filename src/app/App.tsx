@@ -3,14 +3,14 @@ import { AppRouting } from './app-routing'
 import { Header } from '@/shared/ui'
 import { Modals } from '@/components/modal'
 import css from './app.module.css'
+import { lazy, Suspense } from 'react'
 import '@/feature/locale'
-import 'react-toastify/dist/ReactToastify.css'
-import { Seo } from './seo'
+
+const ToastifyCSS = lazy(() => import('@/helpers/lazy-toastify-css'))
 
 export const App = () => {
   return (
     <Provider>
-      <Seo />
       <div className={css.wrapper}>
         <Header />
         <main className={css.content}>
@@ -18,6 +18,10 @@ export const App = () => {
         </main>
       </div>
       <Modals />
+
+      <Suspense fallback={null}>
+        <ToastifyCSS />
+      </Suspense>
     </Provider>
   )
 }

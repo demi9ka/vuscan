@@ -1,10 +1,117 @@
 <!doctype html>
-<html lang="en">
+<html>
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/icon.svg" />
+    <link rel="icon" href="/favicon.ico" sizes="any" />
+    <link rel="icon" href="/icon.svg" type="image/svg+xml" />
+    <meta name="theme-color" content="#242930" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>vuscan</title>
+    <style>
+      body {
+        background-color: #242930;
+      }
+      @font-face {
+        font-family: 'Unbounded';
+        src: url('/fonts/Unbounded-SemiBold.woff2') format('woff2');
+        font-weight: 600;
+        font-style: normal;
+        font-display: swap;
+      }
+      @font-face {
+        font-family: 'Manrope';
+        src: url('/fonts/Manrope-SemiBold.woff2') format('woff2');
+        font-weight: 600;
+        font-style: normal;
+        font-display: swap;
+      }
+      @font-face {
+        font-family: 'Manrope';
+        src: url('/fonts/Manrope-Bold.woff2') format('woff2');
+        font-weight: 700;
+        font-style: normal;
+        font-display: swap;
+      }
+      @font-face {
+        font-family: 'Manrope';
+        src: url('/fonts/Manrope-Regular.woff2') format('woff2');
+        font-weight: 400;
+        font-style: normal;
+        font-display: swap;
+      }
+      @font-face {
+        font-family: 'Eesti';
+        src: url('/fonts/gteestiprodisplay_medium.woff2') format('woff2');
+        font-weight: 500;
+        font-style: normal;
+        font-display: swap;
+      }
+      @font-face {
+        font-family: 'Eesti';
+        src: url('/fonts/gteestiprodisplay_bold.woff2') format('woff2');
+        font-weight: 700;
+        font-style: normal;
+        font-display: swap;
+      }
+      @font-face {
+        font-family: 'Eesti';
+        src: url('/fonts/gteestiprodisplay_regular.woff2') format('woff2');
+        font-weight: 400;
+        font-style: normal;
+        font-display: swap;
+      }
+
+      :root {
+        --accent: #ff8800;
+        --error: #fb0000;
+        --dark-3: #2f353f;
+        --dark: #242930;
+        --dark-5: #1b1b1b;
+        --text: #ffffff;
+        --text-5: #ffffffc9;
+        --text-6: #ffffff70;
+        --border: #99999985;
+        --ff-Unbounded: 'Unbounded';
+        --ff-Manrope: 'Manrope';
+        --ff-Eesti: 'Eesti';
+      }
+
+      * {
+        /* user-select: none; */
+        padding: 0;
+        margin: 0;
+        outline: 0;
+        font-weight: 400;
+        border: 0;
+        box-sizing: border-box;
+        text-decoration: none;
+        color: var(--text);
+        font-family: var(--ff-Manrope);
+        font-size: 16px;
+
+        list-style-type: none;
+        -webkit-tap-highlight-color: transparent; /* Убирает синий подсвет */
+        -webkit-touch-callout: none; /* Отключает контекстное меню на iOS */
+        -webkit-user-select: none; /* Запрещает выделение текста */
+      }
+      @media screen and (max-width: 1920px) {
+        * {
+          line-height: calc(100vw / 64);
+          font-size: calc(100vw / 120);
+        }
+      }
+      @media screen and (max-width: 768px) {
+        * {
+          line-height: calc(100vw / 25.6);
+          font-size: calc(100vw / 48);
+        }
+      }
+      @media screen and (max-width: 480px) {
+        * {
+          line-height: calc(100vw / 13);
+          font-size: calc(100vw / 24.375);
+        }
+      }
+    </style>
   </head>
   <body>
     <div id="root"></div>

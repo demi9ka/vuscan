@@ -3,30 +3,11 @@
   display: flex;
   justify-content: center;
 }
-.scrollArea {
-  border-radius: 12px;
-  height: 527px;
-  background-color: var(--dark-3);
-  padding: 16px;
-  overflow-y: auto;
-  margin: 20px 0;
-}
-.info {
-  margin-top: 10px;
-  font-size: 16px;
-  line-height: 155%;
-}
+
 .button {
   width: 200px;
 }
 @media screen and (max-width: 1920px) {
-  .scrollArea {
-    border-radius: calc(100vw / 160); /* 12px */
-    height: calc(100vw / 3.643); /* 527px */
-    padding: calc(100vw / 120); /* 16px */
-    margin: calc(100vw / 96) 0; /* 20px 0 */
-  }
-
   .info {
     margin-top: calc(100vw / 192); /* 10px */
     font-size: calc(100vw / 120); /* 20px */
@@ -36,13 +17,6 @@
   }
 }
 @media screen and (max-width: 768px) {
-  .scrollArea {
-    border-radius: calc(100vw / 160); /* 12px */
-    height: calc(100vw / 2); /* 527px */
-    padding: calc(100vw / 120); /* 16px */
-    margin: calc(100vw / 96) 0; /* 20px 0 */
-  }
-
   .info {
     margin-top: calc(100vw / 192); /* 10px */
     font-size: calc(100vw / 48); /* 20px */
@@ -52,14 +26,6 @@
   }
 }
 @media screen and (max-width: 480px) {
-  .scrollArea {
-    border-radius: 0;
-    height: auto; /* 527px */
-    padding: 0; /* 16px */
-    background-color: transparent;
-    margin: 0; /* 20px 0 */
-  }
-
   .info {
     margin-top: calc(100vw / 192); /* 10px */
     font-size: calc(100vw / 24.336); /* 20px */

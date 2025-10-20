@@ -1,16 +1,17 @@
 import { combaneCSS } from '@/helpers'
 import css from './menu-mobile.module.css'
 import { useState } from 'react'
-import { MenuBurgerIcon } from '@/shared/ui/svg'
-import { Link } from 'react-router-dom'
-import { Button } from '@/shared/ui/button'
 import { useTranslation } from 'react-i18next'
 import { LanguageSelect } from '../language-select'
 import { useOutsideClick } from '@/hooks'
+import { Link, Button, MenuBurgerIcon } from '@/shared/ui'
+import { languageStore } from '@/store'
+import { observer } from 'mobx-react-lite'
 
-export const MenuMobile = () => {
+export const MenuMobile = observer(() => {
   const { t } = useTranslation()
   const [isOpen, setIsOpen] = useState(false)
+  const { language } = languageStore
 
   const ref = useOutsideClick(() => {
     isOpen && setIsOpen(false)
@@ -20,16 +21,26 @@ export const MenuMobile = () => {
     setIsOpen(!isOpen)
   }
 
+  const onOpenContact = () => {
+    window.open('https://t.me/vuscanteam', '_blank')
+  }
+
   return (
     <div ref={ref} className={css.wrapper} onClick={toggleOpen}>
       <MenuBurgerIcon
         style={{
-          transform: `rotate(${isOpen ? 90 : 0}deg)`
+          transform: `rotate(${isOpen ? 90 : 0}deg)`,
         }}
         className={css.icon}
       />
-      <nav className={combaneCSS(css.menu, isOpen ? css.opened : '')}>
+      <nav className={combaneCSS(css.menu, language == 'he' ? css.rtl : css.ltr, isOpen ? css.opened : '')}>
         <ul>
+          <li className={css.linkWrapper}>
+            <Link to={'/?modal=privacy'} className={css.link}>
+              Privacy policy
+            </Link>
+          </li>
+
           <li className={css.linkWrapper}>
             <Link className={css.link} to={'/?modal=about-scanner'}>
               {t('header.about')}
@@ -47,14 +58,12 @@ export const MenuMobile = () => {
           </li>
           <LanguageSelect />
           <li>
-            <Link to={'/?modal=contact'}>
-              <Button variant='gradient' className={css.button}>
-                {t('header.contact')}
-              </Button>
-            </Link>
+            <Button variant="gradient" onClick={onOpenContact} className={css.button}>
+              {t('header.contact')}
+            </Button>
           </li>
         </ul>
       </nav>
     </div>
   )
-}
+})

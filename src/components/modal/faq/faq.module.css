@@ -5,10 +5,7 @@
 }
 .scrollArea {
   margin-top: 20px;
-  border-radius: 12px;
   height: 527px;
-  background-color: var(--dark-3);
-  padding: 16px;
   overflow-y: auto;
 }
 
@@ -31,14 +28,20 @@
   font-family: var(--ff-Eesti);
   font-size: 24px;
 }
-.answer {
+.transContent {
   padding: 0 10px;
   font-size: 20px;
   margin-bottom: 12px;
   line-height: 155%;
+  list-style-type: disc;
 }
 .arrow {
   width: 24px;
+}
+.transWrapper {
+  height: auto;
+  border: 0;
+  overflow-y: auto;
 }
 
 @media screen and (max-width: 1920px) {
@@ -61,8 +64,7 @@
   .questionTitle {
     font-size: calc(100vw / 80);
   }
-
-  .answer {
+  .transContent {
     padding: 0 calc(100vw / 192);
     font-size: calc(100vw / 120);
     margin-bottom: calc(100vw / 160);
@@ -92,7 +94,7 @@
     font-size: calc(100vw / 32);
   }
 
-  .answer {
+  .transContent {
     padding: 0 calc(100vw / 76.8);
     font-size: calc(100vw / 48);
     margin-bottom: calc(100vw / 64);
@@ -106,11 +108,10 @@
 @media (max-width: 480px) {
   .scrollArea {
     margin-top: 0;
-    border-radius: 0;
+
     height: auto;
-    padding: 0;
+
     overflow-y: visible;
-    background-color: transparent;
   }
   .button {
     display: none;
@@ -126,7 +127,7 @@
     font-size: calc(100vw / 21.666);
   }
 
-  .answer {
+  .transContent {
     padding: 0;
     font-size: calc(100vw / 24.375);
     margin-top: calc(100vw / 65);

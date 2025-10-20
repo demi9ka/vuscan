@@ -7,8 +7,8 @@ class SearchStore {
     makeAutoObservable(this)
   }
 
-  setSearch = (vl: string) => {
-    this.search = vl
+  setSearch = (value: string) => {
+    this.search = value
   }
 
   clearSearch = () => {

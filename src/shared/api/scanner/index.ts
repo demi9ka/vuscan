@@ -1,38 +1,68 @@
 import {
-  BuyAllParams,
-  BuyAllResponse,
   BuyPackageParams,
   BuyPackageResponse,
-  QueueParams,
-  QueueResponse,
-  ScannerParams,
-  ScannerResponse
+  checkScannerStateParams,
+  checkScannerStateReponse,
+  getAllPackagesParams,
+  getAllPackagesResponse,
+  getPackageParams,
+  getPackageResponse,
+  scannerParams,
+  scannerResponse,
+  sendAllReportsToEmailParams,
+  sendAllReportsToEmailResponse,
+  sendReportToEmailParams,
+  sendReportToEmailResponse,
+  BuyAllPackagesParams,
+  BuyAllPackagesResponse,
+  scannerCountResponse,
+  applyPromocodeParams,
+  applyPromocodeResponse,
 } from './types'
 import { api } from '..'
-import { mockQueue, mockScanner0, mockBuyAll } from './mock'
 
 const PREFIX = '/scanner'
 
-const scanner = async (data: ScannerParams) => {
-  return mockScanner0
-  return await api.post<ScannerResponse>(PREFIX + '/scanner', data)
+const scanner = async (data: scannerParams) => {
+  return await api.post<scannerResponse>(PREFIX + '/', data)
 }
-const queue = async (data: QueueParams) => {
-  return mockQueue
-  return await api.post<QueueResponse>(PREFIX + '/queue', data)
+const checkScannerState = async (params: checkScannerStateParams) => {
+  return await api.get<checkScannerStateReponse>(PREFIX + '/check-scanner-state', { params })
 }
-const buyAll = async (data: BuyAllParams) => {
-  return mockBuyAll
-  return await api.post<BuyAllResponse>(PREFIX + '/buy-all', data)
+const getPackage = async (params: getPackageParams) => {
+  return await api.get<getPackageResponse>(PREFIX + '/package', { params })
+}
+const getAllPackages = async (params: getAllPackagesParams) => {
+  return await api.get<getAllPackagesResponse>(PREFIX + '/all-packages', { params })
+}
+const buyAllPackages = async (data: BuyAllPackagesParams) => {
+  return await api.post<BuyAllPackagesResponse>(PREFIX + '/buy-all-packages', data)
 }
 const buyPackage = async (data: BuyPackageParams) => {
-  return mockBuyAll
   return await api.post<BuyPackageResponse>(PREFIX + '/buy-package', data)
+}
+const sendReportToEmail = async (data: sendReportToEmailParams) => {
+  return await api.post<sendReportToEmailResponse>(PREFIX + '/send-report-to-email', data)
+}
+const sendAllReportsToEmail = async (data: sendAllReportsToEmailParams) => {
+  return await api.post<sendAllReportsToEmailResponse>(PREFIX + '/send-all-reports-to-email', data)
+}
+const scannerCount = async () => {
+  return await api.get<scannerCountResponse>(PREFIX + '/scanner-count')
+}
+const applyPromocode = async (data: applyPromocodeParams) => {
+  return await api.post<applyPromocodeResponse>(PREFIX + '/apply-promocode', data)
 }
 
 export default {
   scanner,
-  queue,
-  buyAll,
-  buyPackage
+  getPackage,
+  checkScannerState,
+  buyAllPackages,
+  buyPackage,
+  sendReportToEmail,
+  sendAllReportsToEmail,
+  getAllPackages,
+  scannerCount,
+  applyPromocode,
 }

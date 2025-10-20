@@ -1,8 +1,9 @@
-import { useLocation, useNavigate } from 'react-router-dom'
-import css from './about-scanner.module.css'
-import { Button, Modal } from '@/shared/ui'
+import { useLocation } from 'react-router-dom'
 
+import css from './about-scanner.module.css'
+import { Button, Modal, Trans } from '@/shared/ui'
 import { useTranslation } from 'react-i18next'
+import { useNavigate } from '@/hooks'
 
 export const AboutScanner = () => {
   const { t } = useTranslation()
@@ -13,22 +14,23 @@ export const AboutScanner = () => {
   const urlModal = queryParams.get('modal')
 
   const onClose = () => {
-    navigate('/')
+    navigate('/', { replace: true })
   }
 
   const opened = urlModal == 'about-scanner'
 
   return (
     <Modal title={t('header.about')} opened={opened} onClose={onClose}>
-      <div className={css.scrollArea}>
-        {t('modal.about-scanner.content')
-          .split('\n\n')
-          .map((el, i) => (
-            <p key={i} className={css.info}>
-              {el}
-            </p>
-          ))}
-      </div>
+      <Trans
+        i18nKey={'modal.about-scanner.content'}
+        components={{
+          h4: <h4 />,
+          p: <p />,
+          ul: <ul />,
+          li: <li style={{ listStyleType: 'decimal' }} />
+        }}
+      />
+
       <div className={css.center}>
         <Button variant='default' className={css.button} onClick={onClose}>
           {t('global.close')}

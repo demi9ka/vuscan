@@ -2,7 +2,7 @@ import { observer } from 'mobx-react-lite'
 import css from './buy-all.module.css'
 import { scannerStore } from '@/store'
 import { useTranslation } from 'react-i18next'
-import { useNavigate } from 'react-router-dom'
+import { useNavigate } from '@/hooks'
 import { Button } from '@/shared/ui'
 import { useMemo } from 'react'
 
@@ -12,7 +12,7 @@ export const BuyAll = observer(() => {
   const { isFinished, packages } = scannerStore
 
   const isRender = useMemo(() => {
-    return isFinished && packages && packages.filter(el => el.linkFounded > 0).length > 1
+    return isFinished && packages && packages.filter(el => el.findedLinks > 0).length > 1
   }, [isFinished, packages])
 
   if (!isRender) {

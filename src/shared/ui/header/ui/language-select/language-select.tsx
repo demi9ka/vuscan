@@ -2,15 +2,15 @@ import { languageStore } from '@/store'
 import { observer } from 'mobx-react-lite'
 import css from './language-select.module.css'
 import { combaneCSS } from '@/helpers'
-import { useTranslation } from 'react-i18next'
+import { useNavigate } from '@/hooks'
 
 export const LanguageSelect = observer(() => {
   const { language, setLanguage } = languageStore
-  const { i18n } = useTranslation()
+  const navigate = useNavigate()
 
-  const changeLanguage = (lng: 'ru' | 'en') => {
-    i18n.changeLanguage(lng)
+  const changeLanguage = (lng: 'ru' | 'en' | 'he') => {
     setLanguage(lng)
+    navigate(`/${lng}${location.pathname.slice(3)}`)
   }
 
   return (
@@ -21,6 +21,10 @@ export const LanguageSelect = observer(() => {
       <div className={css.separator} />
       <p onClick={() => changeLanguage('en')} className={combaneCSS(css.variant, language != 'en' ? css.disable : '')}>
         EN
+      </p>
+      <div className={css.separator} />
+      <p onClick={() => changeLanguage('he')} className={combaneCSS(css.variant, language != 'he' ? css.disable : '')}>
+        HE
       </p>
     </div>
   )

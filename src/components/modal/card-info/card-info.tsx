@@ -1,10 +1,9 @@
-import { Button, Modal } from '@/shared/ui'
-import { useLocation, useNavigate } from 'react-router-dom'
+import { Button, Modal, Trans, Level } from '@/shared/ui'
+import { useLocation } from 'react-router-dom'
 import css from './card-info.module.css'
 import { useTranslation } from 'react-i18next'
 import { cardsData } from '@/helpers'
-import { useMediaQuery } from '@/hooks'
-import { Level } from '@/shared/ui/level'
+import { useMediaQuery, useNavigate } from '@/hooks'
 import React from 'react'
 
 type Props = {
@@ -23,7 +22,7 @@ export const CardInfo = ({ id }: Props) => {
   const urlId = queryParams.get('id')
 
   const onClose = () => {
-    navigate('/')
+    navigate('/', { replace: true })
   }
 
   const cardData = cardsData.find(el => el.id == id)!
@@ -34,14 +33,6 @@ export const CardInfo = ({ id }: Props) => {
 
   const opened = id == Number(urlId) && urlModal == 'card-info'
   const { color } = cardData
-
-  const infoMapped = t(`modal.info.levels.${id}`)
-    .split('\n\n')
-    .map((el, i) => (
-      <p key={i} className={css.info}>
-        {el}
-      </p>
-    ))
 
   return (
     <Modal
@@ -61,7 +52,19 @@ export const CardInfo = ({ id }: Props) => {
         </div>
       </div>
       {isMobile ? <></> : <h3 className={css.title}>{t(`home.levels.${id}.title`)}</h3>}
-      {infoMapped}
+
+      <Trans
+        i18nKey={t(`modal.info.levels.${id}`)}
+        components={{
+          h4: <h4 />,
+          p: <p />,
+          'p-accent': <p className={css.accent} />,
+          ul: <ul />,
+          li: <li style={{ listStyleType: 'decimal' }} />,
+          bold: <span className={css.bold} />
+        }}
+      />
+
       <div className={css.center}>
         <Button variant='default' className={css.button} onClick={onClose}>
           {t(`global.close`)}
